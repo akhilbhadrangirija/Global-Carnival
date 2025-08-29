@@ -18,13 +18,15 @@ export function Header() {
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
 
   const navigation = [
-    { name: t('home'), href: `/${locale}` },
+    // { name: t('home'), href: `/${locale}` },
     { name: t('about'), href: `/${locale}/about` },
-    { name: t('attractions'), href: `/${locale}/attractions` },
-    { name: t('events'), href: `/${locale}/events` },
-    { name: t('directory'), href: `/${locale}/directory` },
-    { name: t('dining'), href: `/${locale}/dining` },
-    { name: t('gallery'), href: `/${locale}/gallery` },
+    { name: t('overview'), href: `/${locale}/overview` },
+    { name: t('souks'), href: `/${locale}/souks` },
+    // { name: t('highlights'), href: `/${locale}/highlights` },
+    // { name: t('products'), href: `/${locale}/products` },
+    // { name: t('food'), href: `/${locale}/food` },
+    // { name: t('activities'), href: `/${locale}/activities` },
+    // { name: t('partner'), href: `/${locale}/partner` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
@@ -60,10 +62,10 @@ export function Header() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center space-x-2">
             <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg lg:text-xl">CO</span>
+              <span className="text-white font-bold text-lg lg:text-xl">GCJ</span>
             </div>
             <span className="text-xl lg:text-2xl font-bold text-primary">
-              CityScape Oasis
+              Global Carnival Jeddah
             </span>
           </Link>
 

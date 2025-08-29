@@ -10,9 +10,9 @@ const galleryImages = [
   {
     id: 1,
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
-    alt: "CityScape Oasis aerial view at sunset",
+    alt: "Global carnival Jeddah aerial view at sunset",
     category: "Architecture",
-    description: "A breathtaking aerial view of CityScape Oasis showcasing the stunning architecture and beautiful sunset colors."
+    description: "A breathtaking aerial view of Global carnival Jeddah showcasing the stunning architecture and beautiful sunset colors."
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ const galleryImages = [
     src: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&h=600&fit=crop",
     alt: "Night illumination and lights",
     category: "Nightlife",
-    description: "The magical transformation of CityScape Oasis as the sun sets and lights come alive."
+    description: "The magical transformation of Global carnival Jeddah as the sun sets and lights come alive."
   },
   {
     id: 9,
@@ -157,7 +157,7 @@ export default function GalleryPage() {
               {t('gallery.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Take a visual journey through CityScape Oasis and discover the beauty, excitement, and wonder that awaits you.
+              Take a visual journey through Global carnival Jeddah and discover the beauty, excitement, and wonder that awaits you.
             </p>
           </motion.div>
         </div>

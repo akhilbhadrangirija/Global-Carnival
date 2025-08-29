@@ -152,7 +152,7 @@ export default function EventsPage() {
               {t('events.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Discover exciting events, performances, and celebrations happening at CityScape Oasis throughout the year.
+              Discover exciting events, performances, and celebrations happening at Global carnival Jeddah throughout the year.
             </p>
           </motion.div>
         </div>

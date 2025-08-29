@@ -1,4 +1,4 @@
-# CityScape Oasis - City Destination Website
+# Global carnival Jeddah - City Destination Website
 
 A modern, responsive city-destination website built with Next.js 14, featuring internationalization, beautiful animations, and a comprehensive visitor experience.
 

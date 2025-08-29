@@ -7,6 +7,13 @@
     "directory": "Directory",
     "dining": "Dining",
     "gallery": "Gallery",
+    "overview": "Overview",
+    "souks": "Souks",
+    "highlights": "Highlights",
+    "products": "Products",
+    "food": "Food & Beverages",
+    "activities": "Activities",
+    "partner": "Partner",
     "contact": "Contact",
     "planVisit": "Plan Your Visit"
   },
@@ -14,10 +21,80 @@
     "title": "DISCOVER THE WORLD IN ONE PLACE",
     "subtitle": "Season 01",
     "dates": "November 2025 to April 2026",
+    "location": "Jeddah, Saudi Arabia",
     "welcome": "Welcome To",
-    "brandName": "CityScape Oasis",
-    "description": "Step into a world of wonder, color, and culture at CityScape Oasis, a one-of-a-kind destination bringing the magic of global traditions, flavors, and festivals to the heart of our vibrant city. With its stunning backdrop and seasonal celebrations of world cultures, there's always something new to see, taste, discover, and experience.",
-    "aboutUs": "About Us"
+    "brandName": "Global carnival Jeddah",
+    "description": "Step into a world of wonder, color, and culture at Global carnival Jeddah, a one-of-a-kind destination bringing the magic of global traditions, flavors, and festivals to the heart of our vibrant city. With its stunning backdrop and seasonal celebrations of world cultures, there's always something new to see, taste, discover, and experience.",
+    "aboutUs": "About Us",
+    "cta": "Explore the Carnival"
+  },
+  "homepage": {
+    "introduction": {
+      "title": "Introduction",
+      "description": "Discover the magic of global traditions, flavors, and festivals at Global Carnival Jeddah. A one-of-a-kind destination bringing the world's cultures to the heart of Saudi Arabia.",
+      "cta": "Read More"
+    },
+    "overview": {
+      "title": "Project Overview",
+      "description": "Experience a comprehensive carnival featuring facades, shops, pavilions, and kiosks from around the world. Immerse yourself in cultural diversity and live entertainment.",
+      "cta": "Learn More"
+    },
+    "products": {
+      "title": "Product Diversity",
+      "description": "From traditional crafts to modern goods, explore a world of products from every corner of the globe.",
+      "cta": "Browse Products"
+    },
+    "food": {
+      "title": "Food & Beverages",
+      "description": "Savor authentic flavors from around the world, from street food to fine dining experiences.",
+      "cta": "Explore Cuisine"
+    },
+    "activities": {
+      "title": "Activities & Entertainment",
+      "description": "Engage in cultural activities, creative workshops, and live performances that bring the world to life.",
+      "cta": "View Activities"
+    }
+  },
+  "souks": {
+    "title": "Experience Souks from Around the World",
+    "description": "Each souk represents the authentic culture and traditions of its region, offering visitors a truly immersive experience.",
+    "regions": {
+      "india": { "name": "India", "description": "Traditional textiles, spices, and handicrafts from the subcontinent" },
+      "pakistan": { "name": "Pakistan", "description": "Rich fabrics, traditional jewelry, and cultural artifacts" },
+      "turkey": { "name": "Turkey", "description": "Ottoman-inspired crafts, ceramics, and traditional textiles" },
+      "morocco": { "name": "Morocco", "description": "Berber crafts, leather goods, and traditional ceramics" },
+      "eastAsia": { "name": "East Asia", "description": "Silk, porcelain, and traditional arts from China, Japan, and Korea" },
+      "gcc": { "name": "GCC", "description": "Arabian heritage crafts, dates, and traditional goods" },
+      "egypt": { "name": "Egypt", "description": "Ancient artifacts, papyrus, and traditional Egyptian crafts" },
+      "africa": { "name": "Africa", "description": "Tribal art, traditional fabrics, and cultural artifacts" }
+    },
+    "viewGallery": "View Gallery"
+  },
+  "highlights": {
+    "title": "Highlights of the Carnival",
+    "description": "Discover the main attractions that make Global Carnival Jeddah an extraordinary experience.",
+    "attractions": {
+      "adventurePark": "Adventure Park",
+      "balloonPark": "Balloon Park",
+      "sportsCourt": "Sports Court",
+      "foodKiosks": "Food Kiosks",
+      "restaurants": "Restaurants",
+      "parking": "Parking"
+    }
+  },
+  "partner": {
+    "title": "Why Partner With Global Carnival Jeddah",
+    "description": "Join us in creating the most spectacular carnival experience in the region with our comprehensive partnership program.",
+    "benefits": {
+      "tailoredFestival": "Tailored Festival Creation",
+      "culturalExperience": "Extensive Cultural Experience",
+      "uniqueVision": "Unique Vision",
+      "endToEnd": "End-to-End Services",
+      "expertOperations": "Expert On-Site Operations",
+      "strongNetwork": "Strong Network",
+      "seamlessExecution": "Seamless Execution",
+      "guaranteedSuccess": "Guaranteed Success"
+    }
   },
   "whatAwaits": {
     "title": "What Awaits You",
@@ -108,7 +185,7 @@
     "info": {
       "address": "123 Oasis Boulevard, Downtown District",
       "phone": "+966 11 234 5678",
-      "email": "info@cityscape-oasis.com",
+      "email": "info@globalcarnivaljeddah.com",
       "hours": "Open Daily: 9:00 AM - 11:00 PM"
     }
   },
@@ -120,10 +197,14 @@
       "subscribe": "Subscribe"
     },
     "social": "Follow Us",
-    "copyright": "All rights reserved © CityScape Oasis, 2025.",
+    "copyright": "All rights reserved © Global carnival Jeddah, 2025.",
     "links": {
       "privacy": "Privacy Policy",
       "terms": "Terms & Conditions"
+    },
+    "eventInfo": {
+      "dates": "23rd September 2025 → 9th April 2026",
+      "location": "Jeddah, Saudi Arabia"
     }
   },
   "common": {

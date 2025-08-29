@@ -55,7 +55,7 @@ const visitorInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: "info@cityscape-oasis.com",
+    details: "info@globalcarnivaljeddah.com",
     color: "text-orange-600"
   }
 ];
@@ -77,7 +77,7 @@ export function PlanYourVisit() {
             Plan Your Visit
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know to make the most of your CityScape Oasis experience. From opening hours to insider tips, we've got you covered.
+            Everything you need to know to make the most of your Global carnival Jeddah experience. From opening hours to insider tips, we've got you covered.
           </p>
         </motion.div>
 

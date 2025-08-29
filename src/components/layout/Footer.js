@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Clock, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Facebook, Twitter, Instagram, Youtube, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { cn, getDirection } from '@/lib/utils';
@@ -23,10 +23,11 @@ export function Footer() {
 
   const footerLinks = {
     explore: [
-      { name: 'Attractions', href: `/${locale}/attractions` },
-      { name: 'Events', href: `/${locale}/events` },
-      { name: 'Dining', href: `/${locale}/dining` },
-      { name: 'Gallery', href: `/${locale}/gallery` },
+      { name: 'Souks', href: `/${locale}/souks` },
+      { name: 'Highlights', href: `/${locale}/highlights` },
+      { name: 'Products', href: `/${locale}/products` },
+      { name: 'Food & Beverages', href: `/${locale}/food` },
+      { name: 'Activities', href: `/${locale}/activities` },
     ],
     support: [
       { name: 'Contact Us', href: `/${locale}/contact` },
@@ -35,9 +36,9 @@ export function Footer() {
       { name: 'Safety', href: `/${locale}/safety` },
     ],
     business: [
-      { name: 'Business Opportunities', href: `/${locale}/business` },
+      { name: 'Partner With Us', href: `/${locale}/partner` },
       { name: 'Vendor Information', href: `/${locale}/vendors` },
-      { name: 'Partnerships', href: `/${locale}/partnerships` },
+      { name: 'Business Opportunities', href: `/${locale}/business` },
       { name: 'Press Kit', href: `/${locale}/press` },
     ],
   };
@@ -60,15 +61,32 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">CO</span>
+                <span className="text-white font-bold text-xl">GCJ</span>
               </div>
               <span className="text-2xl font-bold text-white">
-                CityScape Oasis
+                Global Carnival Jeddah
               </span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Discover the world in one place. Experience global cultures, flavors, and traditions at our extraordinary destination.
+              Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world's cultures in one extraordinary destination.
             </p>
+            
+            {/* Event Information */}
+            <div className="mb-6 p-4 bg-gray-800 rounded-lg">
+              <div className="flex items-center space-x-2 mb-2">
+                <Calendar className="w-5 h-5 text-primary" />
+                <span className="text-sm font-semibold text-white">Event Dates</span>
+              </div>
+              <p className="text-gray-300 text-sm mb-2">
+                {t('eventInfo.dates')}
+              </p>
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="text-gray-300 text-sm">
+                  {t('eventInfo.location')}
+                </span>
+              </div>
+            </div>
             
             {/* Newsletter Signup */}
             <div className="mb-6">
@@ -151,7 +169,7 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-primary" />
                   <span className="text-gray-300 text-sm">
-                    123 Oasis Boulevard, Downtown District
+                    {t('eventInfo.location')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -163,7 +181,7 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
                   <span className="text-gray-300 text-sm">
-                    info@cityscape-oasis.com
+                    info@globalcarnivaljeddah.com
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">

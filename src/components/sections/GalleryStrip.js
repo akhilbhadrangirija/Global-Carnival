@@ -9,7 +9,7 @@ const galleryImages = [
   {
     id: 1,
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
-    alt: "CityScape Oasis aerial view",
+    alt: "Global carnival Jeddah aerial view",
     category: "Architecture"
   },
   {
@@ -96,7 +96,7 @@ export function GalleryStrip() {
             {t('gallery.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Take a visual journey through CityScape Oasis and discover the beauty, excitement, and wonder that awaits you.
+            Take a visual journey through Global carnival Jeddah and discover the beauty, excitement, and wonder that awaits you.
           </p>
         </motion.div>
 

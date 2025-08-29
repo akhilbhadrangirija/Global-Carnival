@@ -12,20 +12,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "CityScape Oasis - Discover the World in One Place",
-  description: "Step into a world of wonder, color, and culture at CityScape Oasis, a one-of-a-kind destination bringing the magic of global traditions, flavors, and festivals to the heart of our vibrant city.",
-  keywords: "CityScape Oasis, cultural destination, global traditions, festivals, attractions, events, dining, shopping",
-  authors: [{ name: "CityScape Oasis" }],
+  title: "Global carnival Jeddah - Discover the World in One Place",
+  description: "Step into a world of wonder, color, and culture at Global carnival Jeddah, a one-of-a-kind destination bringing the magic of global traditions, flavors, and festivals to the heart of our vibrant city.",
+  keywords: "Global carnival Jeddah, cultural destination, global traditions, festivals, attractions, events, dining, shopping",
+  authors: [{ name: "Global carnival Jeddah" }],
   openGraph: {
-    title: "CityScape Oasis - Discover the World in One Place",
-    description: "Step into a world of wonder, color, and culture at CityScape Oasis",
+    title: "Global carnival Jeddah - Discover the World in One Place",
+    description: "Step into a world of wonder, color, and culture at Global carnival Jeddah",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CityScape Oasis - Discover the World in One Place",
-    description: "Step into a world of wonder, color, and culture at CityScape Oasis",
+    title: "Global carnival Jeddah - Discover the World in One Place",
+    description: "Step into a world of wonder, color, and culture at Global carnival Jeddah",
   },
 };
 

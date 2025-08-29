@@ -49,7 +49,7 @@ export default function ContactPage() {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      `Hello! I'd like to get in touch about CityScape Oasis.`
+      `Hello! I'd like to get in touch about Global carnival Jeddah.`
     );
     window.open(`https://wa.me/966112345678?text=${message}`, '_blank');
   };

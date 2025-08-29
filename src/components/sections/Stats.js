@@ -129,7 +129,7 @@ export function Stats() {
               Ready to Experience the Magic?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join thousands of visitors who have already discovered the wonders of CityScape Oasis. 
+              Join thousands of visitors who have already discovered the wonders of Global carnival Jeddah. 
               Plan your visit today and create memories that will last a lifetime.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
