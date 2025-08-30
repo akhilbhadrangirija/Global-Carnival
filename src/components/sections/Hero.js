@@ -6,31 +6,56 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { Carousel } from '@/components/ui/Carousel';
 import Image from 'next/image';
 
 export function Hero() {
   const t = useTranslations('hero');
   const locale = useLocale();
 
+  // Hero images array
+  const heroImages = [
+    {
+      src: "/hero/hero_image1.jpg",
+      alt: "Global Carnival Jeddah - A world of wonder and culture"
+    },
+    {
+      src: "/hero/hero_image2.jpg",
+      alt: "Global Carnival Jeddah - A world of wonder and culture"
+    },
+    {
+      src: "/hero/hero_image3.jpg",
+      alt: "Global Carnival Jeddah - A world of wonder and culture"
+    },
+    {
+      src: "/hero/hero_image4.jpg",
+      alt: "Global Carnival Jeddah - A world of wonder and culture"
+    }
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute z-10 inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70 backdrop-blur-[0.5px] pointer-events-none"
-          style={{
-            // Subtle noise texture using a CSS background image (SVG data URI)
-            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url("data:image/svg+xml;utf8,<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100' height='100' filter='url(%23noiseFilter)' opacity='0.12'/></svg>")`,
-            backgroundBlendMode: 'overlay',
-            backgroundSize: 'cover, 200px 200px',
-          }}
+          className="absolute z-10 inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70 pointer-events-none"
         />
-        <Image
-          src="/hero/hero_image.jpg"
-          alt="Global Carnival Jeddah - A world of wonder and culture"
-          fill
-          className="object-cover w-full h-full"
-          priority
+        <Carousel
+          items={heroImages.map((image, index) => (
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover w-full h-full"
+              priority={index === 0}
+            />
+          ))}
+          autoPlay={true}
+          interval={6000}
+          showArrows={false}
+          showDots={false}
+          className="w-full h-full"
         />
       </div>
 
