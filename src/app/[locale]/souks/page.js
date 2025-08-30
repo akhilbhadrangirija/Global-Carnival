@@ -18,7 +18,7 @@ export default function SouksPage() {
       id: 'india',
       name: t('regions.india.name'),
       description: t('regions.india.description'),
-      longDescription: "Experience the vibrant culture of India through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, and colorful fabrics. From the bustling markets of Mumbai to the royal heritage of Rajasthan, every corner tells a story of India's rich cultural tapestry.",
+      longDescription: "Experience the vibrant culture of India through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, and colorful fabrics. From the bustling markets of Mumbai to the royal heritage of Rajasthan, every corner tells a story of India&apos;s rich cultural tapestry.",
       image: '/souks/india.png',
       gallery: [
         '/souks/shop/india-pak1.png',
@@ -98,7 +98,7 @@ export default function SouksPage() {
       id: 'egypt',
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
-      longDescription: "Journey through ancient Egypt in our authentic souk featuring traditional artifacts, papyrus scrolls, and cultural crafts. From the pyramids to the Nile, experience the timeless legacy of one of the world's oldest civilizations.",
+      longDescription: "Journey through ancient Egypt in our authentic souk featuring traditional artifacts, papyrus scrolls, and cultural crafts. From the pyramids to the Nile, experience the timeless legacy of one of the world&apos;s oldest civilizations.",
       image: '/souks/egypt.png',
       gallery: [
         '/souks/shop/egypt1.png',

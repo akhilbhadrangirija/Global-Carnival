@@ -45,7 +45,7 @@ export default function OverviewPage() {
               
               <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Global Carnival Jeddah represents a revolutionary approach to cultural tourism and entertainment, creating an immersive environment where visitors can experience the world's most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it's a living, breathing celebration of global diversity.
+                  Global Carnival Jeddah represents a revolutionary approach to cultural tourism and entertainment, creating an immersive environment where visitors can experience the world&apos;s most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it&apos;s a living, breathing celebration of global diversity.
                 </p>
                 
                 <p>

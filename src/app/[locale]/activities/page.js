@@ -78,7 +78,7 @@ export default function ActivitiesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            Engage in cultural activities, creative workshops, and live performances that bring the world's traditions to life
+            Engage in cultural activities, creative workshops, and live performances that bring the world&apos;s traditions to life
           </motion.p>
         </div>
       </section>

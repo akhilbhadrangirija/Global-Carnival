@@ -71,7 +71,7 @@ export function Footer() {
             />
           </Link>
             <p className="text-gray-300 mb-6 max-w-md">
-              Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world's cultures in one extraordinary destination.
+              Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world&apos;s cultures in one extraordinary destination.
             </p>
             
             {/* Event Information */}

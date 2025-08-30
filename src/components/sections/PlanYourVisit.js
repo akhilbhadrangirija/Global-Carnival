@@ -28,7 +28,7 @@ const planningTips = [
   {
     icon: Star,
     title: "Must-See Attractions",
-    description: "Don't miss the Cultural Pavilion and the main fountain show at sunset.",
+    description: "Don&apos;t miss the Cultural Pavilion and the main fountain show at sunset.",
     color: "bg-yellow-500"
   }
 ];
@@ -77,7 +77,7 @@ export function PlanYourVisit() {
             Plan Your Visit
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know to make the most of your Global carnival Jeddah experience. From opening hours to insider tips, we've got you covered.
+            Everything you need to know to make the most of your Global carnival Jeddah experience. From opening hours to insider tips, we&apos;ve got you covered.
           </p>
         </motion.div>
 

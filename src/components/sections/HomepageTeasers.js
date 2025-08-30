@@ -68,7 +68,7 @@ export function HomepageTeasers() {
             Discover Global Carnival Jeddah
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience the world's cultures, flavors, and traditions in one extraordinary destination
+            Experience the world&apos;s cultures, flavors, and traditions in one extraordinary destination
           </p>
         </motion.div>
 

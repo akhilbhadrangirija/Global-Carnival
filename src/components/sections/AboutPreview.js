@@ -43,7 +43,7 @@ export function AboutPreview() {
             About Global Carnival Jeddah
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.
+            A groundbreaking cultural extravaganza that brings the world&apos;s most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.
           </p>
         </motion.div>
 
@@ -57,7 +57,7 @@ export function AboutPreview() {
           >
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.
+                Global Carnival Jeddah is more than just an event—it&apos;s a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.
               </p>
               <p>
                 From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.

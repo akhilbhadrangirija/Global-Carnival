@@ -128,8 +128,8 @@ export function FeaturedEvents() {
             {t('title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't miss out on our upcoming events and experiences. From cultural celebrations to thrilling adventures, 
-            there's always something exciting happening at Global carnival Jeddah.
+            Don&apos;t miss out on our upcoming events and experiences. From cultural celebrations to thrilling adventures, 
+            there&apos;s always something exciting happening at Global carnival Jeddah.
           </p>
         </motion.div>
 

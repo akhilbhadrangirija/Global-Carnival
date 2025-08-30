@@ -31,7 +31,7 @@ export function truncateText(text, maxLength = 100) {
 }
 
 export function generateWhatsAppMessage(name, email, phone, topic, message) {
-  const text = `Hello! I'm ${name} and I'd like to inquire about ${topic}.
+  const text = `Hello! I&apos;m ${name} and I&apos;d like to inquire about ${topic}.
 
 Contact Information:
 - Email: ${email}

@@ -257,7 +257,7 @@ export default function DiningPage() {
                 No restaurants found
               </h3>
               <p className="text-gray-600 mb-6">
-                Try adjusting your filters or search terms to find what you're looking for.
+                Try adjusting your filters or search terms to find what you&apos;re looking for.
               </p>
               <Button onClick={clearFilters}>
                 Clear All Filters

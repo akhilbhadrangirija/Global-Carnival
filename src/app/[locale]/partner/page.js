@@ -233,7 +233,7 @@ export default function PartnerPage() {
               Ready to Partner With Us?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Let's discuss how we can create something extraordinary together
+              Let&apos;s discuss how we can create something extraordinary together
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
