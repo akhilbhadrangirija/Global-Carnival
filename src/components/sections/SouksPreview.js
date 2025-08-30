@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, Star, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 
@@ -16,49 +16,65 @@ export function SouksPreview() {
       name: t('regions.india.name'),
       description: t('regions.india.description'),
       image: '/souks/india.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Popular',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.pakistan.name'),
       description: t('regions.pakistan.description'),
       image: '/souks/pakistan.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Featured',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.turkey.name'),
       description: t('regions.turkey.description'),
       image: '/souks/turkey.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'New',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.morocco.name'),
       description: t('regions.morocco.description'),
       image: '/souks/morocco.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Popular',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
       image: '/souks/eastAsia.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Featured',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
       image: '/souks/gcc.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Popular',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
       image: '/souks/egypt.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'New',
+      duration: 'Open Daily'
     },
     {
       name: t('regions.africa.name'),
       description: t('regions.africa.description'),
       image: '/souks/africa.png',
-      href: `/${locale}/souks`
+      href: `/${locale}/souks`,
+      tag: 'Featured',
+      duration: 'Open Daily'
     }
   ];
 
@@ -89,32 +105,47 @@ export function SouksPreview() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div className="relative h-48 overflow-hidden">
+              <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 group bg-white">
+                <div className="relative h-80 overflow-hidden">
                   <img
                     src={souk.image}
                     alt={`${souk.name} souk`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg font-bold text-white mb-2">
+                  {/* Gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  {/* Content overlaid on image */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-xl font-bold text-white mb-3">
                       {souk.name}
                     </h3>
+                    <p className="text-white text-sm mb-4 line-clamp-2 opacity-90">
+                      {souk.description}
+                    </p>
+                    
+                    {/* Tags/Badges */}
+                    <div className="flex gap-2 mb-4">
+                      <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-sm border border-gray-100 rounded-full">
+                        <Star className="w-3 h-3 text-yellow-400" />
+                        <span className="text-white text-xs font-medium">{souk.tag}</span>
+                      </div>
+                      <div className="flex items-center gap-1 px-3 py-1 backdrop-blur-sm border border-gray-100 rounded-full">
+                        <Clock className="w-3 h-3 text-white" />
+                        <span className="text-white text-xs font-medium">{souk.duration}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Call to Action Button */}
+                    <Link href={souk.href} className="block">
+                      <Button variant="outline"
+                        className="w-full bg-transparent backdrop-blur-sm text-white hover:bg-gray-100 font-semibold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        Explore Now
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
                   </div>
-                </div>
-                
-                <div className="p-4">
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {souk.description}
-                  </p>
-                  
-                  <Link href={souk.href}>
-                    <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      {t('viewGallery')}
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
                 </div>
               </Card>
             </motion.div>
@@ -129,7 +160,7 @@ export function SouksPreview() {
           className="text-center mt-12"
         >
           <Link href={`/${locale}/souks`}>
-            <Button size="lg" className="group">
+            <Button size="lg" className="group bg-gray-900 text-white hover:bg-gray-800">
               Explore All Souks
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>

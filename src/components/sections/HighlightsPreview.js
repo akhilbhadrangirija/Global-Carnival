@@ -16,32 +16,32 @@ export function HighlightsPreview() {
   const highlights = [
     {
       title: t('attractions.adventurePark'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/adventurePark.jpg',
       description: 'Thrilling rides and adventures for all ages'
     },
     {
       title: t('attractions.balloonPark'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/balloonPark.jpg',
       description: 'Colorful balloon displays and hot air balloon experiences'
     },
     {
       title: t('attractions.sportsCourt'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/sportsCourt.jpg',
       description: 'Multi-sport facilities for active visitors'
     },
     {
       title: t('attractions.foodKiosks'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/foodKiosks.jpg',
       description: 'Diverse street food from around the world'
     },
     {
       title: t('attractions.restaurants'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/restaurent.jpg',
       description: 'Fine dining experiences in cultural settings'
     },
     {
       title: t('attractions.parking'),
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+      image: '/attractions/parking.jpg',
       description: 'Convenient parking facilities for all visitors'
     }
   ];
