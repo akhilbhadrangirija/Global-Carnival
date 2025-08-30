@@ -19,11 +19,12 @@ export default function SouksPage() {
       name: t('regions.india.name'),
       description: t('regions.india.description'),
       longDescription: "Experience the vibrant culture of India through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, and colorful fabrics. From the bustling markets of Mumbai to the royal heritage of Rajasthan, every corner tells a story of India's rich cultural tapestry.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/india.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/india-pak1.png',
+        '/souks/shop/india-pak2.png',
+        '/souks/shop/india-pak3.png',
+        '/souks/shop/india-pak4.png'
       ],
       features: ['Traditional Textiles', 'Handcrafted Jewelry', 'Aromatic Spices', 'Cultural Artifacts']
     },
@@ -32,11 +33,12 @@ export default function SouksPage() {
       name: t('regions.pakistan.name'),
       description: t('regions.pakistan.description'),
       longDescription: "Discover the rich heritage of Pakistan through our authentic souk showcasing traditional fabrics, handcrafted jewelry, and cultural artifacts. From the intricate embroidery of Sindh to the vibrant colors of Punjab, experience the diversity of Pakistani craftsmanship.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/pakistan.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/india-pak1.png',
+        '/souks/shop/india-pak2.png',
+        '/souks/shop/india-pak3.png',
+        '/souks/shop/india-pak4.png'
       ],
       features: ['Rich Fabrics', 'Traditional Jewelry', 'Cultural Artifacts', 'Handcrafted Items']
     },
@@ -45,11 +47,11 @@ export default function SouksPage() {
       name: t('regions.turkey.name'),
       description: t('regions.turkey.description'),
       longDescription: "Immerse yourself in the Ottoman-inspired elegance of our Turkish souk featuring traditional ceramics, handwoven textiles, and cultural artifacts. Experience the blend of Eastern and Western influences that make Turkish culture unique.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/turkey.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/turkey1.png',
+        '/souks/shop/turkey2.png',
+        '/souks/shop/turkey3.png'
       ],
       features: ['Ottoman Crafts', 'Traditional Ceramics', 'Handwoven Textiles', 'Cultural Artifacts']
     },
@@ -58,11 +60,11 @@ export default function SouksPage() {
       name: t('regions.morocco.name'),
       description: t('regions.morocco.description'),
       longDescription: "Experience the exotic charm of Morocco through our authentic souk featuring Berber crafts, traditional leather goods, and handcrafted ceramics. From the vibrant markets of Marrakech to the coastal beauty of Casablanca.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/morocco.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+       '/souks/shop/egypt1.png',
+        '/souks/shop/egypt2.png',
+        '/souks/shop/egypt3.png'
       ],
       features: ['Berber Crafts', 'Leather Goods', 'Traditional Ceramics', 'Cultural Artifacts']
     },
@@ -71,11 +73,11 @@ export default function SouksPage() {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
       longDescription: "Discover the refined elegance of East Asia through our authentic souk featuring silk textiles, porcelain ceramics, and traditional arts from China, Japan, and Korea. Experience the harmony and balance that defines Eastern aesthetics.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/eastAsia.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/eastAsia1.png',
+        '/souks/shop/eastAsia2.png',
+        '/souks/shop/eastAsia3.png'
       ],
       features: ['Silk Textiles', 'Porcelain Ceramics', 'Traditional Arts', 'Cultural Artifacts']
     },
@@ -84,11 +86,11 @@ export default function SouksPage() {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
       longDescription: "Experience the rich heritage of the Arabian Peninsula through our authentic GCC souk featuring traditional crafts, dates, and cultural goods. From the desert traditions to modern Gulf culture, discover the authentic Arabian experience.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/gcc.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/gcc1.png',
+        '/souks/shop/gcc2.png',
+        '/souks/shop/gcc3.png'
       ],
       features: ['Arabian Heritage', 'Traditional Crafts', 'Dates & Fruits', 'Cultural Goods']
     },
@@ -97,11 +99,11 @@ export default function SouksPage() {
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
       longDescription: "Journey through ancient Egypt in our authentic souk featuring traditional artifacts, papyrus scrolls, and cultural crafts. From the pyramids to the Nile, experience the timeless legacy of one of the world's oldest civilizations.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/egypt.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+        '/souks/shop/egypt1.png',
+        '/souks/shop/egypt2.png',
+        '/souks/shop/egypt3.png'
       ],
       features: ['Ancient Artifacts', 'Papyrus Scrolls', 'Traditional Crafts', 'Cultural Heritage']
     },
@@ -110,11 +112,11 @@ export default function SouksPage() {
       name: t('regions.africa.name'),
       description: t('regions.africa.description'),
       longDescription: "Explore the diverse cultures of Africa through our authentic souk featuring tribal art, traditional fabrics, and cultural artifacts. From the savannas to the rainforests, experience the rich tapestry of African heritage.",
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
+      image: '/souks/africa.png',
       gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop'
+       '/souks/shop/egypt1.png',
+        '/souks/shop/egypt2.png',
+        '/souks/shop/egypt3.png'
       ],
       features: ['Tribal Art', 'Traditional Fabrics', 'Cultural Artifacts', 'African Heritage']
     }

@@ -15,49 +15,49 @@ export function SouksPreview() {
     {
       name: t('regions.india.name'),
       description: t('regions.india.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/india.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.pakistan.name'),
       description: t('regions.pakistan.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/pakistan.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.turkey.name'),
       description: t('regions.turkey.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/turkey.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.morocco.name'),
       description: t('regions.morocco.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/morocco.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/eastAsia.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/gcc.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/egypt.png',
       href: `/${locale}/souks`
     },
     {
       name: t('regions.africa.name'),
       description: t('regions.africa.description'),
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
+      image: '/souks/africa.png',
       href: `/${locale}/souks`
     }
   ];

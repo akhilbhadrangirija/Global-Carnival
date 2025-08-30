@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn, getDirection, getOppositeLocale } from '@/lib/utils';
+import Image from 'next/image';
 
 export function Header() {
   const t = useTranslations('navigation');
@@ -52,8 +53,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ',
+        isScrolled ? 'bg-white/40 backdrop-blur-md shadow-lg' : 'bg-white backdrop-blur-md'
       )}
       dir={getDirection(locale)}
     >
@@ -61,12 +62,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center space-x-2">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg lg:text-xl">GCJ</span>
-            </div>
-            <span className="text-xl lg:text-2xl font-bold text-primary">
-              Global Carnival Jeddah
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Global Carnival Jeddah Logo"
+              width={64}
+              height={48}
+              className="w-40 h-8 lg:w-52 lg:h-10 object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -76,8 +79,8 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  isActive(item.href) ? 'text-primary' : 'text-gray-700'
+                  'text-base font-medium transition-colors hover:text-primary',
+                  isActive(item.href) ? 'text-primary' : 'text-black'
                 )}
               >
                 {item.name}
@@ -88,7 +91,7 @@ export function Header() {
           {/* Right side - Language toggle and CTA */}
           <div className="flex items-center space-x-4">
             {/* Language Toggle */}
-            <div className="relative">
+            <div className="relative text-black">
               <button
                 onClick={toggleLanguageMenu}
                 className="flex items-center space-x-1 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors"

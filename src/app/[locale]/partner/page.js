@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, Users, Globe, Award, Zap, Shield, Target, CheckCircle } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function PartnerPage() {
   const partnershipBenefits = [
@@ -235,10 +236,9 @@ export default function PartnerPage() {
               Let's discuss how we can create something extraordinary together
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
                 Contact Us
-              </button>
-              
+              </Button>
             </div>
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Star, Utensils, Coffee, Cake, Pizza } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function FoodPage() {
   const foodCategories = [
@@ -125,9 +126,9 @@ export default function FoodPage() {
                     ))}
                   </div>
                   
-                  <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300">
+                  <Button className="bg-primary text-white hover:bg-primary/90 px-6 py-3 font-semibold">
                     Explore {category.title}
-                  </button>
+                  </Button>
                 </div>
                 
                 {/* Image */}
@@ -187,9 +188,9 @@ export default function FoodPage() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               Experience the incredible diversity of global cuisine in one extraordinary destination
             </p>
-            <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
               View Menu
-            </button>
+            </Button>
           </motion.div>
         </div>
       </section>

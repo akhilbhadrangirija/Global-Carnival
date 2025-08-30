@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { MapPin, Star, Users, Zap, Heart, Award } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function HighlightsPage() {
   const highlights = [
@@ -161,12 +162,12 @@ export default function HighlightsPage() {
               Plan your visit to Global Carnival Jeddah and discover all these amazing highlights and more
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
                 Plan Your Visit
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-300">
+              </Button>
+              <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 font-semibold">
                 View Schedule
-              </button>
+              </Button>
             </div>
           </motion.div>
         </div>

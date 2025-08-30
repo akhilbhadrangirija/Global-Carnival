@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import Image from 'next/image';
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -15,13 +16,24 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-        <img
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop"
+        <div
+          className="absolute z-10 inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70 backdrop-blur-[0.5px] pointer-events-none"
+          style={{
+            // Subtle noise texture using a CSS background image (SVG data URI)
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url("data:image/svg+xml;utf8,<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100' height='100' filter='url(%23noiseFilter)' opacity='0.12'/></svg>")`,
+            backgroundBlendMode: 'overlay',
+            backgroundSize: 'cover, 200px 200px',
+          }}
+        />
+        <Image
+          src="/hero/hero_image.jpg"
           alt="Global Carnival Jeddah - A world of wonder and culture"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover w-full h-full"
+          priority
         />
       </div>
+
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -31,17 +43,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Season Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block bg-primary/90 backdrop-blur-sm px-6 py-2 rounded-full mb-6"
-          >
-            <span className="text-sm font-medium tracking-wider">
-              {t('subtitle')}
-            </span>
-          </motion.div>
+         
 
           {/* Main Title */}
           <motion.h1
@@ -54,14 +56,14 @@ export function Hero() {
           </motion.h1>
 
           {/* Sub-text */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             {t('description')}
-          </motion.p>
+          </motion.p> */}
 
           {/* CTA Button */}
           <motion.div
@@ -83,21 +85,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex items-center justify-center space-x-2 mb-8 text-lg md:text-xl"
+            className="flex justify-center mb-8"
           >
-            <Calendar className="w-5 h-5" />
-            <span>{t('dates')}</span>
-          </motion.div>
-
-          {/* Location */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex items-center justify-center space-x-2 text-lg md:text-xl text-gray-200"
-          >
-            <MapPin className="w-5 h-5" />
-            <span>{t('location')}</span>
+            <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl px-6 py-4 flex flex-col md:flex-row items-center gap-4 shadow-lg">
+              <div className="flex items-center space-x-2 text-lg md:text-xl">
+                <Calendar className="w-5 h-5" />
+                <span>{t('dates')}</span>
+              </div>
+              <span className="hidden md:inline-block w-px h-6 bg-white/20 mx-4" />
+              <div className="flex items-center space-x-2 text-lg md:text-xl text-gray-200">
+                <MapPin className="w-5 h-5" />
+                <span>{t('location')}</span>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

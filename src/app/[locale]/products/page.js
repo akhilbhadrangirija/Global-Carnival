@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Star, ShoppingBag, Palette, Utensils, Gift } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function ProductsPage() {
   const productCategories = [
@@ -125,9 +126,9 @@ export default function ProductsPage() {
                     ))}
                   </div>
                   
-                  <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300">
+                  <Button className="bg-primary text-white hover:bg-primary/90 px-6 py-3 font-semibold">
                     Explore {category.title}
-                  </button>
+                  </Button>
                 </div>
                 
                 {/* Image */}
@@ -187,9 +188,9 @@ export default function ProductsPage() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               Take home authentic products and cultural treasures from around the world
             </p>
-            <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
               Start Shopping
-            </button>
+            </Button>
           </motion.div>
         </div>
       </section>

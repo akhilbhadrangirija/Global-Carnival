@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Star, Palette, Users, Music, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function ActivitiesPage() {
   const activitySections = [
@@ -120,9 +121,9 @@ export default function ActivitiesPage() {
                     ))}
                   </div>
                   
-                  <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300">
+                  <Button className="bg-primary text-white hover:bg-primary/90 px-6 py-3 font-semibold">
                     Explore {section.title}
-                  </button>
+                  </Button>
                 </div>
                 
                 {/* Image */}

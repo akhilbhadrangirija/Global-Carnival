@@ -8,6 +8,7 @@ import { Mail, MapPin, Phone, Clock, Facebook, Twitter, Instagram, Youtube, Cale
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { cn, getDirection } from '@/lib/utils';
+import Image from 'next/image';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -59,14 +60,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">GCJ</span>
-              </div>
-              <span className="text-2xl font-bold text-white">
-                Global Carnival Jeddah
-              </span>
-            </div>
+          <Link href={`/${locale}`} className="flex items-center space-x-2 bg-white rounded-lg p-2 w-fit">
+            <Image
+              src="/logo.png"
+              alt="Global Carnival Jeddah Logo"
+              width={64}
+              height={48}
+              className="w-32 h-8 lg:w-32 lg:h-10 object-contain"
+              priority
+            />
+          </Link>
             <p className="text-gray-300 mb-6 max-w-md">
               Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world's cultures in one extraordinary destination.
             </p>

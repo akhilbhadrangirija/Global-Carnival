@@ -73,7 +73,7 @@ export default function AboutPage() {
             >
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop"
+                  src="/about-jeddah.jpg"
                   alt="Global Carnival Jeddah cultural celebration"
                   className="w-full h-full object-cover"
                 />
