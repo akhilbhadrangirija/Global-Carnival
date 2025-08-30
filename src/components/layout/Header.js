@@ -154,7 +154,7 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-gray-200 bg-white"
+              className="lg:hidden"
             >
               <nav className="py-4 space-y-2">
                 {navigation.map((item) => (
