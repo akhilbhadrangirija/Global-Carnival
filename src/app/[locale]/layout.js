@@ -3,8 +3,9 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-export default async function LocaleLayout({ children, params: { locale } }) {
+export default async function LocaleLayout({ children, params }) {
   // Enable static rendering
+  const { locale } = await params;
   setRequestLocale(locale);
   
   const messages = await getMessages();
