@@ -1,62 +1,29 @@
 "use client";
 import { motion } from 'framer-motion';
-import { Star, Palette, Users, Music, Calendar } from 'lucide-react';
+import { Star, Palette, Users, Music, Calendar, Globe, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { useState } from 'react';
 
 export default function ActivitiesPage() {
-  const activitySections = [
-    {
-      id: 'creativeCorners',
-      title: 'Creative Corners',
-      description: 'Interactive art and craft workshops',
-      longDescription: 'Unleash your creativity in our Creative Corners where visitors of all ages can participate in hands-on art and craft workshops. From traditional pottery making to modern digital art, from textile weaving to jewelry crafting, discover your artistic talents while learning about global artistic traditions.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Art Workshops', 'Craft Sessions', 'Interactive Learning', 'Cultural Art Forms'],
-      icon: Palette,
-      activities: [
-        'Traditional Pottery Making',
-        'Textile Weaving Workshops',
-        'Jewelry Crafting Sessions',
-        'Digital Art Creation',
-        'Painting & Drawing Classes',
-        'Sculpture Workshops'
-      ]
-    },
-    {
-      id: 'culturalCrafts',
-      title: 'Cultural Crafts',
-      description: 'Traditional craft demonstrations and learning',
-      longDescription: 'Immerse yourself in the rich traditions of global craftsmanship through our Cultural Crafts section. Watch master artisans demonstrate traditional techniques, learn about cultural significance, and even try your hand at creating authentic crafts from different regions of the world.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Master Artisans', 'Traditional Techniques', 'Cultural Significance', 'Hands-on Learning'],
-      icon: Users,
-      activities: [
-        'Silk Weaving Demonstrations',
-        'Wood Carving Workshops',
-        'Metalwork Crafting',
-        'Ceramic Art Sessions',
-        'Textile Dyeing Classes',
-        'Traditional Embroidery'
-      ]
-    },
-    {
-      id: 'stageShows',
-      title: 'Stage Shows',
-      description: 'Live performances and cultural entertainment',
-      longDescription: 'Experience the magic of live performance through our diverse Stage Shows featuring traditional dances, musical performances, theatrical productions, and cultural presentations from around the world. Each show tells a story of cultural heritage and artistic excellence.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Live Performances', 'Cultural Dances', 'Musical Shows', 'Theatrical Productions'],
-      icon: Music,
-      activities: [
-        'Traditional Dance Performances',
-        'Cultural Music Concerts',
-        'Theatrical Productions',
-        'Puppet Shows',
-        'Storytelling Sessions',
-        'Interactive Performances'
-      ]
-    }
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const activityImages = [
+    // Activity images from the activities folder
+    '/activities/adventurePark.jpg',
+    '/activities/balloonPark.jpg',
+    '/activities/foodKiosks.jpg',
+    '/activities/parking.jpg',
+    '/activities/restaurent.jpg',
+    '/activities/sportsCourt.jpg'
   ];
+
+  const openImageModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="min-h-screen">
@@ -70,7 +37,7 @@ export default function ActivitiesPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Activities & Entertainment
+            Interactive Activities
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -78,185 +45,182 @@ export default function ActivitiesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            Engage in cultural activities, creative workshops, and live performances that bring the world&apos;s traditions to life
+            Hands-on fun for all ages
           </motion.p>
         </div>
       </section>
 
-      {/* Activity Sections */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          {activitySections.map((section, index) => (
-            <motion.div
-              key={section.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`mb-20 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-            >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Content */}
-                <div className="order-2 lg:order-1">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <section.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900">
-                      {section.title}
-                    </h2>
-                  </div>
-                  
-                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    {section.longDescription}
-                  </p>
-                  
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    {section.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <Star className="w-4 h-4 text-primary" />
-                        <span className="text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="bg-primary text-white hover:bg-primary/90 px-6 py-3 font-semibold">
-                    Explore {section.title}
-                  </Button>
-                </div>
-                
-                {/* Image */}
-                <div className="order-1 lg:order-2">
-                  <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Activities List */}
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Available Activities</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {section.activities.map((activity, activityIndex) => (
-                    <motion.div
-                      key={activityIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: activityIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-300"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-gray-700">{activity}</span>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Schedule Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Activities Description */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="max-w-6xl mx-auto text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Activity Schedule
+            <div className="flex items-center justify-center space-x-3 mb-8">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Festival Fun
+              </h2>
+            </div>
+            
+            <p className="text-lg text-gray-700 leading-relaxed max-w-5xl mx-auto">
+              The festival brims with hands‑on fun: children can unleash their creativity at the open‑air drawing corners, while visitors of all ages join a colorful welcome parade filled with drummers, mascots, and friendly greeters handing out souvenir badges. Cultural hosts offer quick lessons in traditional embroidery, letting you stitch a keepsake motif, and calligraphy artists personalize bookmarks on the spot. Rotating stage shows light up the day and night—folk dances, fusion bands, magic acts, and lively storytelling keep crowds cheering between activities. Add face‑painting booths, mini pottery‑painting tables, quick henna designs, and selfie stations decked in regional backdrops, and every guest—young or grown‑up—finds an activity to spark imagination and celebrate the festival's vibrant spirit.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Activities Gallery */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Explore Our Activities
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Check out our daily schedule of activities and performances to plan your perfect carnival experience
+              Discover interactive experiences and entertainment that bring the festival to life
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    time: '10:00 AM - 12:00 PM',
-                    title: 'Morning Workshops',
-                    description: 'Creative corners and cultural craft sessions'
-                  },
-                  {
-                    time: '2:00 PM - 4:00 PM',
-                    title: 'Afternoon Activities',
-                    description: 'Interactive workshops and demonstrations'
-                  },
-                  {
-                    time: '6:00 PM - 8:00 PM',
-                    title: 'Evening Entertainment',
-                    description: 'Stage shows and cultural performances'
-                  }
-                ].map((session, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    className="text-center p-6 bg-gray-50 rounded-xl"
-                  >
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Calendar className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {session.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      {session.time}
-                    </p>
-                    <p className="text-gray-700">
-                      {session.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {activityImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+                onClick={() => openImageModal(image)}
+              >
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white">
+                  <img
+                    src={image}
+                    alt={`Activity ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 text-center">
+      {/* Activity Categories Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Get Involved Today
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Activity Categories
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join our interactive activities and create unforgettable memories at Global Carnival Jeddah
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our festival offers diverse activities organized into four main categories for all ages and interests
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                View Full Schedule
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-300">
-                Book Activities
-              </button>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Palette,
+                title: 'Creative Workshops',
+                description: 'Drawing corners, pottery painting, embroidery lessons, and calligraphy'
+              },
+              {
+                icon: Users,
+                title: 'Cultural Activities',
+                description: 'Welcome parades, henna designs, and cultural demonstrations'
+              },
+              {
+                icon: Music,
+                title: 'Stage Entertainment',
+                description: 'Folk dances, fusion bands, magic acts, and storytelling'
+              },
+              {
+                icon: Calendar,
+                title: 'Interactive Fun',
+                description: 'Face painting, selfie stations, and family activities'
+              }
+            ].map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                  <category.icon className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {category.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {category.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={closeImageModal}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="relative max-w-4xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeImageModal}
+              className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
+            >
+              <X className="w-5 h-5 text-gray-700" />
+            </button>
+            
+            {/* Image */}
+            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src={selectedImage}
+                alt="Activity detail"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }

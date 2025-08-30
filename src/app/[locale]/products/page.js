@@ -63,14 +63,14 @@ export default function ProductsPage() {
       </section>
 
       {/* Product Description */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto text-center mb-16"
+            className="max-w-6xl mx-auto text-center mb-12"
           >
             <div className="flex items-center justify-center space-x-3 mb-8">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
@@ -89,14 +89,14 @@ export default function ProductsPage() {
       </section>
 
       {/* Product Gallery */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Explore Our Gallery
@@ -135,14 +135,14 @@ export default function ProductsPage() {
       </section>
 
       {/* Product Categories Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Product Categories
