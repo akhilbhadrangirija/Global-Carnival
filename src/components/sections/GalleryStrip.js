@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 const galleryImages = [
   {
@@ -202,12 +203,12 @@ export function GalleryStrip() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <a
+          <Link
             href="/gallery"
             className="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300"
           >
             View Full Gallery
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

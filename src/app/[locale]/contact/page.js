@@ -68,8 +68,8 @@ export default function ContactPage() {
               {t('contact.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Have questions or want to learn more? We'd love to hear from you. Get in touch and we'll respond as soon as possible.
-            </p>
+              {`Have questions or want to learn more? We'd love to hear from you. Get in touch and we'll respond as soon as possible.
+            `}</p>
           </motion.div>
         </div>
       </section>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                   </h3>
                 </div>
                 <p className="text-green-700 mb-4">
-                  Prefer to chat? Send us a quick message on WhatsApp and we'll respond right away.
+                  {`Prefer to chat? Send us a quick message on WhatsApp and we'll respond right away.`}
                 </p>
                 <Button
                   onClick={openWhatsApp}
