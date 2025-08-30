@@ -9,7 +9,7 @@ export default function FoodPage() {
       id: 'classics',
       title: 'Classics',
       description: 'Traditional dishes from around the world',
-      longDescription: 'Experience the timeless classics that have defined global cuisine for generations. From Italian pasta and French coq au vin to Indian curry and Chinese dim sum, our Classics section brings you the most beloved and authentic dishes from every corner of the world.',
+      longDescription: 'Experience the timeless classics that have defined global cuisine for generations. From Italian pasta and French coq au vin to Indian & Pakistani curry and Chinese dim sum, our Classics section brings you the most beloved and authentic dishes from every corner of the world.',
       image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
       features: ['Traditional Recipes', 'Authentic Flavors', 'Cultural Heritage', 'Time-Tested Dishes'],
       icon: Utensils,

@@ -42,16 +42,16 @@ const restaurants = [
   {
     id: 3,
     name: "Spice Route",
-    cuisine: "Indian",
+    cuisine: "Indian & Pakistani",
     priceLevel: "$$",
     rating: 4.7,
     phone: "+966 11 234 5680",
     website: "www.spice-route.com",
     hours: "11:30 AM - 10:30 PM",
     location: "West Quarter, Restaurant #12",
-    description: "Aromatic Indian cuisine with rich spices and flavors, offering both vegetarian and non-vegetarian options.",
+    description: "Aromatic Indian and Pakistani cuisine with rich spices and flavors, offering both vegetarian and non-vegetarian options.",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-    specialties: ["Butter Chicken", "Biryani", "Naan", "Tandoori"]
+    specialties: ["Butter Chicken", "Biryani", "Naan", "Tandoori", "Karahi", "Seekh Kebab"]
   },
   {
     id: 4,
@@ -101,7 +101,7 @@ const cuisines = [
   { key: "all", label: "All Cuisines", color: "bg-gray-500" },
   { key: "japanese", label: "Japanese", color: "bg-red-500" },
   { key: "mediterranean", label: "Mediterranean", color: "bg-blue-500" },
-  { key: "indian", label: "Indian", color: "bg-orange-500" },
+  { key: "indian", label: "Indian & Pakistani", color: "bg-orange-500" },
   { key: "italian", label: "Italian", color: "bg-green-500" },
   { key: "chinese", label: "Chinese", color: "bg-yellow-500" },
   { key: "french", label: "French", color: "bg-purple-500" }

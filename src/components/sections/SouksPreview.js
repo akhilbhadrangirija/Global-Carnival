@@ -13,35 +13,19 @@ export function SouksPreview() {
 
   const souks = [
     {
-      name: t('regions.india.name'),
-      description: t('regions.india.description'),
-      image: '/souks/india.png',
+      name: t('regions.indiaPakistan.name'),
+      description: t('regions.indiaPakistan.description'),
+      image: '/souks/india-pakistan.png',
       href: `/${locale}/souks`,
       tag: 'Popular',
       duration: 'Open Daily'
     },
     {
-      name: t('regions.pakistan.name'),
-      description: t('regions.pakistan.description'),
-      image: '/souks/pakistan.png',
-      href: `/${locale}/souks`,
-      tag: 'Featured',
-      duration: 'Open Daily'
-    },
-    {
-      name: t('regions.turkey.name'),
-      description: t('regions.turkey.description'),
-      image: '/souks/turkey.png',
+      name: t('regions.turkeyMorocco.name'),
+      description: t('regions.turkeyMorocco.description'),
+      image: '/souks/turkey-morocco.png',
       href: `/${locale}/souks`,
       tag: 'New',
-      duration: 'Open Daily'
-    },
-    {
-      name: t('regions.morocco.name'),
-      description: t('regions.morocco.description'),
-      image: '/souks/morocco.png',
-      href: `/${locale}/souks`,
-      tag: 'Popular',
       duration: 'Open Daily'
     },
     {
@@ -60,22 +44,22 @@ export function SouksPreview() {
       tag: 'Popular',
       duration: 'Open Daily'
     },
-    {
-      name: t('regions.egypt.name'),
-      description: t('regions.egypt.description'),
-      image: '/souks/egypt.png',
-      href: `/${locale}/souks`,
-      tag: 'New',
-      duration: 'Open Daily'
-    },
-    {
-      name: t('regions.africa.name'),
-      description: t('regions.africa.description'),
-      image: '/souks/africa.png',
-      href: `/${locale}/souks`,
-      tag: 'Featured',
-      duration: 'Open Daily'
-    }
+    // {
+    //   name: t('regions.egypt.name'),
+    //   description: t('regions.egypt.description'),
+    //   image: '/souks/egypt.png',
+    //   href: `/${locale}/souks`,
+    //   tag: 'New',
+    //   duration: 'Open Daily'
+    // },
+    // {
+    //   name: t('regions.africa.name'),
+    //   description: t('regions.africa.description'),
+    //   image: '/souks/africa.png',
+    //   href: `/${locale}/souks`,
+    //   tag: 'Featured',
+    //   duration: 'Open Daily'
+    // }
   ];
 
   return (

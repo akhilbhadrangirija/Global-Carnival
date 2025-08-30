@@ -59,10 +59,8 @@
     "title": "Experience Souks from Around the World",
     "description": "Each souk represents the authentic culture and traditions of its region, offering visitors a truly immersive experience.",
     "regions": {
-      "india": { "name": "India", "description": "Traditional textiles, spices, and handicrafts from the subcontinent" },
-      "pakistan": { "name": "Pakistan", "description": "Rich fabrics, traditional jewelry, and cultural artifacts" },
-      "turkey": { "name": "Turkey", "description": "Ottoman-inspired crafts, ceramics, and traditional textiles" },
-      "morocco": { "name": "Morocco", "description": "Berber crafts, leather goods, and traditional ceramics" },
+      "indiaPakistan": { "name": "India & Pakistan", "description": "Traditional textiles, spices, handicrafts, rich fabrics, and cultural artifacts from the subcontinent" },
+      "turkeyMorocco": { "name": "Turkey & Morocco", "description": "Ottoman-inspired crafts, ceramics, traditional textiles, Berber crafts, leather goods, and cultural artifacts" },
       "eastAsia": { "name": "East Asia", "description": "Silk, porcelain, and traditional arts from China, Japan, and Korea" },
       "gcc": { "name": "GCC", "description": "Arabian heritage crafts, dates, and traditional goods" },
       "egypt": { "name": "Egypt", "description": "Ancient artifacts, papyrus, and traditional Egyptian crafts" },

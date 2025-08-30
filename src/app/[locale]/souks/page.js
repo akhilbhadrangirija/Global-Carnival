@@ -15,58 +15,34 @@ export default function SouksPage() {
 
   const souks = [
     {
-      id: 'india',
-      name: t('regions.india.name'),
-      description: t('regions.india.description'),
-      longDescription: "Experience the vibrant culture of India through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, and colorful fabrics. From the bustling markets of Mumbai to the royal heritage of Rajasthan, every corner tells a story of India&apos;s rich cultural tapestry.",
-      image: '/souks/india.png',
+      id: 'indiaPakistan',
+      name: t('regions.indiaPakistan.name'),
+      description: t('regions.indiaPakistan.description'),
+      longDescription: "Experience the vibrant cultures of India and Pakistan through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, rich fabrics, and cultural artifacts. From the bustling markets of Mumbai to the royal heritage of Rajasthan, and from the intricate embroidery of Sindh to the vibrant colors of Punjab, every corner tells a story of the subcontinent's rich cultural tapestry.",
+      image: '/souks/india-pakistan.png',
       gallery: [
         '/souks/shop/india-pak1.png',
         '/souks/shop/india-pak2.png',
         '/souks/shop/india-pak3.png',
-        '/souks/shop/india-pak4.png'
+        '/souks/shop/india-pak4.png',
+        '/souks/shop/india-pak5.png'
       ],
-      features: ['Traditional Textiles', 'Handcrafted Jewelry', 'Aromatic Spices', 'Cultural Artifacts']
+      features: ['Traditional Textiles', 'Handcrafted Jewelry', 'Aromatic Spices', 'Rich Fabrics', 'Cultural Artifacts']
     },
     {
-      id: 'pakistan',
-      name: t('regions.pakistan.name'),
-      description: t('regions.pakistan.description'),
-      longDescription: "Discover the rich heritage of Pakistan through our authentic souk showcasing traditional fabrics, handcrafted jewelry, and cultural artifacts. From the intricate embroidery of Sindh to the vibrant colors of Punjab, experience the diversity of Pakistani craftsmanship.",
-      image: '/souks/pakistan.png',
-      gallery: [
-        '/souks/shop/india-pak1.png',
-        '/souks/shop/india-pak2.png',
-        '/souks/shop/india-pak3.png',
-        '/souks/shop/india-pak4.png'
-      ],
-      features: ['Rich Fabrics', 'Traditional Jewelry', 'Cultural Artifacts', 'Handcrafted Items']
-    },
-    {
-      id: 'turkey',
-      name: t('regions.turkey.name'),
-      description: t('regions.turkey.description'),
-      longDescription: "Immerse yourself in the Ottoman-inspired elegance of our Turkish souk featuring traditional ceramics, handwoven textiles, and cultural artifacts. Experience the blend of Eastern and Western influences that make Turkish culture unique.",
-      image: '/souks/turkey.png',
+      id: 'turkeyMorocco',
+      name: t('regions.turkeyMorocco.name'),
+      description: t('regions.turkeyMorocco.description'),
+      longDescription: "Immerse yourself in the rich cultural heritage of Turkey and Morocco through our authentic souk featuring Ottoman-inspired crafts, traditional ceramics, handwoven textiles, Berber crafts, and leather goods. Experience the blend of Eastern and Western influences from Turkey and the exotic charm of Morocco from the vibrant markets of Marrakech to the coastal beauty of Casablanca.",
+      image: '/souks/turkey-morocco.png',
       gallery: [
         '/souks/shop/turkey1.png',
         '/souks/shop/turkey2.png',
-        '/souks/shop/turkey3.png'
+        '/souks/shop/turkey3.png',
+        '/souks/shop/egypt1.png',
+        '/souks/shop/egypt2.png'
       ],
-      features: ['Ottoman Crafts', 'Traditional Ceramics', 'Handwoven Textiles', 'Cultural Artifacts']
-    },
-    {
-      id: 'morocco',
-      name: t('regions.morocco.name'),
-      description: t('regions.morocco.description'),
-      longDescription: "Experience the exotic charm of Morocco through our authentic souk featuring Berber crafts, traditional leather goods, and handcrafted ceramics. From the vibrant markets of Marrakech to the coastal beauty of Casablanca.",
-      image: '/souks/morocco.png',
-      gallery: [
-       '/souks/shop/egypt1.png',
-        '/souks/shop/egypt2.png',
-        '/souks/shop/egypt3.png'
-      ],
-      features: ['Berber Crafts', 'Leather Goods', 'Traditional Ceramics', 'Cultural Artifacts']
+      features: ['Ottoman Crafts', 'Traditional Ceramics', 'Handwoven Textiles', 'Berber Crafts', 'Leather Goods', 'Cultural Artifacts']
     },
     {
       id: 'eastAsia',

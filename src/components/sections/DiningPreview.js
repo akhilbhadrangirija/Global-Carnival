@@ -25,7 +25,7 @@ const diningOptions = [
   },
   {
     name: "Spice Route",
-    cuisine: "Indian",
+    cuisine: "Indian & Pakistani",
     price: "$$",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",

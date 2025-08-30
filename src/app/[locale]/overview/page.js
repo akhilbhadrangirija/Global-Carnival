@@ -53,7 +53,7 @@ export default function OverviewPage() {
                 </p>
                 
                 <p>
-                  The project encompasses eight distinct cultural regions: India, Pakistan, Turkey, Morocco, East Asia (China, Japan, Korea), GCC countries, Egypt, and Africa. Each region is designed to provide visitors with an authentic experience that goes beyond surface-level representation, offering deep cultural immersion through food, music, art, crafts, and interactive experiences.
+                  The project encompasses six distinct cultural regions: India & Pakistan, Turkey & Morocco, East Asia (China, Japan, Korea), GCC countries, Egypt, and Africa. Each region is designed to provide visitors with an authentic experience that goes beyond surface-level representation, offering deep cultural immersion through food, music, art, crafts, and interactive experiences.
                 </p>
                 
                 <p>
