@@ -9,12 +9,15 @@ export default function ActivitiesPage() {
 
   const activityImages = [
     // Activity images from the activities folder
-    '/activities/adventurePark.jpg',
-    '/activities/balloonPark.jpg',
-    '/activities/foodKiosks.jpg',
-    '/activities/parking.jpg',
-    '/activities/restaurent.jpg',
-    '/activities/sportsCourt.jpg'
+    '/activities/activity.jpg',
+    '/activities/activity copy.jpg',
+    '/activities/activity copy 2.jpg',
+    '/activities/activity copy 3.jpg',
+    '/activities/activity copy 4.jpg',
+    '/activities/activity copy 5.jpg',
+    '/activities/activity copy 6.jpg',
+    '/activities/activity copy 7.jpg',
+    '/activities/activity copy 8.jpg'
   ];
 
   const openImageModal = (image) => {
