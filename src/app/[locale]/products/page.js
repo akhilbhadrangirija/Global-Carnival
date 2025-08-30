@@ -1,67 +1,41 @@
 "use client";
 import { motion } from 'framer-motion';
-import { Star, ShoppingBag, Palette, Utensils, Gift } from 'lucide-react';
+import { Star, ShoppingBag, Palette, Utensils, Gift, Globe, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { useState } from 'react';
 
 export default function ProductsPage() {
-  const productCategories = [
-    {
-      id: 'clothes',
-      title: 'Clothes & Fabric',
-      description: 'Traditional and modern textiles from around the world',
-      longDescription: 'Discover a world of textiles and clothing from every corner of the globe. From handwoven silk from China to traditional embroidered fabrics from India & Pakistan, from elegant Turkish textiles to vibrant African prints, our Clothes & Fabric section showcases the incredible diversity of global textile traditions.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Handwoven Textiles', 'Traditional Embroidery', 'Modern Fashion', 'Cultural Designs'],
-      icon: ShoppingBag,
-      gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
-      ]
-    },
-    {
-      id: 'cosmetics',
-      title: 'Cosmetics & Perfumes',
-      description: 'Beauty products and fragrances from global traditions',
-      longDescription: 'Experience the art of beauty through our collection of cosmetics and perfumes from around the world. From traditional Arabian oud and rose water to French luxury cosmetics, from Indian & Pakistani ayurvedic beauty products to Moroccan argan oil, discover beauty secrets that have been passed down through generations.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Traditional Oils', 'Luxury Cosmetics', 'Natural Products', 'Cultural Beauty'],
-      icon: Palette,
-      gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
-      ]
-    },
-    {
-      id: 'food',
-      title: 'Food & Spices',
-      description: 'Culinary treasures and aromatic spices from global cuisines',
-      longDescription: 'Embark on a culinary journey through our Food & Spices section featuring authentic ingredients from around the world. From the aromatic spices of India & Pakistan to the rich flavors of the Middle East, from exotic Asian ingredients to traditional European delicacies, discover the building blocks of global cuisine.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Aromatic Spices', 'Traditional Ingredients', 'Exotic Flavors', 'Cultural Cuisine'],
-      icon: Utensils,
-      gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
-      ]
-    },
-    {
-      id: 'souvenirs',
-      title: 'Souvenirs & Handicraft',
-      description: 'Unique cultural artifacts and handcrafted treasures',
-      longDescription: 'Take home a piece of global culture with our collection of souvenirs and handicrafts. From hand-carved wooden artifacts to intricate metalwork, from traditional pottery to modern artistic creations, each piece tells a story of cultural heritage and artistic excellence.',
-      image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop',
-      features: ['Handcrafted Items', 'Cultural Artifacts', 'Artistic Creations', 'Unique Souvenirs'],
-      icon: Gift,
-      gallery: [
-        'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
-      ]
-    }
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const productImages = [
+    // Clothes & Fabric
+    '/products/cloth.jpg',
+    '/products/cloths.jpg',
+    // Cosmetics
+    '/products/cosmetic.jpg',
+    '/products/cosmetics.jpg',
+    // Food & Drinks
+    '/products/food.jpg',
+    '/products/food copy.jpg',
+    '/products/food copy 2.jpg',
+    '/products/food copy 3.jpg',
+    '/products/drinks.jpg',
+    '/products/drinks copy.jpg',
+    '/products/drinks copy 2.jpg',
+    // Handicrafts
+    '/products/Handicraft.jpg',
+    '/products/Handicraft copy.jpg',
+    // General Products
+    '/products/product.jpg'
   ];
+
+  const openImageModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="min-h-screen">
@@ -75,7 +49,7 @@ export default function ProductsPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Product Diversity
+            Global Products
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -83,117 +57,183 @@ export default function ProductsPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            Explore a world of products from every corner of the globe, each representing the unique culture and craftsmanship of its region
+            A vibrant tapestry of cultures under one roof
           </motion.p>
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Product Description */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          {productCategories.map((category, index) => (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className={`mb-20 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-            >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Content */}
-                <div className="order-2 lg:order-1">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <category.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900">
-                      {category.title}
-                    </h2>
-                  </div>
-                  
-                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    {category.longDescription}
-                  </p>
-                  
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    {category.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <Star className="w-4 h-4 text-primary" />
-                        <span className="text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="bg-primary text-white hover:bg-primary/90 px-6 py-3 font-semibold">
-                    Explore {category.title}
-                  </Button>
-                </div>
-                
-                {/* Image */}
-                <div className="order-1 lg:order-2">
-                  <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Gallery Strip */}
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Gallery</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  {category.gallery.map((image, imageIndex) => (
-                    <motion.div
-                      key={imageIndex}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: imageIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="group"
-                    >
-                      <div className="relative h-32 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                        <img
-                          src={image}
-                          alt={`${category.title} gallery`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
-        <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="max-w-6xl mx-auto text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Discover Global Treasures
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Take home authentic products and cultural treasures from around the world
+            <div className="flex items-center justify-center space-x-3 mb-8">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Cultural Marketplace
+              </h2>
+            </div>
+            
+            <p className="text-lg text-gray-700 leading-relaxed max-w-5xl mx-auto">
+              From hand‑loomed saris, mirror‑worked kurtas, silky abayas, and kilim‑pattern jackets to saffron‑stuffed dates, fiery masala blends, Turkish delight, Himalayan pink‑salt snacks, and delicate matcha sweets, GlobalCarnival Jeddah threads a vibrant tapestry of cultures under one roof. Shoppers can pick up carved onyx bowls, mosaic‑tiled lanterns, bamboo lacquerware, terracotta sculptures, and papyrus art, then indulge in argan‑oil elixirs, Ayurvedic tonics, oud‑infused perfumes, and spa‑soft Egyptian‑cotton linens—all before exploring a dash of East‑Asian innovation with compact smart gadgets and kawaii stationery. The result is a seamless marketplace where ancient craftsmanship, gourmet flavors, timeless beauty rituals, and next‑gen trends meet, giving visitors a passport‑free world tour and exhibitors unrivalled cross‑category exposure in a single, bustling venue.
             </p>
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
-              Start Shopping
-            </Button>
           </motion.div>
         </div>
       </section>
+
+      {/* Product Gallery */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Explore Our Gallery
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover authentic products from around the world, each telling a unique story of cultural heritage and craftsmanship
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {productImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+                onClick={() => openImageModal(image)}
+              >
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white">
+                  <img
+                    src={image}
+                    alt={`Product ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Categories Overview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Product Categories
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our marketplace is organized into four main categories, each representing the rich diversity of global culture
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: ShoppingBag,
+                title: 'Clothes & Fabric',
+                description: 'Traditional textiles, handwoven saris, embroidered kurtas, and cultural garments'
+              },
+              {
+                icon: Palette,
+                title: 'Cosmetics & Perfumes',
+                description: 'Argan oils, Ayurvedic tonics, oud perfumes, and spa essentials'
+              },
+              {
+                icon: Utensils,
+                title: 'Food & Spices',
+                description: 'Saffron dates, masala blends, Turkish delights, and global delicacies'
+              },
+              {
+                icon: Gift,
+                title: 'Souvenirs & Handicrafts',
+                description: 'Onyx bowls, mosaic lanterns, terracotta sculptures, and cultural artifacts'
+              }
+            ].map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                  <category.icon className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {category.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {category.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+          onClick={closeImageModal}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="relative max-w-4xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeImageModal}
+              className="absolute -top-4 -right-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
+            >
+              <X className="w-5 h-5 text-gray-700" />
+            </button>
+            
+            {/* Image */}
+            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src={selectedImage}
+                alt="Product detail"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+       
     </div>
   );
 }
