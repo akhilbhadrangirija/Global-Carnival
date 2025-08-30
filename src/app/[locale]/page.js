@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <HomepageTeasers />
       <SouksPreview />
       <HighlightsPreview />
