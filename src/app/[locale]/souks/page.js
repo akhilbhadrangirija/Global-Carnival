@@ -19,13 +19,12 @@ export default function SouksPage() {
       name: t('regions.indiaPakistan.name'),
       description: t('regions.indiaPakistan.description'),
       longDescription: "Experience the vibrant cultures of India and Pakistan through our authentic souk featuring traditional textiles, intricate handicrafts, aromatic spices, rich fabrics, and cultural artifacts. From the bustling markets of Mumbai to the royal heritage of Rajasthan, and from the intricate embroidery of Sindh to the vibrant colors of Punjab, every corner tells a story of the subcontinent's rich cultural tapestry.",
-      image: '/souks/india-pakistan.png',
+      image: '/souks/shop/india-pakistan-shop-main.jpg',
       gallery: [
-        '/souks/shop/india-pak1.png',
-        '/souks/shop/india-pak2.png',
-        '/souks/shop/india-pak3.png',
-        '/souks/shop/india-pak4.png',
-        '/souks/shop/india-pak5.png'
+        '/souks/shop/india-pakistan-shop-1.jpg',
+        '/souks/shop/india-pakistan-shop-2.jpg',
+        '/souks/shop/india-pakistan-shop-3.jpg',
+        '/souks/shop/india-pakistan-shop-4.jpg'
       ],
       features: ['Traditional Textiles', 'Handcrafted Jewelry', 'Aromatic Spices', 'Rich Fabrics', 'Cultural Artifacts']
     },
@@ -34,13 +33,12 @@ export default function SouksPage() {
       name: t('regions.turkeyMorocco.name'),
       description: t('regions.turkeyMorocco.description'),
       longDescription: "Immerse yourself in the rich cultural heritage of Turkey and Morocco through our authentic souk featuring Ottoman-inspired crafts, traditional ceramics, handwoven textiles, Berber crafts, and leather goods. Experience the blend of Eastern and Western influences from Turkey and the exotic charm of Morocco from the vibrant markets of Marrakech to the coastal beauty of Casablanca.",
-      image: '/souks/turkey-morocco.png',
+      image: '/souks/shop/turkey-morocco-shop-1.jpg',
       gallery: [
-        '/souks/shop/turkey1.png',
-        '/souks/shop/turkey2.png',
-        '/souks/shop/turkey3.png',
-        '/souks/shop/egypt1.png',
-        '/souks/shop/egypt2.png'
+        '/souks/shop/turkey-morocco-shop-1.jpg',
+        '/souks/shop/turkey-morocco-shop-2.jpg',
+        '/souks/shop/turkey-morocco-shop-3.jpg',
+        '/souks/shop/turkey-morocco-shop-4.jpg'
       ],
       features: ['Ottoman Crafts', 'Traditional Ceramics', 'Handwoven Textiles', 'Berber Crafts', 'Leather Goods', 'Cultural Artifacts']
     },
@@ -49,11 +47,12 @@ export default function SouksPage() {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
       longDescription: "Discover the refined elegance of East Asia through our authentic souk featuring silk textiles, porcelain ceramics, and traditional arts from China, Japan, and Korea. Experience the harmony and balance that defines Eastern aesthetics.",
-      image: '/souks/eastAsia.png',
+      image: '/souks/shop/east-asia-shop-1.jpg',
       gallery: [
-        '/souks/shop/eastAsia1.png',
-        '/souks/shop/eastAsia2.png',
-        '/souks/shop/eastAsia3.png'
+        '/souks/shop/east-asia-shop-1.jpg',
+        '/souks/shop/east-asia-shop-2.jpg',
+        '/souks/shop/east-asia-shop-3.jpg',
+        '/souks/shop/east-asia-shop-4.jpg'
       ],
       features: ['Silk Textiles', 'Porcelain Ceramics', 'Traditional Arts', 'Cultural Artifacts']
     },
@@ -62,11 +61,12 @@ export default function SouksPage() {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
       longDescription: "Experience the rich heritage of the Arabian Peninsula through our authentic GCC souk featuring traditional crafts, dates, and cultural goods. From the desert traditions to modern Gulf culture, discover the authentic Arabian experience.",
-      image: '/souks/gcc.png',
+      image: '/souks/shop/gcc-shop-1.jpg',
       gallery: [
-        '/souks/shop/gcc1.png',
-        '/souks/shop/gcc2.png',
-        '/souks/shop/gcc3.png'
+        '/souks/shop/gcc-shop-1.jpg',
+        '/souks/shop/gcc-shop-2.jpg',
+        '/souks/shop/gcc-shop-3.jpg',
+        '/souks/shop/gcc-shop-4.jpg'
       ],
       features: ['Arabian Heritage', 'Traditional Crafts', 'Dates & Fruits', 'Cultural Goods']
     },
@@ -75,11 +75,12 @@ export default function SouksPage() {
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
       longDescription: "Journey through ancient Egypt in our authentic souk featuring traditional artifacts, papyrus scrolls, and cultural crafts. From the pyramids to the Nile, experience the timeless legacy of one of the world&apos;s oldest civilizations.",
-      image: '/souks/egypt.png',
+      image: '/souks/shop/egypt-shop-1.jpg',
       gallery: [
-        '/souks/shop/egypt1.png',
-        '/souks/shop/egypt2.png',
-        '/souks/shop/egypt3.png'
+        '/souks/shop/egypt-shop-1.jpg',
+        '/souks/shop/egypt-shop-2.jpg',
+        '/souks/shop/egypt-shop-3.jpg',
+        '/souks/shop/egypt-shop-4.jpg'
       ],
       features: ['Ancient Artifacts', 'Papyrus Scrolls', 'Traditional Crafts', 'Cultural Heritage']
     },
@@ -88,11 +89,11 @@ export default function SouksPage() {
       name: t('regions.africa.name'),
       description: t('regions.africa.description'),
       longDescription: "Explore the diverse cultures of Africa through our authentic souk featuring tribal art, traditional fabrics, and cultural artifacts. From the savannas to the rainforests, experience the rich tapestry of African heritage.",
-      image: '/souks/africa.png',
+      image: '/souks/shop/egypt-shop-2.jpg',
       gallery: [
-       '/souks/shop/egypt1.png',
-        '/souks/shop/egypt2.png',
-        '/souks/shop/egypt3.png'
+       '/souks/shop/egypt-shop-1.jpg',
+        '/souks/shop/egypt-shop-2.jpg',
+        '/souks/shop/egypt-shop-3.jpg'
       ],
       features: ['Tribal Art', 'Traditional Fabrics', 'Cultural Artifacts', 'African Heritage']
     }

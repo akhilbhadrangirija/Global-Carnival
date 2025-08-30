@@ -15,7 +15,7 @@ export function SouksPreview() {
     {
       name: t('regions.indiaPakistan.name'),
       description: t('regions.indiaPakistan.description'),
-      image: '/souks/india-pakistan.png',
+      image: '/souks/shop/india-pakistan-shop-main.jpg',
       href: `/${locale}/souks`,
       tag: 'Popular',
       duration: 'Open Daily'
@@ -23,7 +23,7 @@ export function SouksPreview() {
     {
       name: t('regions.turkeyMorocco.name'),
       description: t('regions.turkeyMorocco.description'),
-      image: '/souks/turkey-morocco.png',
+      image: '/souks/shop/turkey-morocco-shop-1.jpg',
       href: `/${locale}/souks`,
       tag: 'New',
       duration: 'Open Daily'
@@ -31,7 +31,7 @@ export function SouksPreview() {
     {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
-      image: '/souks/eastAsia.png',
+      image: '/souks/shop/east-asia-shop-1.jpg',
       href: `/${locale}/souks`,
       tag: 'Featured',
       duration: 'Open Daily'
@@ -39,7 +39,7 @@ export function SouksPreview() {
     {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
-      image: '/souks/gcc.png',
+      image: '/souks/shop/gcc-shop-1.jpg',
       href: `/${locale}/souks`,
       tag: 'Popular',
       duration: 'Open Daily'
@@ -47,7 +47,7 @@ export function SouksPreview() {
     // {
     //   name: t('regions.egypt.name'),
     //   description: t('regions.egypt.description'),
-    //   image: '/souks/egypt.png',
+    //   image: '/souks/shop/egypt-shop-1.jpg',
     //   href: `/${locale}/souks`,
     //   tag: 'New',
     //   duration: 'Open Daily'
@@ -55,7 +55,7 @@ export function SouksPreview() {
     // {
     //   name: t('regions.africa.name'),
     //   description: t('regions.africa.description'),
-    //   image: '/souks/africa.png',
+    //   image: '/souks/shop/egypt-shop-2.jpg',
     //   href: `/${locale}/souks`,
     //   tag: 'Featured',
     //   duration: 'Open Daily'
