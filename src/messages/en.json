@@ -94,6 +94,27 @@
       "guaranteedSuccess": "Guaranteed Success"
     }
   },
+  "aboutPreview": {
+    "title": "About Global Carnival Jeddah",
+    "subtitle": "A groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.",
+    "description1": "Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.",
+    "description2": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.",
+    "features": {
+      "globalDiversity": {
+        "title": "Global Cultural Diversity",
+        "description": "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage."
+      },
+      "interactiveExperiences": {
+        "title": "Interactive Experiences",
+        "description": "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences."
+      },
+      "strategicLocation": {
+        "title": "Strategic Location",
+        "description": "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
+      }
+    },
+    "cta": "Learn More About Us"
+  },
   "whatAwaits": {
     "title": "What Awaits You",
     "description": "Enjoy world-class shopping, global dining, history & heritage, endless fun & entertainment, adventures & rides, cultural pavilions, and live shows & events, all in one extraordinary destination.",

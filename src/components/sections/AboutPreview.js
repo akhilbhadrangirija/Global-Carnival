@@ -14,18 +14,18 @@ export function AboutPreview() {
   const features = [
     {
       icon: Globe,
-      title: "Global Cultural Diversity",
-      description: "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage."
+      title: t('aboutPreview.features.globalDiversity.title'),
+      description: t('aboutPreview.features.globalDiversity.description')
     },
     {
       icon: Users,
-      title: "Interactive Experiences",
-      description: "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences."
+      title: t('aboutPreview.features.interactiveExperiences.title'),
+      description: t('aboutPreview.features.interactiveExperiences.description')
     },
     {
       icon: MapPin,
-      title: "Strategic Location",
-      description: "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
+      title: t('aboutPreview.features.strategicLocation.title'),
+      description: t('aboutPreview.features.strategicLocation.description')
     }
   ];
 
@@ -40,10 +40,10 @@ export function AboutPreview() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About Global Carnival Jeddah
+            {t('aboutPreview.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A groundbreaking cultural extravaganza that brings the world&apos;s most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.
+            {t('aboutPreview.subtitle')}
           </p>
         </motion.div>
 
@@ -57,10 +57,10 @@ export function AboutPreview() {
           >
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Global Carnival Jeddah is more than just an event—it&apos;s a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.
+                {t('aboutPreview.description1')}
               </p>
               <p>
-                From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.
+                {t('aboutPreview.description2')}
               </p>
             </div>
           </motion.div>
@@ -119,7 +119,7 @@ export function AboutPreview() {
         >
           <Link href={`/${locale}/about`}>
             <Button size="lg" className="group bg-primary text-white hover:bg-primary/90">
-              Learn More About Us
+              {t('aboutPreview.cta')}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
