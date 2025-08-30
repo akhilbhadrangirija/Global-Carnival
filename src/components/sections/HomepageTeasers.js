@@ -12,22 +12,22 @@ export function HomepageTeasers() {
   const locale = useLocale();
 
   const teasers = [
-    {
-      title: t('introduction.title'),
-      description: t('introduction.description'),
-      cta: t('introduction.cta'),
-      href: `/${locale}/about`,
-      icon: Globe,
-      color: 'from-blue-500 to-purple-600'
-    },
-    {
-      title: t('overview.title'),
-      description: t('overview.description'),
-      cta: t('overview.cta'),
-      href: `/${locale}/overview`,
-      icon: Store,
-      color: 'from-green-500 to-teal-600'
-    },
+    // {
+    //   title: t('introduction.title'),
+    //   description: t('introduction.description'),
+    //   cta: t('introduction.cta'),
+    //   href: `/${locale}/about`,
+    //   icon: Globe,
+    //   color: 'from-blue-500 to-purple-600'
+    // },
+    // {
+    //   title: t('overview.title'),
+    //   description: t('overview.description'),
+    //   cta: t('overview.cta'),
+    //   href: `/${locale}/overview`,
+    //   icon: Store,
+    //   color: 'from-green-500 to-teal-600'
+    // },
     {
       title: t('products.title'),
       description: t('products.description'),
