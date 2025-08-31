@@ -32,9 +32,9 @@ export function Footer() {
     ],
     support: [
       { name: 'Contact Us', href: `/${locale}/contact` },
-      { name: 'FAQ', href: `/${locale}/faq` },
-      { name: 'Accessibility', href: `/${locale}/accessibility` },
-      { name: 'Safety', href: `/${locale}/safety` },
+      // { name: 'FAQ', href: `/${locale}/faq` },
+      // { name: 'Accessibility', href: `/${locale}/accessibility` },
+      // { name: 'Safety', href: `/${locale}/safety` },
     ],
     business: [
       { name: 'Partner With Us', href: `/${locale}/partner` },
@@ -146,7 +146,7 @@ export function Footer() {
               ))}
             </ul>
             
-            <h3 className="text-lg font-semibold mb-4">Business</h3>
+            {/* <h3 className="text-lg font-semibold mb-4">Business</h3>
             <ul className="space-y-2">
               {footerLinks.business.map((link) => (
                 <li key={link.name}>
@@ -158,7 +158,7 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
 
