@@ -24,31 +24,31 @@ export function Footer() {
 
   const footerLinks = {
     explore: [
-      { name: 'Souks', href: `/${locale}/souks` },
-      { name: 'Highlights', href: `/${locale}/highlights` },
-      { name: 'Products', href: `/${locale}/products` },
-      { name: 'Food & Beverages', href: `/${locale}/food` },
-      { name: 'Activities', href: `/${locale}/activities` },
+      { name: t('footerLinks.souks'), href: `/${locale}/souks` },
+      { name: t('footerLinks.highlights'), href: `/${locale}/highlights` },
+      { name: t('footerLinks.products'), href: `/${locale}/products` },
+      { name: t('footerLinks.foodBeverages'), href: `/${locale}/food` },
+      { name: t('footerLinks.activities'), href: `/${locale}/activities` },
     ],
     support: [
-      { name: 'Contact Us', href: `/${locale}/contact` },
-      // { name: 'FAQ', href: `/${locale}/faq` },
-      // { name: 'Accessibility', href: `/${locale}/accessibility` },
-      // { name: 'Safety', href: `/${locale}/safety` },
+      { name: t('footerLinks.contactUs'), href: `/${locale}/contact` },
+      // { name: t('footerLinks.faq'), href: `/${locale}/faq` },
+      // { name: t('footerLinks.accessibility'), href: `/${locale}/accessibility` },
+      // { name: t('footerLinks.safety'), href: `/${locale}/safety` },
     ],
     business: [
-      { name: 'Partner With Us', href: `/${locale}/partner` },
-      { name: 'Vendor Information', href: `/${locale}/vendors` },
-      { name: 'Business Opportunities', href: `/${locale}/business` },
-      { name: 'Press Kit', href: `/${locale}/press` },
+      { name: t('footerLinks.partnerWithUs'), href: `/${locale}/partner` },
+      { name: t('footerLinks.vendorInformation'), href: `/${locale}/vendors` },
+      { name: t('footerLinks.businessOpportunities'), href: `/${locale}/business` },
+      { name: t('footerLinks.pressKit'), href: `/${locale}/press` },
     ],
   };
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com' },
+    { name: t('social.facebook'), icon: Facebook, href: 'https://facebook.com' },
+    { name: t('social.twitter'), icon: Twitter, href: 'https://twitter.com' },
+    { name: t('social.instagram'), icon: Instagram, href: 'https://instagram.com' },
+    { name: t('social.youtube'), icon: Youtube, href: 'https://youtube.com' },
   ];
 
   return (
@@ -71,14 +71,14 @@ export function Footer() {
             />
           </Link>
             <p className="text-gray-300 mb-6 max-w-md">
-              Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world&apos;s cultures in one extraordinary destination.
+              {t('brandDescription')}
             </p>
             
             {/* Event Information */}
             <div className="mb-6 p-4 bg-gray-800 rounded-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <Calendar className="w-5 h-5 text-primary" />
-                <span className="text-sm font-semibold text-white">Event Dates</span>
+                <span className="text-sm font-semibold text-white">{t('eventDates')}</span>
               </div>
               <p className="text-gray-300 text-sm mb-2">
                 {t('eventInfo.dates')}
@@ -115,7 +115,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Explore</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('explore')}</h3>
             <ul className="space-y-2">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
@@ -132,7 +132,7 @@ export function Footer() {
 
           {/* Support & Business */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('support')}</h3>
             <ul className="space-y-2 mb-6">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
@@ -167,7 +167,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact Information */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('contactInformation')}</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-primary" />
@@ -178,19 +178,19 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <span className="text-gray-300 text-sm">
-                    +966 11 234 5678
+                    {t('contact.phone')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
                   <span className="text-gray-300 text-sm">
-                    info@globalcarnivaljeddah.com
+                    {t('contact.email')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-gray-300 text-sm">
-                    Open Daily: 9:00 AM - 11:00 PM
+                    {t('contact.hours')}
                   </span>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export function Footer() {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">{t('social')}</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('socialHeader')}</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
