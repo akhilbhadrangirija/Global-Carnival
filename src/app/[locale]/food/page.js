@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { Star, Utensils, Coffee, Cake, Pizza, Globe, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function FoodPage() {
+  const t = useTranslations('food');
+  const commonT = useTranslations('common');
   const [selectedImage, setSelectedImage] = useState(null);
 
   const foodImages = [
@@ -49,7 +52,7 @@ export default function FoodPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Global Cuisine
+            {t('hero.title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +60,7 @@ export default function FoodPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            A passport-free feast of world flavors
+            {t('hero.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -77,12 +80,12 @@ export default function FoodPage() {
                 <Utensils className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-4xl font-bold text-gray-900">
-                Culinary Journey
+                {t('description.title')}
               </h2>
             </div>
             
             <p className="text-lg text-gray-700 leading-relaxed max-w-5xl mx-auto">
-              Global Carnival Jeddah serves a passport‑free feast: tandoor‑blistered naan with butter chicken, Pakistan's spice‑laced chapli kebabs, delicately layered Moroccan pastilla, and Egypt's tangy tomato‑topped koshari. Sweet teeth indulge in honey‑soaked Turkish baklava, pistachio‑rich halva, and medjool dates stuffed with saffron‑kissed almond paste. Adventurous eaters chase umami through East‑Asian sushi rolls, steaming dim sum baskets, and crispy Korean corn dogs. Drinks range from frothy mango lassi and cardamom‑fragrant Arabic qahwa to chilled hibiscus karkadé, velvety Turkish coffee, refreshing Moroccan mint tea, and matcha‑whisked bubble tea. Centuries‑old recipes meet Instagram‑ready street eats, letting every palate tour the world without ever leaving Jeddah.
+              {t('description.content')}
             </p>
           </motion.div>
         </div>
@@ -99,10 +102,10 @@ export default function FoodPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Explore Our Menu
+              {t('gallery.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover authentic flavors from around the world, each dish telling a unique story of cultural heritage and culinary excellence
+              {t('gallery.subtitle')}
             </p>
           </motion.div>
 
@@ -120,7 +123,7 @@ export default function FoodPage() {
                 <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 bg-white">
                   <img
                     src={image}
-                    alt={`Food ${index + 1}`}
+                    alt={`${commonT('foodItem')} ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -145,10 +148,10 @@ export default function FoodPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Culinary Categories
+              {t('categories.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our diverse menu is organized into four main categories, each representing the rich flavors of global cuisine
+              {t('categories.subtitle')}
             </p>
           </motion.div>
 
@@ -156,23 +159,23 @@ export default function FoodPage() {
             {[
               {
                 icon: Utensils,
-                title: 'Main Dishes',
-                description: 'Tandoor naan, chapli kebabs, Moroccan pastilla, and Egyptian koshari'
+                title: t('categories.mainDishes.title'),
+                description: t('categories.mainDishes.description')
               },
               {
                 icon: Cake,
-                title: 'Desserts & Sweets',
-                description: 'Turkish baklava, pistachio halva, and saffron-stuffed dates'
+                title: t('categories.desserts.title'),
+                description: t('categories.desserts.description')
               },
               {
                 icon: Pizza,
-                title: 'Street Food',
-                description: 'Sushi rolls, dim sum baskets, and Korean corn dogs'
+                title: t('categories.streetFood.title'),
+                description: t('categories.streetFood.description')
               },
               {
                 icon: Coffee,
-                title: 'Beverages',
-                description: 'Mango lassi, Arabic qahwa, Turkish coffee, and bubble tea'
+                title: t('categories.beverages.title'),
+                description: t('categories.beverages.description')
               }
             ].map((category, index) => (
               <motion.div
@@ -226,7 +229,7 @@ export default function FoodPage() {
             <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
               <img
                 src={selectedImage}
-                alt="Food detail"
+                alt={commonT('foodDetail')}
                 className="w-full h-full object-contain"
               />
             </div>

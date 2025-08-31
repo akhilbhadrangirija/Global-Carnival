@@ -15,7 +15,41 @@
     "activities": "Activities",
     "partner": "Partner",
     "contact": "Contact",
-    "planVisit": "Plan Your Visit"
+    "planVisit": "Plan Your Visit",
+    "planYourVisit": {
+      "title": "Plan Your Visit",
+      "subtitle": "Everything you need to know to make the most of your Global Carnival Jeddah experience",
+      "sections": {
+        "gettingThere": {
+          "title": "Getting There",
+          "subtitle": "How to reach Global Carnival Jeddah",
+          "directions": "Directions",
+          "parking": "Parking Information",
+          "publicTransport": "Public Transportation"
+        },
+        "tickets": {
+          "title": "Tickets & Admission",
+          "subtitle": "Purchase your tickets and plan your visit",
+          "pricing": "Pricing",
+          "purchase": "Purchase Tickets",
+          "groupDiscounts": "Group Discounts"
+        },
+        "hours": {
+          "title": "Operating Hours",
+          "subtitle": "When we're open",
+          "daily": "Daily: 9:00 AM - 11:00 PM",
+          "special": "Special Event Hours",
+          "holidays": "Holiday Hours"
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "subtitle": "Ensuring everyone can enjoy our carnival",
+          "wheelchair": "Wheelchair Access",
+          "assistance": "Assistance Services",
+          "facilities": "Accessible Facilities"
+        }
+      }
+    }
   },
   "hero": {
     "title": "DISCOVER THE WORLD IN ONE PLACE",
@@ -39,11 +73,41 @@
       "description": "Experience a comprehensive carnival featuring facades, shops, pavilions, and kiosks from around the world. Immerse yourself in cultural diversity and live entertainment.",
       "cta": "Learn More"
     },
-    "products": {
-      "title": "Product Diversity",
-      "description": "From traditional crafts to modern goods, explore a world of products from every corner of the globe.",
-      "cta": "Browse Products"
-    },
+      "products": {
+    "title": "Product Diversity",
+    "description": "From traditional crafts to modern goods, explore a world of products from every corner of the globe.",
+    "cta": "Browse Products",
+    "page": {
+      "hero": {
+        "title": "Global Products & Crafts",
+        "subtitle": "Discover authentic products from around the world"
+      },
+      "description": {
+        "title": "What We Offer",
+        "content": "Our marketplace features a diverse collection of authentic products, traditional crafts, and modern goods from every corner of the globe. Each item tells a story of cultural heritage and craftsmanship."
+      },
+      "categories": {
+        "title": "Product Categories",
+        "subtitle": "Explore our diverse range of products organized by category",
+        "traditionalCrafts": {
+          "title": "Traditional Crafts",
+          "description": "Handcrafted items representing centuries-old traditions and techniques"
+        },
+        "textiles": {
+          "title": "Textiles & Fabrics",
+          "description": "Beautiful fabrics, traditional clothing, and textile art from various cultures"
+        },
+        "jewelry": {
+          "title": "Jewelry & Accessories",
+          "description": "Unique jewelry pieces and accessories reflecting cultural heritage"
+        },
+        "homeDecor": {
+          "title": "Home & Decor",
+          "description": "Decorative items and home accessories from around the world"
+        }
+      }
+    }
+  },
     "food": {
       "title": "Food & Beverages",
       "description": "Savor authentic flavors from around the world, from street food to fine dining experiences.",
@@ -66,7 +130,21 @@
       "egypt": { "name": "Egypt", "description": "Ancient artifacts, papyrus, and traditional Egyptian crafts" },
       "africa": { "name": "Africa", "description": "Tribal art, traditional fabrics, and cultural artifacts" }
     },
-    "viewGallery": "View Gallery"
+    "viewGallery": "View Gallery",
+    "page": {
+      "hero": {
+        "title": "Experience Souks from Around the World",
+        "subtitle": "Each souk represents the authentic culture and traditions of its region"
+      },
+      "description": {
+        "title": "What Makes Our Souks Special",
+        "content": "Our souks are more than just marketplaces—they are living cultural experiences that transport visitors to different parts of the world. Each souk is carefully designed to reflect the authentic architecture, atmosphere, and traditions of its region."
+      },
+      "regions": {
+        "title": "Regional Souks",
+        "subtitle": "Explore the unique characteristics of each regional souk"
+      }
+    }
   },
   "highlights": {
     "title": "Highlights of the Carnival",
@@ -78,6 +156,42 @@
       "foodKiosks": "Food Kiosks",
       "restaurants": "Restaurants",
       "parking": "Parking"
+    },
+    "page": {
+      "hero": {
+        "title": "Highlights of Global Carnival Jeddah",
+        "subtitle": "Discover the main attractions that make our carnival an extraordinary experience"
+      },
+      "description": {
+        "title": "What Makes Our Highlights Special",
+        "content": "Each highlight at Global Carnival Jeddah is carefully designed to provide visitors with unique experiences that showcase the diversity and richness of global cultures. From thrilling adventures to cultural experiences, there's something for everyone to enjoy and remember."
+      },
+      "attractions": {
+        "adventurePark": {
+          "title": "Adventure Park",
+          "description": "Thrilling rides and adventures for all ages, featuring state-of-the-art attractions that combine excitement with safety."
+        },
+        "balloonPark": {
+          "title": "Balloon Park",
+          "description": "Colorful balloon displays and hot air balloon experiences that offer breathtaking views of the carnival and beyond."
+        },
+        "sportsCourt": {
+          "title": "Sports Court",
+          "description": "Multi-sport facilities for active visitors, including basketball, volleyball, and other recreational activities."
+        },
+        "foodKiosks": {
+          "title": "Food Kiosks",
+          "description": "Diverse street food from around the world, offering authentic flavors and culinary experiences."
+        },
+        "restaurants": {
+          "title": "Restaurants",
+          "description": "Fine dining experiences in cultural settings, featuring international cuisine and traditional dishes."
+        },
+        "parking": {
+          "title": "Parking",
+          "description": "Convenient parking facilities for all visitors, ensuring easy access to the carnival experience."
+        }
+      }
     }
   },
   "partner": {
@@ -92,29 +206,72 @@
       "strongNetwork": "Strong Network",
       "seamlessExecution": "Seamless Execution",
       "guaranteedSuccess": "Guaranteed Success"
+    },
+    "page": {
+      "hero": {
+        "title": "Partner With Global Carnival Jeddah",
+        "subtitle": "Join us in creating the most spectacular carnival experience in the region"
+      },
+      "description": {
+        "title": "Why Choose Partnership?",
+        "content": "Our partnership program offers unique opportunities to be part of a groundbreaking cultural event that brings the world to Saudi Arabia. We provide comprehensive support, expert guidance, and proven strategies to ensure your success."
+      },
+      "benefits": {
+        "title": "Partnership Benefits",
+        "subtitle": "Discover what makes partnering with us a smart business decision"
+      }
     }
   },
-  "aboutPreview": {
-    "title": "About Global Carnival Jeddah",
-    "subtitle": "A groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.",
-    "description1": "Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.",
-    "description2": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.",
-    "features": {
-      "globalDiversity": {
-        "title": "Global Cultural Diversity",
-        "description": "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage."
+      "aboutPreview": {
+      "title": "About Global Carnival Jeddah",
+      "subtitle": "A groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.",
+      "description1": "Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.",
+      "description2": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.",
+      "features": {
+        "globalDiversity": {
+          "title": "Global Cultural Diversity",
+          "description": "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage."
+        },
+        "interactiveExperiences": {
+          "title": "Interactive Experiences",
+          "description": "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences."
+        },
+        "strategicLocation": {
+          "title": "Strategic Location",
+          "description": "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
+        }
       },
-      "interactiveExperiences": {
-        "title": "Interactive Experiences",
-        "description": "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences."
+      "cta": "Learn More About Us"
+    },
+    "aboutPage": {
+      "hero": {
+        "title": "About Global Carnival Jeddah",
+        "dates": "23rd September 2025 → 9th April 2026",
+        "location": "Jeddah, Saudi Arabia"
       },
-      "strategicLocation": {
-        "title": "Strategic Location",
-        "description": "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
+      "welcome": {
+        "title": "Welcome to Global Carnival Jeddah",
+        "description1": "Global Carnival Jeddah is a groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia. This extraordinary event represents a fusion of global cultures, creating an immersive environment where visitors can explore, taste, and experience the richness of our diverse world.",
+        "description2": "Our carnival is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures, fostering understanding and appreciation for the world's diversity.",
+        "description3": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula."
+      },
+      "features": {
+        "title": "What Makes Us Special",
+        "subtitle": "Discover the unique elements that make Global Carnival Jeddah an extraordinary cultural experience",
+        "globalDiversity": {
+          "title": "Global Cultural Diversity",
+          "description": "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage."
+        },
+        "interactiveExperiences": {
+          "title": "Interactive Experiences",
+          "description": "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences."
+        },
+        "strategicLocation": {
+          "title": "Strategic Location",
+          "description": "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
+        }
       }
     },
-    "cta": "Learn More About Us"
-  },
   "whatAwaits": {
     "title": "What Awaits You",
     "description": "Enjoy world-class shopping, global dining, history & heritage, endless fun & entertainment, adventures & rides, cultural pavilions, and live shows & events, all in one extraordinary destination.",
@@ -122,6 +279,27 @@
     "dine": "Dine",
     "shows": "Shows & Events",
     "pavilions": "Pavilions"
+  },
+  "overview": {
+    "hero": {
+      "title": "Project Overview",
+      "subtitle": "A comprehensive carnival experience that brings the world to Saudi Arabia"
+    },
+    "description": {
+      "title": "What is Global Carnival Jeddah?",
+      "content": "Global Carnival Jeddah is a groundbreaking cultural extravaganza that creates an immersive environment where visitors can experience the world's most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it's a living, breathing celebration of global unity and cultural diversity."
+    },
+    "features": {
+      "title": "Key Features",
+      "facades": "Authentic Facades",
+      "facadesDesc": "Meticulously crafted architectural replicas representing different cultures and regions",
+      "souks": "Cultural Souks",
+      "souksDesc": "Traditional marketplaces offering authentic products and cultural experiences",
+      "pavilions": "Cultural Pavilions",
+      "pavilionsDesc": "Interactive spaces showcasing the heritage and traditions of various cultures",
+      "entertainment": "Live Entertainment",
+      "entertainmentDesc": "Continuous performances, shows, and cultural demonstrations throughout the day"
+    }
   },
   "stats": {
     "attractions": "Attractions",
@@ -138,6 +316,36 @@
       "date": "Date",
       "category": "Category",
       "search": "Search events..."
+    },
+    "page": {
+      "hero": {
+        "title": "Events & Entertainment",
+        "subtitle": "Experience the vibrant energy of live performances and cultural events"
+      },
+      "description": {
+        "title": "What's Happening",
+        "content": "Our events calendar is packed with exciting performances, cultural demonstrations, and entertainment that brings the world's cultures to life. From traditional dances to modern performances, there's always something happening at Global Carnival Jeddah."
+      },
+      "categories": {
+        "title": "Event Categories",
+        "subtitle": "Discover the different types of events we offer",
+        "cultural": {
+          "title": "Cultural Events",
+          "description": "Traditional performances and cultural demonstrations"
+        },
+        "entertainment": {
+          "title": "Entertainment",
+          "description": "Live music, dance shows, and theatrical performances"
+        },
+        "workshops": {
+          "title": "Interactive Workshops",
+          "description": "Hands-on activities and learning experiences"
+        },
+        "special": {
+          "title": "Special Events",
+          "description": "Seasonal celebrations and unique experiences"
+        }
+      }
     }
   },
   "attractions": {
@@ -156,6 +364,44 @@
       "entertainment": "Entertainment",
       "shopping": "Shopping",
       "dining": "Dining"
+    },
+    "page": {
+      "hero": {
+        "title": "Explore Attractions",
+        "subtitle": "Discover the exciting attractions that make our carnival unforgettable"
+      },
+      "description": {
+        "title": "What Makes Our Attractions Special",
+        "content": "Each attraction at Global Carnival Jeddah is designed to provide unique experiences that combine entertainment, education, and cultural immersion. From thrilling rides to cultural experiences, there's something for visitors of all ages."
+      },
+      "attractions": {
+        "title": "Featured Attractions",
+        "subtitle": "Explore our most popular attractions",
+        "adventurePark": {
+          "title": "Adventure Park",
+          "description": "Thrilling rides and adventures for all ages, featuring state-of-the-art attractions that combine excitement with safety."
+        },
+        "balloonPark": {
+          "title": "Balloon Park",
+          "description": "Colorful balloon displays and hot air balloon experiences that offer breathtaking views of the carnival and beyond."
+        },
+        "sportsCourt": {
+          "title": "Sports Court",
+          "description": "Multi-sport facilities for active visitors, including basketball, volleyball, and other recreational activities."
+        },
+        "foodKiosks": {
+          "title": "Food Kiosks",
+          "description": "Diverse street food from around the world, offering authentic flavors and culinary experiences."
+        },
+        "restaurants": {
+          "title": "Restaurants",
+          "description": "Fine dining experiences in cultural settings, featuring international cuisine and traditional dishes."
+        },
+        "parking": {
+          "title": "Parking",
+          "description": "Convenient parking facilities for all visitors, ensuring easy access to the carnival experience."
+        }
+      }
     }
   },
   "dining": {
@@ -166,6 +412,104 @@
       "price": "Price Level",
       "rating": "Rating",
       "search": "Search restaurants..."
+    },
+    "page": {
+      "hero": {
+        "title": "Global Dining Experience",
+        "subtitle": "Savor authentic flavors from around the world"
+      },
+      "description": {
+        "title": "What Makes Our Dining Special",
+        "content": "Our dining experience goes beyond just food—it's a journey through the world's most beloved cuisines. Each restaurant and food kiosk is carefully selected to provide authentic flavors and cultural experiences."
+      },
+      "cuisines": {
+        "title": "Cuisine Types",
+        "subtitle": "Explore the diverse culinary offerings available",
+        "middleEastern": {
+          "title": "Middle Eastern",
+          "description": "Traditional Arabic, Turkish, and Mediterranean cuisines"
+        },
+        "asian": {
+          "title": "Asian",
+          "description": "Chinese, Japanese, Korean, and Southeast Asian flavors"
+        },
+        "european": {
+          "title": "European",
+          "description": "Italian, French, Spanish, and other European cuisines"
+        },
+        "international": {
+          "title": "International",
+          "description": "Fusion and international dishes from around the world"
+        }
+      }
+    }
+  },
+  "food": {
+    "hero": {
+      "title": "Global Cuisine",
+      "subtitle": "A passport-free feast of world flavors"
+    },
+    "description": {
+      "title": "Culinary Journey",
+      "content": "Global Carnival Jeddah serves a passport‑free feast: tandoor‑blistered naan with butter chicken, Pakistan's spice‑laced chapli kebabs, delicately layered Moroccan pastilla, and Egypt's tangy tomato‑topped koshari. Sweet teeth indulge in honey‑soaked Turkish baklava, pistachio‑rich halva, and medjool dates stuffed with saffron‑kissed almond paste. Adventurous eaters chase umami through East‑Asian sushi rolls, steaming dim sum baskets, and crispy Korean corn dogs. Drinks range from frothy mango lassi and cardamom‑fragrant Arabic qahwa to chilled hibiscus karkadé, velvety Turkish coffee, refreshing Moroccan mint tea, and matcha‑whisked bubble tea. Centuries‑old recipes meet Instagram‑ready street eats, letting every palate tour the world without ever leaving Jeddah."
+    },
+    "gallery": {
+      "title": "Explore Our Menu",
+      "subtitle": "Discover authentic flavors from around the world, each dish telling a unique story of cultural heritage and culinary excellence"
+    },
+    "categories": {
+      "title": "Culinary Categories",
+      "subtitle": "Our diverse menu is organized into four main categories, each representing the rich flavors of global cuisine",
+      "mainDishes": {
+        "title": "Main Dishes",
+        "description": "Tandoor naan, chapli kebabs, Moroccan pastilla, and Egyptian koshari"
+      },
+      "desserts": {
+        "title": "Desserts & Sweets",
+        "description": "Turkish baklava, pistachio halva, and saffron-stuffed dates"
+      },
+      "streetFood": {
+        "title": "Street Food",
+        "description": "Sushi rolls, dim sum baskets, and Korean corn dogs"
+      },
+      "beverages": {
+        "title": "Beverages",
+        "description": "Mango lassi, Arabic qahwa, Turkish coffee, and bubble tea"
+      }
+    }
+  },
+  "activities": {
+    "hero": {
+      "title": "Interactive Activities",
+      "subtitle": "Hands-on fun for all ages"
+    },
+    "description": {
+      "title": "Festival Fun",
+      "content": "The festival brims with hands‑on fun: children can unleash their creativity at the open‑air drawing corners, while visitors of all ages join a colorful welcome parade filled with drummers, mascots, and friendly greeters handing out souvenir badges. Cultural hosts offer quick lessons in traditional embroidery, letting you stitch a keepsake motif, and calligraphy artists personalize bookmarks on the spot. Rotating stage shows light up the day and night—folk dances, fusion bands, magic acts, and lively storytelling keep crowds cheering between activities. Add face‑painting booths, mini pottery‑painting tables, quick henna designs, and selfie stations decked in regional backdrops, and every guest—young or grown‑up—finds an activity to spark imagination and celebrate the festival's vibrant spirit."
+    },
+    "gallery": {
+      "title": "Explore Our Activities",
+      "subtitle": "Discover interactive experiences and entertainment that bring the festival to life"
+    },
+    "categories": {
+      "title": "Activity Categories",
+      "subtitle": "Our festival offers diverse activities organized into four main categories for all ages and interests",
+      "creativeWorkshops": {
+        "title": "Creative Workshops",
+        "description": "Drawing corners, pottery painting, embroidery lessons, and calligraphy"
+      },
+      "culturalActivities": {
+        "title": "Cultural Activities",
+        "description": "Welcome parades, henna designs, and cultural demonstrations"
+      },
+      "stageEntertainment": {
+        "title": "Stage Entertainment",
+        "description": "Folk dances, fusion bands, magic acts, and storytelling"
+      },
+      "interactiveFun": {
+        "title": "Interactive Fun",
+        "description": "Face painting, selfie stations, and family activities"
+      }
     }
   },
   "directory": {
@@ -176,11 +520,52 @@
       "services": "Services",
       "entertainment": "Entertainment",
       "wellness": "Wellness"
+    },
+    "page": {
+      "hero": {
+        "title": "Business Directory",
+        "subtitle": "Find all the businesses and services at Global Carnival Jeddah"
+      },
+      "description": {
+        "title": "What We Offer",
+        "content": "Our comprehensive business directory helps you find everything you need during your visit. From shopping and dining to services and entertainment, discover all the businesses that make our carnival a complete experience."
+      },
+      "search": {
+        "title": "Search & Filter",
+        "subtitle": "Find exactly what you're looking for",
+        "placeholder": "Search businesses, services, or categories...",
+        "filters": {
+          "category": "Category",
+          "location": "Location",
+          "rating": "Rating",
+          "price": "Price Range"
+        }
+      }
     }
   },
   "gallery": {
     "title": "Photo Gallery",
-    "viewImage": "View Image"
+    "viewImage": "View Image",
+    "page": {
+      "hero": {
+        "title": "Photo Gallery",
+        "subtitle": "Capture the magic and beauty of Global Carnival Jeddah"
+      },
+      "description": {
+        "title": "Visual Journey",
+        "content": "Our gallery showcases the vibrant colors, cultural richness, and unforgettable moments that make Global Carnival Jeddah a truly special place. Browse through our collection of photos to get a glimpse of what awaits you."
+      },
+      "categories": {
+        "title": "Gallery Categories",
+        "subtitle": "Explore our photos by category",
+        "architecture": "Architecture & Facades",
+        "culture": "Cultural Experiences",
+        "food": "Food & Dining",
+        "entertainment": "Entertainment & Shows",
+        "shopping": "Shopping & Souks",
+        "activities": "Activities & Workshops"
+      }
+    }
   },
   "contact": {
     "title": "Get In Touch",
@@ -206,24 +591,148 @@
       "phone": "+966 11 234 5678",
       "email": "info@globalcarnivaljeddah.com",
       "hours": "Open Daily: 9:00 AM - 11:00 PM"
+    },
+    "page": {
+      "hero": {
+        "title": "Get In Touch",
+        "subtitle": "We'd love to hear from you and answer any questions you may have"
+      },
+      "description": {
+        "title": "How Can We Help?",
+        "content": "Whether you have questions about visiting, want to partner with us, or need information about our events, our team is here to help. Reach out to us and we'll get back to you as soon as possible."
+      },
+      "contactMethods": {
+        "title": "Contact Methods",
+        "subtitle": "Choose the best way to reach us",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "hours": "Operating Hours"
+      }
     }
   },
-  "footer": {
-    "newsletter": {
-      "title": "Stay Updated",
-      "description": "Subscribe to our newsletter for the latest events and updates",
-      "placeholder": "Enter your email",
-      "subscribe": "Subscribe"
-    },
-    "social": "Follow Us",
-    "copyright": "All rights reserved © Global carnival Jeddah, 2025.",
-    "links": {
+      "footer": {
+      "newsletter": {
+        "title": "Stay Updated",
+        "description": "Subscribe to our newsletter for the latest events and updates",
+        "placeholder": "Enter your email",
+        "subscribe": "Subscribe"
+      },
+      "social": "Follow Us",
+      "copyright": "All rights reserved © Global carnival Jeddah, 2025.",
+          "links": {
       "privacy": "Privacy Policy",
       "terms": "Terms & Conditions"
+    },
+    "pages": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "How we protect and handle your information",
+        "lastUpdated": "Last updated: January 2025",
+        "introduction": "This Privacy Policy describes how Global Carnival Jeddah collects, uses, and protects your personal information when you visit our website or attend our events.",
+        "sections": {
+          "informationWeCollect": "Information We Collect",
+          "howWeUseInformation": "How We Use Your Information",
+          "informationSharing": "Information Sharing",
+          "dataSecurity": "Data Security",
+          "yourRights": "Your Rights",
+          "contactUs": "Contact Us"
+        }
+      },
+      "terms": {
+        "title": "Terms & Conditions",
+        "subtitle": "Please read these terms carefully before using our services",
+        "lastUpdated": "Last updated: January 2025",
+        "introduction": "These Terms and Conditions govern your use of Global Carnival Jeddah's website and services. By using our services, you agree to these terms.",
+        "sections": {
+          "acceptance": "Acceptance of Terms",
+          "useOfServices": "Use of Services",
+          "intellectualProperty": "Intellectual Property",
+          "limitationOfLiability": "Limitation of Liability",
+          "governingLaw": "Governing Law",
+          "changes": "Changes to Terms"
+        }
+      }
     },
     "eventInfo": {
       "dates": "23rd September 2025 → 9th April 2026",
       "location": "Jeddah, Saudi Arabia"
+    },
+    "brandDescription": "Facades, Shops, Pavilions, and Kiosks for Carnivals. Experience the world's cultures in one extraordinary destination.",
+    "eventDates": "Event Dates",
+    "explore": "Explore",
+    "support": "Support",
+    "business": "Business",
+    "contactInformation": "Contact Information",
+    "footerLinks": {
+      "souks": "Souks",
+      "highlights": "Highlights",
+      "products": "Products",
+      "foodBeverages": "Food & Beverages",
+      "activities": "Activities",
+      "contactUs": "Contact Us",
+      "faq": "FAQ",
+      "accessibility": "Accessibility",
+      "safety": "Safety",
+      "partnerWithUs": "Partner With Us",
+      "vendorInformation": "Vendor Information",
+      "businessOpportunities": "Business Opportunities",
+      "pressKit": "Press Kit"
+    },
+    "contact": {
+      "phone": "+966 11 234 5678",
+      "email": "info@globalcarnivaljeddah.com",
+      "hours": "Open Daily: 9:00 AM - 11:00 PM"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  },
+  "components": {
+    "homepageTeasers": {
+      "title": "Discover Global Carnival Jeddah",
+      "subtitle": "Experience the world's cultures, flavors, and traditions in one extraordinary destination"
+    },
+    "souksPreview": {
+      "tags": {
+        "popular": "Popular",
+        "new": "New",
+        "featured": "Featured"
+      },
+      "duration": "Open Daily",
+      "exploreNow": "Explore Now",
+      "exploreAllSouks": "Explore All Souks"
+    },
+    "highlightsPreview": {
+      "descriptions": {
+        "adventurePark": "Thrilling rides and adventures for all ages",
+        "balloonPark": "Colorful balloon displays and hot air balloon experiences",
+        "sportsCourt": "Multi-sport facilities for active visitors",
+        "foodKiosks": "Diverse street food from around the world",
+        "restaurants": "Fine dining experiences in cultural settings",
+        "parking": "Convenient parking facilities for all visitors"
+      },
+      "exploreAllHighlights": "Explore All Highlights",
+      "navigation": {
+        "previous": "Previous highlight",
+        "next": "Next highlight",
+        "goToHighlight": "Go to highlight"
+      }
+    },
+    "partnerCTA": {
+      "benefitDescriptions": {
+        "tailoredFestival": "Custom festival experiences tailored to your brand and audience",
+        "culturalExperience": "Access to diverse cultural experiences and global markets",
+        "uniqueVision": "Be part of a unique vision that brings the world to Saudi Arabia",
+        "endToEnd": "Comprehensive services from planning to execution",
+        "expertOperations": "Professional on-site operations and management",
+        "strongNetwork": "Access to our extensive network of cultural partners",
+        "seamlessExecution": "Smooth and professional event execution",
+        "guaranteedSuccess": "Proven track record and success guarantees"
+      }
     }
   },
   "common": {
@@ -238,6 +747,19 @@
     "search": "Search",
     "filter": "Filter",
     "clear": "Clear",
-    "apply": "Apply"
+    "apply": "Apply",
+    "foodDetail": "Food detail",
+    "foodItem": "Food item",
+    "activityItem": "Activity item",
+    "aboutPage": "About Global Carnival Jeddah",
+    "welcomeTo": "Welcome to Global Carnival Jeddah",
+    "whatMakesSpecial": "What Makes Us Special",
+    "whatMakesSpecialDesc": "Discover the unique elements that make Global Carnival Jeddah an extraordinary cultural experience",
+    "globalCulturalDiversity": "Global Cultural Diversity",
+    "globalCulturalDiversityDesc": "Experience authentic representations of cultures from every continent, each carefully curated to preserve their unique traditions and heritage.",
+    "interactiveExperiences": "Interactive Experiences",
+    "interactiveExperiencesDesc": "Engage with cultural ambassadors, participate in traditional activities, and create lasting memories through hands-on experiences.",
+    "strategicLocation": "Strategic Location",
+    "strategicLocationDesc": "Located in the vibrant city of Jeddah, a gateway to the Middle East, making it accessible to visitors from around the world."
   }
 }
