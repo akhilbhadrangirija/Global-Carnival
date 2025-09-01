@@ -11,10 +11,9 @@ export default function HomePage() {
     <>
       <Hero />
       <AboutPreview />
-      {/* <Stats /> */}
+      <HighlightsPreview />
       <HomepageTeasers />
       <SouksPreview />
-      <HighlightsPreview />
       <PartnerCTA />
     </>
   );
