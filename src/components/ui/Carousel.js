@@ -47,7 +47,7 @@ export function Carousel({
 
   return (
     <div className={cn('relative w-full overflow-hidden', className)} {...props}>
-      <div className="relative aspect-[16/9] w-full">
+      <div className="relative md:aspect-[16/9] aspect-[9/16] w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}

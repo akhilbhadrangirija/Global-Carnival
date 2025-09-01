@@ -33,7 +33,7 @@ export default function SouksPage() {
       name: t('regions.turkeyMorocco.name'),
       description: t('regions.turkeyMorocco.description'),
       longDescription: "Immerse yourself in the rich cultural heritage of Turkey and Morocco through our authentic souk featuring Ottoman-inspired crafts, traditional ceramics, handwoven textiles, Berber crafts, and leather goods. Experience the blend of Eastern and Western influences from Turkey and the exotic charm of Morocco from the vibrant markets of Marrakech to the coastal beauty of Casablanca.",
-      image: '/souks/shop/turkey-morocco-shop-1.jpg',
+      image: '/souks/TURKEY-MOROCCO.jpg',
       gallery: [
         '/souks/shop/turkey-morocco-shop-1.jpg',
         '/souks/shop/turkey-morocco-shop-2.jpg',
@@ -47,7 +47,7 @@ export default function SouksPage() {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
       longDescription: "Discover the refined elegance of East Asia through our authentic souk featuring silk textiles, porcelain ceramics, and traditional arts from China, Japan, and Korea. Experience the harmony and balance that defines Eastern aesthetics.",
-      image: '/souks/shop/east-asia-shop-1.jpg',
+      image: '/souks/EastAsia.jpg',
       gallery: [
         '/souks/shop/east-asia-shop-1.jpg',
         '/souks/shop/east-asia-shop-2.jpg',
@@ -61,7 +61,7 @@ export default function SouksPage() {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
       longDescription: "Experience the rich heritage of the Arabian Peninsula through our authentic GCC souk featuring traditional crafts, dates, and cultural goods. From the desert traditions to modern Gulf culture, discover the authentic Arabian experience.",
-      image: '/souks/shop/gcc-shop-1.jpg',
+      image: '/souks/GCC.jpg',
       gallery: [
         '/souks/shop/gcc-shop-1.jpg',
         '/souks/shop/gcc-shop-2.jpg',
