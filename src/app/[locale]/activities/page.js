@@ -31,7 +31,13 @@ export default function ActivitiesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative py-32 bg-gradient-to-br from-indigo-600 to-blue-700 text-white">
+      <section className="relative py-32 text-white">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/hero/hero_image2.jpg)'
+          }}
+        />
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container mx-auto px-4 text-center">
           <motion.h1

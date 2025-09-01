@@ -59,7 +59,7 @@ export function HighlightsPreview() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+    <section className="py-20 bg-gradient-to-br" style={{ backgroundImage: 'linear-gradient(to right, #000428, #004e92)' }}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,10 +68,10 @@ export function HighlightsPreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             {t('title')}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto">
             {t('description')}
           </p>
         </motion.div>
