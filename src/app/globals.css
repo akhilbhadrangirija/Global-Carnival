@@ -53,6 +53,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Oswald', system-ui, sans-serif;
   }
 
   /* RTL Support */
@@ -179,6 +180,10 @@
 
   .text-caption {
     @apply text-sm text-gray-500;
+  }
+
+  .font-oswald {
+    font-family: 'Oswald', system-ui, sans-serif;
   }
 }
 

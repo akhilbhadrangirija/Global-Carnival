@@ -48,8 +48,8 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['Oswald', 'system-ui', 'sans-serif'],
+        oswald: ['Oswald', 'system-ui', 'sans-serif'],
       },
     },
   },
