@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Store, Utensils, Palette, Users } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -12,29 +13,19 @@ export function HomepageTeasers() {
   const locale = useLocale();
 
   const teasers = [
-    // {
-    //   title: t('introduction.title'),
-    //   description: t('introduction.description'),
-    //   cta: t('introduction.cta'),
-    //   href: `/${locale}/about`,
-    //   icon: Globe,
-    //   color: 'from-blue-500 to-purple-600'
-    // },
-    // {
-    //   title: t('overview.title'),
-    //   description: t('overview.description'),
-    //   cta: t('overview.cta'),
-    //   href: `/${locale}/overview`,
-    //   icon: Store,
-    //   color: 'from-green-500 to-teal-600'
-    // },
     {
       title: t('products.title'),
       description: t('products.description'),
       cta: t('products.cta'),
       href: `/${locale}/products`,
       icon: Store,
-      color: 'from-orange-500 to-red-600'
+      color: 'from-orange-500 to-red-600',
+      images: [
+        { src: '/products/product.jpg', alt: 'Traditional crafts' },
+        { src: '/products/cloth.jpg', alt: 'Textiles and fabrics' },
+        { src: '/products/cosmetic.jpg', alt: 'Cosmetics and beauty' },
+        { src: '/products/Handicraft.jpg', alt: 'Handicrafts and art' }
+      ]
     },
     {
       title: t('food.title'),
@@ -42,7 +33,13 @@ export function HomepageTeasers() {
       cta: t('food.cta'),
       href: `/${locale}/food`,
       icon: Utensils,
-      color: 'from-pink-500 to-rose-600'
+      color: 'from-pink-500 to-rose-600',
+      images: [
+        { src: '/food/food.jpg', alt: 'Main dishes' },
+        { src: '/food/food copy.jpg', alt: 'Traditional cuisine' },
+        { src: '/food/drinks.jpg', alt: 'Beverages and drinks' },
+        { src: '/food/food copy 2.jpg', alt: 'Street food' }
+      ]
     },
     {
       title: t('activities.title'),
@@ -50,7 +47,13 @@ export function HomepageTeasers() {
       cta: t('activities.cta'),
       href: `/${locale}/activities`,
       icon: Palette,
-      color: 'from-indigo-500 to-blue-600'
+      color: 'from-indigo-500 to-blue-600',
+      images: [
+        { src: '/activities/activity.jpg', alt: 'Creative workshops' },
+        { src: '/activities/activity copy.jpg', alt: 'Cultural activities' },
+        { src: '/activities/activity copy 2.jpg', alt: 'Stage entertainment' },
+        { src: '/activities/activity copy 3.jpg', alt: 'Interactive fun' }
+      ]
     }
   ];
 
@@ -81,24 +84,59 @@ export function HomepageTeasers() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full p-6 hover:shadow-xl transition-all duration-300 group">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${teaser.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <teaser.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {teaser.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 flex-grow">
-                  {teaser.description}
-                </p>
-                
-                <Link href={teaser.href}>
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    {teaser.cta}
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+              <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                <Link href={teaser.href} className="block h-full">
+                  {/* Image Grid Section */}
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="grid grid-cols-2 grid-rows-2 h-full">
+                      {teaser.images.map((image, imgIndex) => (
+                        <div key={imgIndex} className="relative overflow-hidden">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 transition-opacity duration-300" />
+                        </div>
+                      ))}
+                    </div>
+                    <div className={`absolute top-4 right-4 w-12 h-12 rounded-lg bg-gradient-to-r ${teaser.color} flex items-center justify-center shadow-lg`}>
+                      <teaser.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="p-6 flex flex-col h-full">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+                      {teaser.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-4 flex-grow leading-relaxed">
+                      {teaser.description}
+                    </p>
+                   
+                    {/* //TODO: Add More Details Button */}
+                    {/* <div className="space-y-3 z-10">
+                      <div className="flex items-center text-primary font-semibold group-hover:text-primary-dark transition-colors duration-300">
+                        <span>{teaser.cta}</span>
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                      
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full text-sm border-2 border-gray-300 text-gray-700 hover:border-primary hover:bg-primary hover:text-white transition-all duration-300"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(teaser.href, '_blank');
+                        }}
+                      >
+                        More Details
+                      </Button>
+                    </div> */}
+                  </div>
                 </Link>
               </Card>
             </motion.div>

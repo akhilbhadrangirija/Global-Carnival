@@ -75,8 +75,14 @@ export default function PartnerPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative py-32 bg-gradient-to-br from-primary to-primary/80 text-white">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative py-32 text-white">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/hero/hero_image1.jpg)'
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

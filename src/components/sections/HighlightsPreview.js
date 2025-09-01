@@ -21,7 +21,7 @@ export function HighlightsPreview() {
     },
     {
       title: t('attractions.balloonPark'),
-      image: '/attractions/balloonPark.jpg',
+      image: '/attractions/ballonPark.jpg',
       description: 'Colorful balloon displays and hot air balloon experiences'
     },
     {
@@ -36,7 +36,7 @@ export function HighlightsPreview() {
     },
     {
       title: t('attractions.restaurants'),
-      image: '/attractions/restaurent.jpg',
+      image: '/attractions/restaurant1.jpg',
       description: 'Fine dining experiences in cultural settings'
     },
     {

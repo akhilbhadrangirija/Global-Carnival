@@ -55,8 +55,16 @@ export function PartnerCTA() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative text-white overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/hero/hero_image1.jpg)'
+        }}
+      />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
