@@ -23,7 +23,7 @@ export function SouksPreview() {
     {
       name: t('regions.turkeyMorocco.name'),
       description: t('regions.turkeyMorocco.description'),
-      image: '/souks/shop/turkey-morocco-shop-1.jpg',
+      image: '/souks/TURKEY-MOROCCO.jpg',
       href: `/${locale}/souks`,
       tag: 'New',
       duration: 'Open Daily'
@@ -31,7 +31,7 @@ export function SouksPreview() {
     {
       name: t('regions.eastAsia.name'),
       description: t('regions.eastAsia.description'),
-      image: '/souks/shop/east-asia-shop-1.jpg',
+      image: '/souks/EastAsia.jpg',
       href: `/${locale}/souks`,
       tag: 'Featured',
       duration: 'Open Daily'
@@ -39,7 +39,7 @@ export function SouksPreview() {
     {
       name: t('regions.gcc.name'),
       description: t('regions.gcc.description'),
-      image: '/souks/shop/gcc-shop-1.jpg',
+      image: '/souks/GCC.jpg',
       href: `/${locale}/souks`,
       tag: 'Popular',
       duration: 'Open Daily'
