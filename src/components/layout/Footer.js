@@ -60,13 +60,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-2">
-          <Link href={`/${locale}`} className="flex items-center space-x-2 bg-white rounded-lg p-2 w-fit">
+          <Link href={`/${locale}`} className='mb-4'>
             <Image
               src="/logo.png"
               alt="Global Carnival Jeddah Logo"
-              width={64}
-              height={48}
-              className="w-32 h-8 lg:w-32 lg:h-10 object-contain"
+              width={150}
+              height={100}
+              className="object-contain mb-4"
               priority
             />
           </Link>
@@ -75,7 +75,7 @@ export function Footer() {
             </p>
             
             {/* Event Information */}
-            <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+            <div className="mb-6 rounded-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <Calendar className="w-5 h-5 text-primary" />
                 <span className="text-sm font-semibold text-gray-900">{t('eventDates')}</span>
@@ -245,13 +245,13 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-end space-y-4 md:space-y-0">
             <p className="text-gray-600 text-sm">
               {t('copyright')}
             </p>
             
             {/* Organized by Section */}
-            <div className="flex flex-col items-center space-y-2">
+            <div className="flex flex-col items-end">
               <p className="text-gray-600 text-sm">Organized by</p>
               <a 
                 href="https://www.barakatexhibitions.com/" 
@@ -262,8 +262,8 @@ export function Footer() {
                 <Image 
                   src="/ShamsAl.png" 
                   alt="Shams Al Logo" 
-                  width={150} 
-                  height={50}
+                  width={300} 
+                  height={100}
                   className="object-contain"
                 />
               </a>
