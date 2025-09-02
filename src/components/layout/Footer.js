@@ -53,7 +53,7 @@ export function Footer() {
 
   return (
     <footer 
-      className="bg-gray-900 text-white"
+      className="bg-gray-50 text-gray-900"
       dir={getDirection(locale)}
     >
       <div className="container mx-auto px-4 py-16">
@@ -70,22 +70,22 @@ export function Footer() {
               priority
             />
           </Link>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-600 mb-6 max-w-md">
               {t('brandDescription')}
             </p>
             
             {/* Event Information */}
-            <div className="mb-6 p-4 bg-gray-800 rounded-lg">
+            <div className="mb-6 p-4 bg-gray-100 rounded-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <Calendar className="w-5 h-5 text-primary" />
-                <span className="text-sm font-semibold text-white">{t('eventDates')}</span>
+                <span className="text-sm font-semibold text-gray-900">{t('eventDates')}</span>
               </div>
-              <p className="text-gray-300 text-sm mb-2">
+              <p className="text-gray-700 text-sm mb-2">
                 {t('eventInfo.dates')}
               </p>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-gray-300 text-sm">
+                <span className="text-gray-700 text-sm">
                   {t('eventInfo.location')}
                 </span>
               </div>
@@ -94,7 +94,7 @@ export function Footer() {
             {/* Newsletter Signup */}
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-3">{t('newsletter.title')}</h3>
-              <p className="text-gray-300 mb-4 text-sm">
+              <p className="text-gray-600 mb-4 text-sm">
                 {t('newsletter.description')}
               </p>
               <form onSubmit={handleNewsletterSubmit} className="flex space-x-2">
@@ -103,7 +103,7 @@ export function Footer() {
                   placeholder={t('newsletter.placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  className="flex-1 bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   required
                 />
                 <Button type="submit" size="sm">
@@ -166,54 +166,54 @@ export function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-primary" />
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-gray-700 text-sm">
                     {t('eventInfo.location')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-gray-700 text-sm">
                     {t('contact.phone')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-gray-700 text-sm">
                     {t('contact.email')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-primary" />
-                  <span className="text-gray-300 text-sm">
+                  <span className="text-gray-700 text-sm">
                     {t('contact.hours')}
                   </span>
                 </div>
                 
                 {/* Additional Contact Numbers */}
-                <div className="mt-4 pt-4 border-t border-gray-700">
-                  <h4 className="text-sm font-semibold text-white mb-3">Contact Team</h4>
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Contact Team</h4>
                   <div className="space-y-2">
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-300 text-sm">
+                      <span className="text-gray-700 text-sm">
                         Anil: +971 50 354 5972
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-300 text-sm">
+                      <span className="text-gray-700 text-sm">
                         +966 53 857 8872
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-300 text-sm">
+                      <span className="text-gray-700 text-sm">
                         Rinu: +971 50 275 5860
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-300 text-sm">
+                      <span className="text-gray-700 text-sm">
                         Himanshu: +971 55 413 7686
                       </span>
                     </div>
@@ -231,7 +231,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    className="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
@@ -244,15 +244,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        <div className="border-t border-gray-200 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               {t('copyright')}
             </p>
             
             {/* Organized by Section */}
             <div className="flex flex-col items-center space-y-2">
-              <p className="text-gray-400 text-sm">Organized by</p>
+              <p className="text-gray-600 text-sm">Organized by</p>
               <a 
                 href="https://www.barakatexhibitions.com/" 
                 target="_blank" 
