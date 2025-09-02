@@ -14,14 +14,6 @@ export default function ProductsPage() {
     // Cosmetics
     '/products/cosmetic.jpg',
     '/products/cosmetics.jpg',
-    // Food & Drinks
-    '/products/food.jpg',
-    '/products/food copy.jpg',
-    '/products/food copy 2.jpg',
-    '/products/food copy 3.jpg',
-    '/products/drinks.jpg',
-    '/products/drinks copy.jpg',
-    '/products/drinks copy 2.jpg',
     // Handicrafts
     '/products/Handicraft.jpg',
     '/products/Handicraft copy.jpg',
