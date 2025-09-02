@@ -6,7 +6,6 @@ import { Footer } from '@/components/layout/Footer';
 export default async function LocaleLayout({ children, params }) {
   // Enable static rendering
   const { locale } = await params;
-  console.log('params locale',locale)
   setRequestLocale(locale);
   
   const messages = await getMessages();
