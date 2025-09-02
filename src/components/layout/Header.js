@@ -132,9 +132,11 @@ export function Header() {
             </div>
 
             {/* CTA Button */}
-            <Button className="hidden sm:inline-flex">
-              {t('planVisit')}
-            </Button>
+            <Link href={`/${locale}/contact`}>
+              <Button className="hidden sm:inline-flex">
+                {t('contactUs')}
+              </Button>
+            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -171,9 +173,11 @@ export function Header() {
                   </Link>
                 ))}
                 <div className="px-4 pt-4">
-                  <Button className="w-full">
-                    {t('planVisit')}
-                  </Button>
+                  <Link href={`/${locale}/contact`} onClick={() => setIsMenuOpen(false)}>
+                    <Button className="w-full">
+                      {t('contactUs')}
+                    </Button>
+                  </Link>
                 </div>
               </nav>
             </motion.div>

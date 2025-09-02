@@ -1,9 +1,13 @@
 "use client";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 import { MapPin, Star, Users, Zap, Heart, Award } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export default function HighlightsPage() {
+  const locale = useLocale();
+  const t = useTranslations('navigation');
   const highlights = [
     {
       id: 'adventurePark',
@@ -165,12 +169,13 @@ export default function HighlightsPage() {
               Ready to Experience the Magic?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Plan your visit to Global Carnival Jeddah and discover all these amazing highlights and more
+              {/* Keeping copy simple; button is translated */}
+              Have questions or need more info? Get in touch with our team.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold">
-                Plan Your Visit
-              </Button>
+              <Link href={`/${locale}/contact`} className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold inline-flex items-center justify-center rounded-md">
+                {t('contactUs')}
+              </Link>
               <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 font-semibold">
                 View Schedule
               </Button>

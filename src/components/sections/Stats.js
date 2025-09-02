@@ -1,11 +1,14 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Users, Calendar, MapPin, Star } from 'lucide-react';
 
 export function Stats() {
   const t = useTranslations('stats');
+  const navT = useTranslations('navigation');
+  const locale = useLocale();
 
   const stats = [
     {
@@ -129,13 +132,13 @@ export function Stats() {
               Ready to Experience the Magic?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join thousands of visitors who have already discovered the wonders of Global carnival Jeddah. 
-              Plan your visit today and create memories that will last a lifetime.
+              Join thousands of visitors who have already discovered the wonders of Global Carnival Jeddah. 
+              Have questions or need help planning? Our team is here to assist.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Plan Your Visit
-              </button>
+              <Link href={`/${locale}/contact`} className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                {navT('contactUs')}
+              </Link>
               <button className="text-primary font-semibold hover:text-primary/80 transition-colors">
                 View Virtual Tour →
               </button>
