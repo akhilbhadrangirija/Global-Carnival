@@ -232,7 +232,7 @@ SMTP_USER=your-email@example.com
 SMTP_PASS=your-password
 
 # WhatsApp Integration
-WHATSAPP_NUMBER=966112345678
+WHATSAPP_NUMBER=971503545972
 ```
 
 ### Next.js Configuration

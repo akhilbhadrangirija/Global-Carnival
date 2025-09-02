@@ -51,7 +51,7 @@ export default function ContactPage() {
     const message = encodeURIComponent(
       `Hello! I'd like to get in touch about Global carnival Jeddah.`
     );
-    window.open(`https://wa.me/966112345678?text=${message}`, '_blank');
+    window.open(`https://wa.me/971503545972?text=${message}`, '_blank');
   };
 
   return (

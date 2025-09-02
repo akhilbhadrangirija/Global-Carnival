@@ -49,7 +49,7 @@ const visitorInfo = [
   {
     icon: Phone,
     title: "Contact",
-    details: "+966 11 234 5678",
+    details: "+971 50 354 5972",
     color: "text-purple-600"
   },
   {

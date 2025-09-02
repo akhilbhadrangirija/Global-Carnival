@@ -17,7 +17,7 @@ const restaurants = [
     cuisine: "Japanese",
     priceLevel: "$$",
     rating: 4.8,
-    phone: "+966 11 234 5678",
+    phone: "+971 50 354 5972",
     website: "www.sakura-garden.com",
     hours: "11:00 AM - 10:00 PM",
     location: "East Wing, Restaurant #3",

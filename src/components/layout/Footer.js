@@ -193,6 +193,37 @@ export function Footer() {
                     {t('contact.hours')}
                   </span>
                 </div>
+                
+                {/* Additional Contact Numbers */}
+                <div className="mt-4 pt-4 border-t border-gray-700">
+                  <h4 className="text-sm font-semibold text-white mb-3">Contact Team</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="text-gray-300 text-sm">
+                        Anil: +971 50 354 5972
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="text-gray-300 text-sm">
+                        +966 53 857 8872
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="text-gray-300 text-sm">
+                        Rinu: +971 50 275 5860
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="text-gray-300 text-sm">
+                        Himanshu: +971 55 413 7686
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

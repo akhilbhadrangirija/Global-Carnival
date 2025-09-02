@@ -17,7 +17,7 @@ const businesses = [
     category: "shops",
     type: "Handmade Goods",
     rating: 4.9,
-    phone: "+966 11 234 5678",
+    phone: "+971 50 354 5972",
     website: "www.artisancrafts.com",
     hours: "9:00 AM - 8:00 PM",
     location: "West Quarter, Shop #12",
