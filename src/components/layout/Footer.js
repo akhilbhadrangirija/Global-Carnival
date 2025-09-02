@@ -114,7 +114,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">{t('explore')}</h3>
             <ul className="space-y-2">
               {footerLinks.explore.map((link) => (
@@ -128,10 +128,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Support & Business */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">{t('support')}</h3>
             <ul className="space-y-2 mb-6">
               {footerLinks.support.map((link) => (
@@ -146,7 +146,7 @@ export function Footer() {
               ))}
             </ul>
             
-            {/* <h3 className="text-lg font-semibold mb-4">Business</h3>
+            <h3 className="text-lg font-semibold mb-4">Business</h3>
             <ul className="space-y-2">
               {footerLinks.business.map((link) => (
                 <li key={link.name}>
@@ -158,14 +158,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul> */}
-          </div>
-        </div>
-
-        {/* Contact Info & Social */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Information */}
+            </ul>
+          </div> */}
+          {/* Contact Information */}
             <div>
               <h3 className="text-lg font-semibold mb-4">{t('contactInformation')}</h3>
               <div className="space-y-3">
@@ -226,7 +221,6 @@ export function Footer() {
                 </div>
               </div>
             </div>
-
             {/* Social Links */}
             <div>
               <h3 className="text-lg font-semibold mb-4">{t('socialHeader')}</h3>
@@ -247,7 +241,6 @@ export function Footer() {
                 ))}
               </div>
             </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}

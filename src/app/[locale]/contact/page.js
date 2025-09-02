@@ -57,17 +57,17 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="relative py-32 bg-gradient-to-br" style={{ backgroundImage: 'linear-gradient(to right, #000428, #004e92)' }}>
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               {t('contact.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {`Have questions or want to learn more? We'd love to hear from you. Get in touch and we'll respond as soon as possible.
             `}</p>
           </motion.div>
@@ -294,12 +294,17 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Location
                 </h3>
-                <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <MapPin className="w-12 h-12 mx-auto mb-2" />
-                    <p>Interactive Map Coming Soon</p>
-                    <p className="text-sm">Leaflet integration will be added here</p>
-                  </div>
+                <div className="bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.085046559461!2d39.19332061349139!3d21.57688855456441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d10044cd8edb%3A0x8f81370fb685f24b!2sCenomi%20Aziz%20Mall.!5e0!3m2!1sen!2sin!4v1756787543991!5m2!1sen!2sin"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Cenomi Aziz Mall Location"
+                  ></iframe>
                 </div>
               </div>
             </motion.div>
