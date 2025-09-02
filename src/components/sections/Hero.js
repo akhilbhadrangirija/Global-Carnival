@@ -112,13 +112,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex justify-center mb-8"
           >
-            <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl px-6 py-4 flex flex-col md:flex-row items-center gap-4 shadow-lg">
-              <div className="flex items-center space-x-2 text-lg md:text-xl">
+            <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl px-4 py-3 flex flex-col md:flex-row items-center gap-2 shadow-lg">
+              <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
                 <span>{t('dates')}</span>
               </div>
               <span className="hidden md:inline-block w-px h-6 bg-white/20 mx-4" />
-              <div className="flex items-center space-x-2 text-lg md:text-xl text-gray-200">
+              <div className="flex items-center space-x-2 text-gray-200">
                 <MapPin className="w-5 h-5" />
                 <span>{t('location')}</span>
               </div>

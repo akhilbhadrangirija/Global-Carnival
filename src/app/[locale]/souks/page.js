@@ -75,7 +75,7 @@ export default function SouksPage() {
       name: t('regions.egypt.name'),
       description: t('regions.egypt.description'),
       longDescription: "Journey through ancient Egypt in our authentic souk featuring traditional artifacts, papyrus scrolls, and cultural crafts. From the pyramids to the Nile, experience the timeless legacy of one of the world&apos;s oldest civilizations.",
-      image: '/souks/shop/egypt-shop-1.jpg',
+      image: '/souks/EGYPT.jpg',
       gallery: [
         '/souks/shop/egypt-shop-1.jpg',
         '/souks/shop/egypt-shop-2.jpg',
@@ -89,7 +89,7 @@ export default function SouksPage() {
       name: t('regions.africa.name'),
       description: t('regions.africa.description'),
       longDescription: "Explore the diverse cultures of Africa through our authentic souk featuring tribal art, traditional fabrics, and cultural artifacts. From the savannas to the rainforests, experience the rich tapestry of African heritage.",
-      image: '/souks/shop/egypt-shop-2.jpg',
+      image: '/souks/AFRICA.jpg',
       gallery: [
        '/souks/shop/egypt-shop-1.jpg',
         '/souks/shop/egypt-shop-2.jpg',
@@ -128,7 +128,7 @@ export default function SouksPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/hero/hero_image1.jpg)'
+            backgroundImage: 'url(/souks/AllSoucks.jpg)'
           }}
         />
         <div className="absolute inset-0 bg-black/20" />

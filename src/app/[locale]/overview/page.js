@@ -174,8 +174,9 @@ export default function OverviewPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
+                // image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
                 title: "Festive Atmosphere",
+                image: "/global-carnival.jpg",
                 description: "Vibrant celebrations and cultural performances"
               },
               {
