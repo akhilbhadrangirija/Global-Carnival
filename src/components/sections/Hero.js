@@ -126,7 +126,7 @@ export function Hero() {
                   src="/ShamsAl.png" 
                   alt="Shams Al Logo" 
                   width={300} 
-                  height={150}
+                  height={100}
                   className="object-contain"
                 />
               </a>

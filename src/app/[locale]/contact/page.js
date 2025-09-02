@@ -296,14 +296,14 @@ export default function ContactPage() {
                 </h3>
                 <div className="bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.085046559461!2d39.19332061349139!3d21.57688855456441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d10044cd8edb%3A0x8f81370fb685f24b!2sCenomi%20Aziz%20Mall.!5e0!3m2!1sen!2sin!4v1756787543991!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.2967310980894!2d39.198796900000005!3d21.5743375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d100783b5e59%3A0x390c13690b4c7c75!2scarnival%20Jeddah!5e0!3m2!1sen!2sin!4v1756806397206!5m2!1sen!2sin"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Cenomi Aziz Mall Location"
+                    title="Carnival Jeddah Location"
                   ></iframe>
                 </div>
               </div>
