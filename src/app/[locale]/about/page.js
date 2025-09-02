@@ -36,7 +36,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="w-6 h-6" />
-              <span>Jeddah, Saudi Arabia</span>
+              <span>M-09, Arabilla Building, Hor Al Anz East, Dubai -UAE</span>
             </div>
           </motion.div>
         </div>

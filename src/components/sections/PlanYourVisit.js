@@ -43,7 +43,7 @@ const visitorInfo = [
   {
     icon: MapPin,
     title: "Location",
-    details: "123 Oasis Boulevard, Downtown District",
+    details: "M-09, Arabilla Building, Hor Al Anz East, Dubai -UAE",
     color: "text-green-600"
   },
   {

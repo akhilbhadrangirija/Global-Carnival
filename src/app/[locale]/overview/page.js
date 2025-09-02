@@ -34,6 +34,67 @@ export default function OverviewPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Carnival Atmosphere
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Experience the festive atmosphere and cultural diversity that awaits you
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Festive Atmosphere",
+                image: "/global-carnival.jpg",
+                description: "Vibrant celebrations and cultural performances"
+              },
+              {
+                title: "Cultural Diversity",
+                image: "/diversity.jpg",
+                description: "Representation of cultures from around the world"
+              },
+              {
+                title: "Live Entertainment",
+                image: "/live_event.jpg",
+                description: "Dynamic performances and cultural shows"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="relative h-64 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-white/90">{item.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Project Overview Content */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -78,9 +139,10 @@ export default function OverviewPage() {
           </div>
         </div>
       </section>
+      
 
       {/* Key Features Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br" style={{ backgroundImage: 'linear-gradient(to right, #000428, #004e92)' }}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -89,10 +151,10 @@ export default function OverviewPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Project Highlights
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               Discover the key elements that make Global Carnival Jeddah a unique cultural destination
             </p>
           </motion.div>
@@ -154,67 +216,7 @@ export default function OverviewPage() {
       </section>
 
       {/* Supporting Images */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Carnival Atmosphere
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the festive atmosphere and cultural diversity that awaits you
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                // image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
-                title: "Festive Atmosphere",
-                image: "/global-carnival.jpg",
-                description: "Vibrant celebrations and cultural performances"
-              },
-              {
-                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-                title: "Cultural Diversity",
-                description: "Representation of cultures from around the world"
-              },
-              {
-                image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop",
-                title: "Live Entertainment",
-                description: "Dynamic performances and cultural shows"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="relative h-64 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-white/90">{item.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }
