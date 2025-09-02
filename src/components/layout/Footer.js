@@ -45,10 +45,10 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { name: t('social.facebook'), icon: Facebook, href: 'https://facebook.com' },
-    { name: t('social.twitter'), icon: Twitter, href: 'https://twitter.com' },
-    { name: t('social.instagram'), icon: Instagram, href: 'https://instagram.com' },
-    { name: t('social.youtube'), icon: Youtube, href: 'https://youtube.com' },
+    { name: t('social.facebook'), icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61579708906500' },
+    // { name: t('social.twitter'), icon: Twitter, href: 'https://twitter.com' },
+    { name: t('social.instagram'), icon: Instagram, href: 'https://www.instagram.com/global_carnival_jeddah/' },
+    { name: t('social.youtube'), icon: Youtube, href: 'https://www.youtube.com/channel/UCqpbvpvH_b-9-gHRSvEvdqg' },
   ];
 
   return (
@@ -256,14 +256,14 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               {t('copyright')}
             </p>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-white transition-colors">
                 {t('links.privacy')}
               </Link>
               <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-white transition-colors">
                 {t('links.terms')}
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
