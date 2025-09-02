@@ -160,8 +160,8 @@
     },
     "page": {
       "hero": {
-        "title": "Highlights of Global Carnival Jeddah",
-        "subtitle": "Discover the main attractions that make our carnival an extraordinary experience"
+        "title": "Highlights of the Carnival",
+        "subtitle": "Discover the main attractions and activities that make Global Carnival Jeddah an unforgettable experience"
       },
       "description": {
         "title": "What Makes Our Highlights Special",
@@ -170,28 +170,76 @@
       "attractions": {
         "adventurePark": {
           "title": "Adventure Park",
-          "description": "Thrilling rides and adventures for all ages, featuring state-of-the-art attractions that combine excitement with safety."
+          "description": "Thrilling rides and adventures for all ages",
+          "longDescription": "Experience the excitement of our Adventure Park featuring state-of-the-art rides, thrilling attractions, and family-friendly adventures. From gentle carousels for the little ones to adrenaline-pumping roller coasters for thrill-seekers, our Adventure Park offers something for everyone.",
+          "features": {
+            "familyRides": "Family Rides",
+            "thrillRides": "Thrill Rides",
+            "interactiveGames": "Interactive Games",
+            "safetyFirst": "Safety First"
+          }
         },
         "balloonPark": {
           "title": "Balloon Park",
-          "description": "Colorful balloon displays and hot air balloon experiences that offer breathtaking views of the carnival and beyond."
+          "description": "Children's park with fun inflated rides and bouncy attractions",
+          "longDescription": "Let your little ones bounce, slide, and play in our exciting Balloon Park featuring colorful inflated rides, bouncy castles, and interactive play structures. This safe and supervised children's area provides endless fun with age-appropriate attractions designed to keep kids entertained while parents can relax nearby.",
+          "features": {
+            "bouncyCastles": "Bouncy Castles",
+            "inflatedSlides": "Inflated Slides",
+            "safePlayAreas": "Safe Play Areas",
+            "supervisedActivities": "Supervised Activities"
+          }
         },
         "sportsCourt": {
           "title": "Sports Court",
-          "description": "Multi-sport facilities for active visitors, including basketball, volleyball, and other recreational activities."
+          "description": "Multi-sport facilities for active visitors",
+          "longDescription": "Stay active and energized at our Sports Court featuring multiple sports facilities including basketball courts, football fields, tennis courts, and fitness areas. Whether you want to play a game with friends or just stay active during your visit, our Sports Court has you covered.",
+          "features": {
+            "basketballCourts": "Basketball Courts",
+            "footballFields": "Football Fields",
+            "tennisCourts": "Tennis Courts",
+            "fitnessAreas": "Fitness Areas"
+          }
         },
         "foodKiosks": {
           "title": "Food Kiosks",
-          "description": "Diverse street food from around the world, offering authentic flavors and culinary experiences."
+          "description": "Diverse street food from around the world",
+          "longDescription": "Savor authentic flavors from around the world at our diverse Food Kiosks. From traditional street food to modern culinary innovations, each kiosk offers a unique taste of different cultures. Experience the world through your taste buds in one convenient location.",
+          "features": {
+            "globalCuisine": "Global Cuisine",
+            "streetFood": "Street Food",
+            "quickService": "Quick Service",
+            "culturalFlavors": "Cultural Flavors"
+          }
         },
         "restaurants": {
           "title": "Restaurants",
-          "description": "Fine dining experiences in cultural settings, featuring international cuisine and traditional dishes."
+          "description": "Fine dining experiences in cultural settings",
+          "longDescription": "Indulge in world-class dining at our themed restaurants, each offering authentic cuisine in beautifully designed cultural settings. From elegant fine dining to casual family restaurants, enjoy exceptional meals while immersing yourself in the atmosphere of different cultures.",
+          "features": {
+            "fineDining": "Fine Dining",
+            "culturalThemes": "Cultural Themes",
+            "authenticCuisine": "Authentic Cuisine",
+            "familyFriendly": "Family Friendly"
+          }
         },
         "parking": {
           "title": "Parking",
-          "description": "Convenient parking facilities for all visitors, ensuring easy access to the carnival experience."
+          "description": "Convenient parking facilities for all visitors",
+          "longDescription": "Enjoy hassle-free parking with our comprehensive parking facilities designed to accommodate all visitors. With multiple parking areas, shuttle services, and easy access to all carnival attractions, your visit starts with convenience and ends with unforgettable memories.",
+          "features": {
+            "multipleAreas": "Multiple Areas",
+            "shuttleService": "Shuttle Service",
+            "easyAccess": "Easy Access",
+            "securityMonitored": "Security Monitored"
+          }
         }
+      },
+      "cta": {
+        "title": "Ready to Experience the Magic?",
+        "subtitle": "Have questions or need more info? Get in touch with our team.",
+        "contactUs": "Contact Us",
+        "viewSchedule": "View Schedule"
       }
     }
   },

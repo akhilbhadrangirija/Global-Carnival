@@ -7,60 +7,77 @@ import { Button } from '@/components/ui/Button';
 
 export default function HighlightsPage() {
   const locale = useLocale();
-  const t = useTranslations('navigation');
+  const t = useTranslations('highlights.page');
+  
+  // Helper function to get features for each attraction
+  const getFeatures = (attractionId) => {
+    const featureKeys = {
+      adventurePark: ['familyRides', 'thrillRides', 'interactiveGames', 'safetyFirst'],
+      balloonPark: ['bouncyCastles', 'inflatedSlides', 'safePlayAreas', 'supervisedActivities'],
+      sportsCourt: ['basketballCourts', 'footballFields', 'tennisCourts', 'fitnessAreas'],
+      foodKiosks: ['globalCuisine', 'streetFood', 'quickService', 'culturalFlavors'],
+      restaurants: ['fineDining', 'culturalThemes', 'authenticCuisine', 'familyFriendly'],
+      parking: ['multipleAreas', 'shuttleService', 'easyAccess', 'securityMonitored']
+    };
+    
+    return featureKeys[attractionId].map(key => 
+      t(`attractions.${attractionId}.features.${key}`)
+    );
+  };
+
   const highlights = [
     {
       id: 'adventurePark',
-      title: 'Adventure Park',
-      description: 'Thrilling rides and adventures for all ages',
-      longDescription: 'Experience the excitement of our Adventure Park featuring state-of-the-art rides, thrilling attractions, and family-friendly adventures. From gentle carousels for the little ones to adrenaline-pumping roller coasters for thrill-seekers, our Adventure Park offers something for everyone.',
+      title: t('attractions.adventurePark.title'),
+      description: t('attractions.adventurePark.description'),
+      longDescription: t('attractions.adventurePark.longDescription'),
       image: '/attractions/adventurePark.jpg',
-      features: ['Family Rides', 'Thrill Rides', 'Interactive Games', 'Safety First'],
+      features: getFeatures('adventurePark'),
       icon: Zap
     },
     {
       id: 'balloonPark',
-      title: 'Balloon Park',
-      description: 'Children\'s park with fun inflated rides and bouncy attractions',
-      longDescription: 'Let your little ones bounce, slide, and play in our exciting Balloon Park featuring colorful inflated rides, bouncy castles, and interactive play structures. This safe and supervised children\'s area provides endless fun with age-appropriate attractions designed to keep kids entertained while parents can relax nearby.',
+      title: t('attractions.balloonPark.title'),
+      description: t('attractions.balloonPark.description'),
+      longDescription: t('attractions.balloonPark.longDescription'),
       image: '/attractions/ballonPark.jpg',
-      features: ['Bouncy Castles', 'Inflated Slides', 'Safe Play Areas', 'Supervised Activities'],
+      features: getFeatures('balloonPark'),
       icon: Heart
     },
     {
       id: 'sportsCourt',
-      title: 'Sports Court',
-      description: 'Multi-sport facilities for active visitors',
-      longDescription: 'Stay active and energized at our Sports Court featuring multiple sports facilities including basketball courts, football fields, tennis courts, and fitness areas. Whether you want to play a game with friends or just stay active during your visit, our Sports Court has you covered.',
+      title: t('attractions.sportsCourt.title'),
+      description: t('attractions.sportsCourt.description'),
+      longDescription: t('attractions.sportsCourt.longDescription'),
       image: '/attractions/sportsCourt.jpg',
-      features: ['Basketball Courts', 'Football Fields', 'Tennis Courts', 'Fitness Areas'],
+      features: getFeatures('sportsCourt'),
       icon: Users
     },
     {
       id: 'foodKiosks',
-      title: 'Food Kiosks',
-      description: 'Diverse street food from around the world',
-      longDescription: 'Savor authentic flavors from around the world at our diverse Food Kiosks. From traditional street food to modern culinary innovations, each kiosk offers a unique taste of different cultures. Experience the world through your taste buds in one convenient location.',
+      title: t('attractions.foodKiosks.title'),
+      description: t('attractions.foodKiosks.description'),
+      longDescription: t('attractions.foodKiosks.longDescription'),
       image: '/attractions/foodKiosks.jpg',
-      features: ['Global Cuisine', 'Street Food', 'Quick Service', 'Cultural Flavors'],
+      features: getFeatures('foodKiosks'),
       icon: Star
     },
     {
       id: 'restaurants',
-      title: 'Restaurants',
-      description: 'Fine dining experiences in cultural settings',
-      longDescription: 'Indulge in world-class dining at our themed restaurants, each offering authentic cuisine in beautifully designed cultural settings. From elegant fine dining to casual family restaurants, enjoy exceptional meals while immersing yourself in the atmosphere of different cultures.',
+      title: t('attractions.restaurants.title'),
+      description: t('attractions.restaurants.description'),
+      longDescription: t('attractions.restaurants.longDescription'),
       image: '/attractions/restaurant1.jpg',
-      features: ['Fine Dining', 'Cultural Themes', 'Authentic Cuisine', 'Family Friendly'],
+      features: getFeatures('restaurants'),
       icon: Award
     },
     {
       id: 'parking',
-      title: 'Parking',
-      description: 'Convenient parking facilities for all visitors',
-      longDescription: 'Enjoy hassle-free parking with our comprehensive parking facilities designed to accommodate all visitors. With multiple parking areas, shuttle services, and easy access to all carnival attractions, your visit starts with convenience and ends with unforgettable memories.',
+      title: t('attractions.parking.title'),
+      description: t('attractions.parking.description'),
+      longDescription: t('attractions.parking.longDescription'),
       image: '/attractions/parking.jpg',
-      features: ['Multiple Areas', 'Shuttle Service', 'Easy Access', 'Security Monitored'],
+      features: getFeatures('parking'),
       icon: MapPin
     }
   ];
@@ -83,7 +100,7 @@ export default function HighlightsPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Highlights of the Carnival
+            {t('hero.title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +108,7 @@ export default function HighlightsPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            Discover the main attractions and activities that make Global Carnival Jeddah an unforgettable experience
+            {t('hero.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -166,18 +183,17 @@ export default function HighlightsPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Experience the Magic?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              {/* Keeping copy simple; button is translated */}
-              Have questions or need more info? Get in touch with our team.
+              {t('cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link href={`/${locale}/contact`} className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold inline-flex items-center justify-center rounded-md">
-                {t('contactUs')}
+                {t('cta.contactUs')}
               </Link>
               <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 font-semibold">
-                View Schedule
+                {t('cta.viewSchedule')}
               </Button>
             </div>
           </motion.div>
