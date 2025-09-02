@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Globe, Users } from 'lucide-react';
 
 export default function AboutPage() {
+  const t = useTranslations('hero');
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
@@ -32,11 +33,11 @@ export default function AboutPage() {
           >
             <div className="flex items-center space-x-2">
               <Calendar className="w-6 h-6" />
-              <span>23rd September 2025 → 9th April 2026</span>
+              <span>{t('dates')}</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="w-6 h-6" />
-              <span>M-09, Arabilla Building, Hor Al Anz East, Dubai -UAE</span>
+              <span>{t('location')}</span>
             </div>
           </motion.div>
         </div>
