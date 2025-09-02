@@ -35,9 +35,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* <div className="absolute z-10 bottom-20 left-20 backdrop-blur-sm bg-white/40 border border-white/20 rounded-xl px-4 py-3 flex flex-col md:flex-row items-center gap-2 shadow-lg">
-            <Image src="/ShamsAl.png" alt="logo" width={150} height={50} />
-            </div> */}
+    
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <div
@@ -101,10 +99,16 @@ export function Hero() {
             className="mb-8"
           >
             <Link href={`/${locale}/overview`}>
-              <Button size="lg" className="group">
+            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-2  font-medium text-white backdrop-blur-3xl">
+        {t('cta')} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </span>
+      </button>
+              {/* <Button size="lg" className="group">
                 {t('cta')}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </Button> */}
             </Link>
           </motion.div>
 
@@ -115,16 +119,36 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex justify-center mb-8"
           >
-            <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl px-4 py-3 flex flex-col md:flex-row items-center gap-2 shadow-lg">
+            <div className='space-y-2 backdrop-blur-sm bg-white/20 border border-white/20 rounded-xl px-4 py-3'>
+            <div className="flex flex-col items-center space-y-2">
+              <p className="text-gray-200 text-sm">Organized by</p>
+              <a 
+                href="https://www.barakatexhibitions.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <Image 
+                  src="/ShamsAl.png" 
+                  alt="Shams Al Logo" 
+                  width={300} 
+                  height={150}
+                  className="object-contain"
+                />
+              </a>
+            </div>
+
+            <div className=" flex flex-col md:flex-row items-center gap-2 text-gray-200">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
                 <span>{t('dates')}</span>
               </div>
-              <span className="hidden md:inline-block w-px h-6 bg-white/20 mx-4" />
-              <div className="flex items-center space-x-2 text-gray-200">
+              <span className="hidden md:inline-block w-px h-6" />
+              <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5" />
                 <span>{t('location')}</span>
               </div>
+            </div>
             </div>
           </motion.div>
         </motion.div>
