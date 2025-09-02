@@ -47,10 +47,10 @@ export default function FoodPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/hero/hero_image3.jpg)'
+            backgroundImage: 'url(/foodcollage.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative container mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

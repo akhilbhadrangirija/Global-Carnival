@@ -44,7 +44,7 @@ export default function ProductsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/hero/hero_image4.jpg)'
+            backgroundImage: 'url(/products.jpg)'
           }}
         />
         <div className="absolute inset-0 bg-black/20" />

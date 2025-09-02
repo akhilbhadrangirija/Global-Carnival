@@ -35,7 +35,7 @@ export default function ActivitiesPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/hero/hero_image2.jpg)'
+            backgroundImage: 'url(/hero/activities.jpg)'
           }}
         />
         <div className="absolute inset-0 bg-black/20" />
