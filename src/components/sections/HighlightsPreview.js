@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft, MapPin, Carousel } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 import { Card } from '@/components/ui/Card';
 import { useState } from 'react';
 
@@ -153,10 +154,10 @@ export function HighlightsPreview() {
           className="text-center mt-12"
         >
           <Link href={`/${locale}/highlights`}>
-            <Button size="lg" className="group">
+            <CTAButton>
               Explore All Highlights
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </CTAButton>
           </Link>
         </motion.div>
       </div>

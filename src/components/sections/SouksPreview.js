@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 import { Card } from '@/components/ui/Card';
 
 export function SouksPreview() {
@@ -144,10 +145,10 @@ export function SouksPreview() {
           className="text-center mt-12"
         >
           <Link href={`/${locale}/souks`}>
-            <Button size="lg" className="group bg-gray-900 text-white hover:bg-gray-800">
+            <CTAButton>
               Explore All Souks
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </CTAButton>
           </Link>
         </motion.div>
       </div>

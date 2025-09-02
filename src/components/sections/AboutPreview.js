@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Users, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 import { Card } from '@/components/ui/Card';
 import Image from 'next/image';
 
@@ -134,10 +135,10 @@ export function AboutPreview() {
           className="text-center"
         >
           <Link href={`/${locale}/about`}>
-            <Button size="lg" className="group bg-primary text-white hover:bg-primary/90">
+            <CTAButton>
               {t('aboutPreview.cta')}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </CTAButton>
           </Link>
         </motion.div>
       </div>

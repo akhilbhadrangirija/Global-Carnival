@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 import { cn, getDirection, getOppositeLocale } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -133,9 +134,11 @@ export function Header() {
 
             {/* CTA Button */}
             <Link href={`/${locale}/contact`}>
-              <Button className="hidden sm:inline-flex">
-                {t('contactUs')}
-              </Button>
+              <span className="hidden sm:inline-flex">
+                <CTAButton asChild>
+                  <span>{t('contactUs')}</span>
+                </CTAButton>
+              </span>
             </Link>
 
             {/* Mobile menu button */}
@@ -174,9 +177,9 @@ export function Header() {
                 ))}
                 <div className="px-4 pt-4">
                   <Link href={`/${locale}/contact`} onClick={() => setIsMenuOpen(false)}>
-                    <Button className="w-full">
+                    <CTAButton className="w-full">
                       {t('contactUs')}
-                    </Button>
+                    </CTAButton>
                   </Link>
                 </div>
               </nav>

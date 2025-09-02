@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Clock, MapPin, Phone, Mail, Calendar, Star, Users, Car } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 
 const planningTips = [
   {
@@ -173,11 +174,11 @@ export function PlanYourVisit() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button size="lg" className="group">
+            <CTAButton>
               <Calendar className="mr-2 w-5 h-5" />
               Book Tickets
               <span className="ml-2 text-sm opacity-80">(Coming Soon)</span>
-            </Button>
+            </CTAButton>
             
             <Link href="/contact">
               <Button variant="outline" size="lg">

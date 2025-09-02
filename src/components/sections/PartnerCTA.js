@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Users, Globe, Award, Zap, Shield, Target } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import CTAButton from '@/components/ui/CTAButton';
 import { Card } from '@/components/ui/Card';
 
 export function PartnerCTA() {
@@ -114,10 +115,10 @@ export function PartnerCTA() {
           className="text-center"
         >
           <Link href={`/${locale}/partner`}>
-            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100 border-white group">
+            <CTAButton>
               {t('title')}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </CTAButton>
           </Link>
         </motion.div>
       </div>
