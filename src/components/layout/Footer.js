@@ -202,18 +202,6 @@ export function Footer() {
                     <div className="flex items-center space-x-3">
                       <Phone className="w-4 h-4 text-primary" />
                       <span className="text-gray-700 text-sm">
-                        +966 53 857 8872
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-700 text-sm">
-                        Rinu: +971 50 275 5860
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-gray-700 text-sm">
                         Himanshu: +971 55 413 7686
                       </span>
                     </div>
