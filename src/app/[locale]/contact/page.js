@@ -49,9 +49,9 @@ export default function ContactPage() {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      `Hello! I'd like to get in touch about Global carnival Jeddah.`
+      `Hello! I've visited the Global Carnival Jeddah website and would like to get in touch.`
     );
-    window.open(`https://wa.me/971503545972?text=${message}`, '_blank');
+    window.open(`https://wa.me/+971503545972?text=${message}`, '_blank');
   };
 
   return (
