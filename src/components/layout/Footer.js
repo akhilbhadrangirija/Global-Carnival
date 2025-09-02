@@ -249,6 +249,26 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               {t('copyright')}
             </p>
+            
+            {/* Organized by Section */}
+            <div className="flex flex-col items-center space-y-2">
+              <p className="text-gray-400 text-sm">Organized by</p>
+              <a 
+                href="https://www.barakatexhibitions.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <Image 
+                  src="/ShamsAl.png" 
+                  alt="Shams Al Logo" 
+                  width={150} 
+                  height={50}
+                  className="object-contain"
+                />
+              </a>
+            </div>
+            
             {/* <div className="flex space-x-6 text-sm">
               <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-white transition-colors">
                 {t('links.privacy')}

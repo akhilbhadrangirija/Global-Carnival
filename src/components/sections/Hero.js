@@ -35,6 +35,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* <div className="absolute z-10 bottom-20 left-20 backdrop-blur-sm bg-white/40 border border-white/20 rounded-xl px-4 py-3 flex flex-col md:flex-row items-center gap-2 shadow-lg">
+            <Image src="/ShamsAl.png" alt="logo" width={150} height={50} />
+            </div> */}
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <div

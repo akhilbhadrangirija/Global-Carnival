@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Users, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import Image from 'next/image';
 
 export function AboutPreview() {
   const t = useTranslations();
@@ -45,6 +46,7 @@ export function AboutPreview() {
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t('aboutPreview.subtitle')}
           </p>
+          {/* Organised by */}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
@@ -63,6 +65,20 @@ export function AboutPreview() {
                 {t('aboutPreview.description2')}
               </p>
             </div>
+            
+            {/* Organised by section */}
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-500 mb-3">Organised by</p>
+              <a 
+                href="https://www.barakatexhibitions.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+              >
+                <Image src="/ShamsAl.png" alt="logo" width={300} height={100} />
+              </a>
+            </div>
+
           </motion.div>
 
           {/* Image */}
