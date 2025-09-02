@@ -1,8 +1,10 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Globe, Users, Star, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function OverviewPage() {
+  const t = useTranslations();
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
@@ -21,7 +23,7 @@ export default function OverviewPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Project Overview
+            {t('overview.hero.title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +31,7 @@ export default function OverviewPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto"
           >
-            A comprehensive carnival experience featuring facades, shops, pavilions, and kiosks from around the world
+            {t('overview.hero.subtitle')}
           </motion.p>
         </div>
       </section>
@@ -44,29 +46,29 @@ export default function OverviewPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Carnival Atmosphere
+              {t('overview.carnivalAtmosphere.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the festive atmosphere and cultural diversity that awaits you
+              {t('overview.carnivalAtmosphere.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Festive Atmosphere",
+                title: t('overview.carnivalAtmosphere.items.festiveAtmosphere.title'),
                 image: "/global-carnival.jpg",
-                description: "Vibrant celebrations and cultural performances"
+                description: t('overview.carnivalAtmosphere.items.festiveAtmosphere.description')
               },
               {
-                title: "Cultural Diversity",
+                title: t('overview.carnivalAtmosphere.items.culturalDiversity.title'),
                 image: "/diversity.jpg",
-                description: "Representation of cultures from around the world"
+                description: t('overview.carnivalAtmosphere.items.culturalDiversity.description')
               },
               {
-                title: "Live Entertainment",
+                title: t('overview.carnivalAtmosphere.items.liveEntertainment.title'),
                 image: "/live_event.jpg",
-                description: "Dynamic performances and cultural shows"
+                description: t('overview.carnivalAtmosphere.items.liveEntertainment.description')
               }
             ].map((item, index) => (
               <motion.div
@@ -107,32 +109,32 @@ export default function OverviewPage() {
               className="prose prose-lg max-w-none"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Global Carnival Jeddah: A World of Possibilities
+                {t('overview.projectOverview.title')}
               </h2>
               
               <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Global Carnival Jeddah represents a revolutionary approach to cultural tourism and entertainment, creating an immersive environment where visitors can experience the world&apos;s most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it&apos;s a living, breathing celebration of global diversity.
+                  {t('overview.projectOverview.content.paragraph1')}
                 </p>
                 
                 <p>
-                  Our carnival concept is built around the principle of authentic cultural representation. Each region, country, and culture featured in our carnival is represented through carefully crafted facades that replicate iconic architectural styles, authentic souks that showcase traditional crafts and products, cultural pavilions that tell the stories of different societies, and interactive kiosks that offer hands-on experiences.
+                  {t('overview.projectOverview.content.paragraph2')}
                 </p>
                 
                 <p>
-                  The project encompasses six distinct cultural regions: India & Pakistan, Turkey & Morocco, East Asia (China, Japan, Korea), GCC countries, Egypt, and Africa. Each region is designed to provide visitors with an authentic experience that goes beyond surface-level representation, offering deep cultural immersion through food, music, art, crafts, and interactive experiences.
+                  {t('overview.projectOverview.content.paragraph3')}
                 </p>
                 
                 <p>
-                  What sets Global Carnival Jeddah apart is our commitment to cultural authenticity. We work directly with cultural ambassadors, artisans, and experts from each region to ensure that every aspect of our carnival—from the architecture and decor to the food and entertainment—accurately represents the rich heritage and traditions of these diverse cultures.
+                  {t('overview.projectOverview.content.paragraph4')}
                 </p>
                 
                 <p>
-                  The carnival is designed to be accessible to visitors of all ages and backgrounds, offering educational experiences for students, entertainment for families, cultural enrichment for adults, and exciting adventures for thrill-seekers. Our facilities include adventure parks, balloon displays, sports courts, diverse dining options, and ample parking to accommodate visitors from around the world.
+                  {t('overview.projectOverview.content.paragraph5')}
                 </p>
                 
                 <p>
-                  Beyond entertainment, Global Carnival Jeddah serves as a platform for cultural exchange, business opportunities, and international collaboration. We welcome partnerships with cultural organizations, businesses, and individuals who share our vision of bringing the world together through celebration and understanding.
+                  {t('overview.projectOverview.content.paragraph6')}
                 </p>
               </div>
             </motion.div>
@@ -152,10 +154,10 @@ export default function OverviewPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Project Highlights
+              {t('overview.projectHighlights.title')}
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-              Discover the key elements that make Global Carnival Jeddah a unique cultural destination
+              {t('overview.projectHighlights.subtitle')}
             </p>
           </motion.div>
 
@@ -163,33 +165,33 @@ export default function OverviewPage() {
             {[
               {
                 icon: Globe,
-                title: "Cultural Authenticity",
-                description: "Each region is authentically represented through direct collaboration with cultural experts and artisans."
+                title: t('overview.projectHighlights.features.culturalAuthenticity.title'),
+                description: t('overview.projectHighlights.features.culturalAuthenticity.description')
               },
               {
                 icon: Users,
-                title: "Interactive Experiences",
-                description: "Visitors engage directly with cultural traditions through hands-on activities and demonstrations."
+                title: t('overview.projectHighlights.features.interactiveExperiences.title'),
+                description: t('overview.projectHighlights.features.interactiveExperiences.description')
               },
               {
                 icon: Star,
-                title: "World-Class Entertainment",
-                description: "Live performances, cultural shows, and entertainment from around the globe."
+                title: t('overview.projectHighlights.features.worldClassEntertainment.title'),
+                description: t('overview.projectHighlights.features.worldClassEntertainment.description')
               },
               {
                 icon: Zap,
-                title: "Modern Infrastructure",
-                description: "State-of-the-art facilities designed for comfort, accessibility, and sustainability."
+                title: t('overview.projectHighlights.features.modernInfrastructure.title'),
+                description: t('overview.projectHighlights.features.modernInfrastructure.description')
               },
               {
                 icon: MapPin,
-                title: "Strategic Location",
-                description: "Located in Jeddah, a gateway city accessible to visitors from multiple continents."
+                title: t('overview.projectHighlights.features.strategicLocation.title'),
+                description: t('overview.projectHighlights.features.strategicLocation.description')
               },
               {
                 icon: Calendar,
-                title: "Extended Season",
-                description: "Seven-month carnival season from September 2025 to April 2026."
+                title: t('overview.projectHighlights.features.extendedSeason.title'),
+                description: t('overview.projectHighlights.features.extendedSeason.description')
               }
             ].map((feature, index) => (
               <motion.div

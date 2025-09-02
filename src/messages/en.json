@@ -332,22 +332,66 @@
   "overview": {
     "hero": {
       "title": "Project Overview",
-      "subtitle": "A comprehensive carnival experience that brings the world to Saudi Arabia"
+      "subtitle": "A comprehensive carnival experience featuring facades, shops, pavilions, and kiosks from around the world"
     },
-    "description": {
-      "title": "What is Global Carnival Jeddah?",
-      "content": "Global Carnival Jeddah is a groundbreaking cultural extravaganza that creates an immersive environment where visitors can experience the world's most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it's a living, breathing celebration of global unity and cultural diversity."
+    "carnivalAtmosphere": {
+      "title": "Carnival Atmosphere",
+      "subtitle": "Experience the festive atmosphere and cultural diversity that awaits you",
+      "items": {
+        "festiveAtmosphere": {
+          "title": "Festive Atmosphere",
+          "description": "Vibrant celebrations and cultural performances"
+        },
+        "culturalDiversity": {
+          "title": "Cultural Diversity",
+          "description": "Representation of cultures from around the world"
+        },
+        "liveEntertainment": {
+          "title": "Live Entertainment",
+          "description": "Dynamic performances and cultural shows"
+        }
+      }
     },
-    "features": {
-      "title": "Key Features",
-      "facades": "Authentic Facades",
-      "facadesDesc": "Meticulously crafted architectural replicas representing different cultures and regions",
-      "souks": "Cultural Souks",
-      "souksDesc": "Traditional marketplaces offering authentic products and cultural experiences",
-      "pavilions": "Cultural Pavilions",
-      "pavilionsDesc": "Interactive spaces showcasing the heritage and traditions of various cultures",
-      "entertainment": "Live Entertainment",
-      "entertainmentDesc": "Continuous performances, shows, and cultural demonstrations throughout the day"
+    "projectOverview": {
+      "title": "Global Carnival Jeddah: A World of Possibilities",
+      "content": {
+        "paragraph1": "Global Carnival Jeddah represents a revolutionary approach to cultural tourism and entertainment, creating an immersive environment where visitors can experience the world's most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it's a living, breathing celebration of global diversity.",
+        "paragraph2": "Our carnival concept is built around the principle of authentic cultural representation. Each region, country, and culture featured in our carnival is represented through carefully crafted facades that replicate iconic architectural styles, authentic souks that showcase traditional crafts and products, cultural pavilions that tell the stories of different societies, and interactive kiosks that offer hands-on experiences.",
+        "paragraph3": "The project encompasses six distinct cultural regions: India & Pakistan, Turkey & Morocco, East Asia (China, Japan, Korea), GCC countries, Egypt, and Africa. Each region is designed to provide visitors with an authentic experience that goes beyond surface-level representation, offering deep cultural immersion through food, music, art, crafts, and interactive experiences.",
+        "paragraph4": "What sets Global Carnival Jeddah apart is our commitment to cultural authenticity. We work directly with cultural ambassadors, artisans, and experts from each region to ensure that every aspect of our carnival—from the architecture and decor to the food and entertainment—accurately represents the rich heritage and traditions of these diverse cultures.",
+        "paragraph5": "The carnival is designed to be accessible to visitors of all ages and backgrounds, offering educational experiences for students, entertainment for families, cultural enrichment for adults, and exciting adventures for thrill-seekers. Our facilities include adventure parks, balloon displays, sports courts, diverse dining options, and ample parking to accommodate visitors from around the world.",
+        "paragraph6": "Beyond entertainment, Global Carnival Jeddah serves as a platform for cultural exchange, business opportunities, and international collaboration. We welcome partnerships with cultural organizations, businesses, and individuals who share our vision of bringing the world together through celebration and understanding."
+      }
+    },
+    "projectHighlights": {
+      "title": "Project Highlights",
+      "subtitle": "Discover the key elements that make Global Carnival Jeddah a unique cultural destination",
+      "features": {
+        "culturalAuthenticity": {
+          "title": "Cultural Authenticity",
+          "description": "Each region is authentically represented through direct collaboration with cultural experts and artisans."
+        },
+        "interactiveExperiences": {
+          "title": "Interactive Experiences",
+          "description": "Visitors engage directly with cultural traditions through hands-on activities and demonstrations."
+        },
+        "worldClassEntertainment": {
+          "title": "World-Class Entertainment",
+          "description": "Live performances, cultural shows, and entertainment from around the globe."
+        },
+        "modernInfrastructure": {
+          "title": "Modern Infrastructure",
+          "description": "State-of-the-art facilities designed for comfort, accessibility, and sustainability."
+        },
+        "strategicLocation": {
+          "title": "Strategic Location",
+          "description": "Located in Jeddah, a gateway city accessible to visitors from multiple continents."
+        },
+        "extendedSeason": {
+          "title": "Extended Season",
+          "description": "Seven-month carnival season from September 2025 to April 2026."
+        }
+      }
     }
   },
   "stats": {
