@@ -23,7 +23,7 @@ export function HighlightsPreview() {
     {
       title: t('attractions.balloonPark'),
       image: '/attractions/ballonPark.jpg',
-      description: 'Colorful balloon displays and hot air balloon experiences'
+      description: 'Children\'s park with fun inflated rides and bouncy attractions'
     },
     {
       title: t('attractions.sportsCourt'),

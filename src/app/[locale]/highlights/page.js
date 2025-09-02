@@ -14,17 +14,17 @@ export default function HighlightsPage() {
       title: 'Adventure Park',
       description: 'Thrilling rides and adventures for all ages',
       longDescription: 'Experience the excitement of our Adventure Park featuring state-of-the-art rides, thrilling attractions, and family-friendly adventures. From gentle carousels for the little ones to adrenaline-pumping roller coasters for thrill-seekers, our Adventure Park offers something for everyone.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+      image: '/attractions/adventurePark.jpg',
       features: ['Family Rides', 'Thrill Rides', 'Interactive Games', 'Safety First'],
       icon: Zap
     },
     {
       id: 'balloonPark',
       title: 'Balloon Park',
-      description: 'Colorful balloon displays and hot air balloon experiences',
-      longDescription: 'Soar above the carnival in our spectacular Balloon Park featuring colorful balloon displays, tethered hot air balloon rides, and interactive balloon art installations. Experience the magic of flight while enjoying breathtaking views of the entire carnival grounds.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-      features: ['Hot Air Balloon Rides', 'Balloon Art', 'Aerial Views', 'Photo Opportunities'],
+      description: 'Children\'s park with fun inflated rides and bouncy attractions',
+      longDescription: 'Let your little ones bounce, slide, and play in our exciting Balloon Park featuring colorful inflated rides, bouncy castles, and interactive play structures. This safe and supervised children\'s area provides endless fun with age-appropriate attractions designed to keep kids entertained while parents can relax nearby.',
+      image: '/attractions/ballonPark.jpg',
+      features: ['Bouncy Castles', 'Inflated Slides', 'Safe Play Areas', 'Supervised Activities'],
       icon: Heart
     },
     {
@@ -32,7 +32,7 @@ export default function HighlightsPage() {
       title: 'Sports Court',
       description: 'Multi-sport facilities for active visitors',
       longDescription: 'Stay active and energized at our Sports Court featuring multiple sports facilities including basketball courts, football fields, tennis courts, and fitness areas. Whether you want to play a game with friends or just stay active during your visit, our Sports Court has you covered.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+      image: '/attractions/sportsCourt.jpg',
       features: ['Basketball Courts', 'Football Fields', 'Tennis Courts', 'Fitness Areas'],
       icon: Users
     },
@@ -41,7 +41,7 @@ export default function HighlightsPage() {
       title: 'Food Kiosks',
       description: 'Diverse street food from around the world',
       longDescription: 'Savor authentic flavors from around the world at our diverse Food Kiosks. From traditional street food to modern culinary innovations, each kiosk offers a unique taste of different cultures. Experience the world through your taste buds in one convenient location.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+      image: '/attractions/foodKiosks.jpg',
       features: ['Global Cuisine', 'Street Food', 'Quick Service', 'Cultural Flavors'],
       icon: Star
     },
@@ -50,7 +50,7 @@ export default function HighlightsPage() {
       title: 'Restaurants',
       description: 'Fine dining experiences in cultural settings',
       longDescription: 'Indulge in world-class dining at our themed restaurants, each offering authentic cuisine in beautifully designed cultural settings. From elegant fine dining to casual family restaurants, enjoy exceptional meals while immersing yourself in the atmosphere of different cultures.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+      image: '/attractions/restaurant1.jpg',
       features: ['Fine Dining', 'Cultural Themes', 'Authentic Cuisine', 'Family Friendly'],
       icon: Award
     },
@@ -59,7 +59,7 @@ export default function HighlightsPage() {
       title: 'Parking',
       description: 'Convenient parking facilities for all visitors',
       longDescription: 'Enjoy hassle-free parking with our comprehensive parking facilities designed to accommodate all visitors. With multiple parking areas, shuttle services, and easy access to all carnival attractions, your visit starts with convenience and ends with unforgettable memories.',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+      image: '/attractions/parking.jpg',
       features: ['Multiple Areas', 'Shuttle Service', 'Easy Access', 'Security Monitored'],
       icon: MapPin
     }

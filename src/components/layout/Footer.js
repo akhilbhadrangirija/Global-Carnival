@@ -182,29 +182,44 @@ export function Footer() {
                     {t('contact.email')}
                   </span>
                 </div>
-                <div className="flex items-center space-x-3">
+                {/* <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 text-sm">
                     {t('contact.hours')}
                   </span>
-                </div>
+                </div> */}
                 
                 {/* Additional Contact Numbers */}
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <h4 className="text-sm font-semibold text-gray-900 mb-3">Contact Team</h4>
                   <div className="space-y-2">
-                    <div className="flex items-center space-x-3">
+                    <a
+                      href="tel:+971503545972"
+                      className="flex items-center space-x-3 hover:underline focus:outline-none"
+                    >
                       <Phone className="w-4 h-4 text-primary" />
                       <span className="text-gray-700 text-sm">
                         Anil: +971 50 354 5972
                       </span>
-                    </div>
-                    <div className="flex items-center space-x-3">
+                    </a>
+                    <a
+                      href="tel:+971502755860"
+                      className="flex items-center space-x-3 hover:underline focus:outline-none"
+                    >
+                      <Phone className="w-4 h-4 text-primary" />
+                      <span className="text-gray-700 text-sm">
+                        Rinu: +971 50 275 5860
+                      </span>
+                    </a>
+                    <a
+                      href="tel:+971554137686"
+                      className="flex items-center space-x-3 hover:underline focus:outline-none"
+                    >
                       <Phone className="w-4 h-4 text-primary" />
                       <span className="text-gray-700 text-sm">
                         Himanshu: +971 55 413 7686
                       </span>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
