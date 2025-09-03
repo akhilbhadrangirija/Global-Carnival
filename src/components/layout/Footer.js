@@ -177,22 +177,28 @@ export function Footer() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700 text-sm">
+                  <a 
+                    href="tel:+971503545972" 
+                    className="text-gray-700 text-sm hover:text-primary transition-colors"
+                  >
                     +971 50 354 5972
-                  </span>
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-gray-700 text-sm">
-                  info@globalcarnivaljeddah.com
-                  </span>
+                  <a 
+                    href="mailto:info@globalcarnivaljeddah.com" 
+                    className="text-gray-700 text-sm hover:text-primary transition-colors"
+                  >
+                    info@globalcarnivaljeddah.com
+                  </a>
                 </div>
-                {/* <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 text-sm">
-                    {t('contact.hours')}
+                    9:00 AM - 6:00 PM
                   </span>
-                </div> */}
+                </div>
                 
                 {/* Additional Contact Numbers */}
                 <div className="mt-4 pt-4 border-t border-gray-200">

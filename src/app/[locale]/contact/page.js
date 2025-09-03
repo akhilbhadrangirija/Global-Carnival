@@ -241,7 +241,7 @@ export default function ContactPage() {
                       Address
                     </h3>
                     <p className="text-gray-600">
-                      {t('contact.info.address')}
+                      M-09, Arabilla Building, Hor Al Anz East, Dubai -UAE
                     </p>
                   </div>
                 </div>
@@ -254,9 +254,12 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Phone
                     </h3>
-                    <p className="text-gray-600">
-                      {t('contact.info.phone')}
-                    </p>
+                    <a 
+                      href="tel:+971503545972" 
+                      className="text-gray-600 hover:text-primary transition-colors"
+                    >
+                      +971 50 354 5972
+                    </a>
                   </div>
                 </div>
 
@@ -268,9 +271,12 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Email
                     </h3>
-                    <p className="text-gray-600">
-                      {t('contact.info.email')}
-                    </p>
+                    <a 
+                      href="mailto:info@globalcarnivaljeddah.com" 
+                      className="text-gray-600 hover:text-primary transition-colors"
+                    >
+                      info@globalcarnivaljeddah.com
+                    </a>
                   </div>
                 </div>
 
@@ -283,7 +289,7 @@ export default function ContactPage() {
                       Hours
                     </h3>
                     <p className="text-gray-600">
-                      {t('contact.info.hours')}
+                      9:00 AM - 6:00 PM
                     </p>
                   </div>
                 </div>

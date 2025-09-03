@@ -38,7 +38,7 @@ const visitorInfo = [
   {
     icon: Clock,
     title: "Opening Hours",
-    details: "Daily: 9:00 AM - 11:00 PM",
+    details: "Daily: 9:00 AM - 6:00 PM",
     color: "text-blue-600"
   },
   {
@@ -147,9 +147,25 @@ export function PlanYourVisit() {
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-gray-600">
-                        {info.details}
-                      </p>
+                      {info.title === "Contact" ? (
+                        <a 
+                          href="tel:+971503545972" 
+                          className="text-gray-600 hover:text-primary transition-colors"
+                        >
+                          {info.details}
+                        </a>
+                      ) : info.title === "Email" ? (
+                        <a 
+                          href="mailto:info@globalcarnivaljeddah.com" 
+                          className="text-gray-600 hover:text-primary transition-colors"
+                        >
+                          {info.details}
+                        </a>
+                      ) : (
+                        <p className="text-gray-600">
+                          {info.details}
+                        </p>
+                      )}
                     </div>
                   </motion.div>
                 ))}
