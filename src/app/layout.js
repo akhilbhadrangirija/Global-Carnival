@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from 'next/script';
+import { Suspense } from 'react';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 
 export const metadata = {
@@ -200,7 +201,9 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         {children}
       </body>
     </html>
