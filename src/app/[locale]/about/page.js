@@ -114,16 +114,19 @@ export default function AboutPage() {
               {
                 icon: Globe,
                 title: t('features.globalDiversity.title'),
+                image: "/diversity.jpg",
                 description: t('features.globalDiversity.description')
               },
               {
                 icon: Users,
                 title: t('features.interactiveExperiences.title'),
+                image: "/activities.jpg",
                 description: t('features.interactiveExperiences.description')
               },
               {
                 icon: MapPin,
                 title: t('features.strategicLocation.title'),
+                image: "/souks/AllSoucks.jpg",
                 description: t('features.strategicLocation.description')
               }
             ].map((feature, index) => (
@@ -133,17 +136,30 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="text-center p-6"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-white" />
+                {/* Image Section */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
+                
+                {/* Content Section */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

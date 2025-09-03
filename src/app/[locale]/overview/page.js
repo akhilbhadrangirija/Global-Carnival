@@ -200,15 +200,15 @@ export default function OverviewPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-bold text-gray-100 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-300">
                   {feature.description}
                 </p>
               </motion.div>
