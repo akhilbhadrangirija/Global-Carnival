@@ -81,12 +81,12 @@ export function Footer() {
                 <span className="text-sm font-semibold text-gray-900">{t('eventDates')}</span>
               </div>
               <p className="text-gray-700 text-sm mb-2">
-                {t('eventInfo.dates')}
+                23rd October 2025 → 9th April 2026
               </p>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-gray-700 text-sm">
-                  {t('eventInfo.location')}
+                  Carnival Jeddah, Next to Aziz Mall, Jeddah
                 </span>
               </div>
             </div>
@@ -167,19 +167,19 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 text-sm">
-                    {t('eventInfo.location')}
+                    M-09, Arabilla Building, Hor Al Anz East, Dubai -UAE
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 text-sm">
-                    {t('contact.phone')}
+                    +971 50 354 5972
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 text-sm">
-                    {t('contact.email')}
+                  info@globalcarnivaljeddah.com
                   </span>
                 </div>
                 {/* <div className="flex items-center space-x-3">
