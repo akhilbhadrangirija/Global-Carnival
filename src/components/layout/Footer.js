@@ -24,7 +24,7 @@ export function Footer() {
 
   const footerLinks = {
     explore: [
-      { name: t('footerLinks.souks'), href: `/${locale}/souks` },
+      { name: t('footerLinks.pavilion'), href: `/${locale}/pavilion` },
       { name: t('footerLinks.highlights'), href: `/${locale}/highlights` },
       { name: t('footerLinks.products'), href: `/${locale}/products` },
       { name: t('footerLinks.foodBeverages'), href: `/${locale}/food` },

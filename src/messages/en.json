@@ -8,7 +8,7 @@
     "dining": "Dining",
     "gallery": "Gallery",
     "overview": "Overview",
-    "souks": "Souks",
+    "pavilion": "Pavilion",
     "highlights": "Highlights",
     "products": "Products",
     "food": "Food & Beverages",
@@ -120,9 +120,9 @@
       "cta": "View Activities"
     }
   },
-  "souks": {
-    "title": "Experience Souks from Around the World",
-    "description": "Each souk represents the authentic culture and traditions of its region, offering visitors a truly immersive experience.",
+  "pavilion": {
+    "title": "Experience Pavilions from Around the World",
+    "description": "Each pavilion represents the authentic culture and traditions of its region, offering visitors a truly immersive experience.",
     "regions": {
       "indiaPakistan": { "name": "India & Pakistan", "description": "Traditional textiles, spices, handicrafts, rich fabrics, and cultural artifacts from the subcontinent" },
       "turkeyMorocco": { "name": "Turkey & Morocco", "description": "Ottoman-inspired crafts, ceramics, traditional textiles, Berber crafts, leather goods, and cultural artifacts" },
@@ -134,16 +134,16 @@
     "viewGallery": "View Gallery",
     "page": {
       "hero": {
-        "title": "Experience Souks from Around the World",
-        "subtitle": "Each souk represents the authentic culture and traditions of its region"
+        "title": "Experience Pavilions from Around the World",
+        "subtitle": "Each pavilion represents the authentic culture and traditions of its region"
       },
       "description": {
-        "title": "What Makes Our Souks Special",
-        "content": "Our souks are more than just marketplaces—they are living cultural experiences that transport visitors to different parts of the world. Each souk is carefully designed to reflect the authentic architecture, atmosphere, and traditions of its region."
+        "title": "What Makes Our Pavilions Special",
+        "content": "Our pavilions are more than just marketplaces—they are living cultural experiences that transport visitors to different parts of the world. Each pavilion is carefully designed to reflect the authentic architecture, atmosphere, and traditions of its region."
       },
       "regions": {
-        "title": "Regional Souks",
-        "subtitle": "Explore the unique characteristics of each regional souk"
+        "title": "Regional Pavilions",
+        "subtitle": "Explore the unique characteristics of each regional pavilion"
       }
     }
   },
@@ -274,7 +274,7 @@
       "aboutPreview": {
       "title": "About Global Carnival Jeddah",
       "subtitle": "A groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia.",
-      "description1": "Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures.",
+      "description1": "Global Carnival Jeddah is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic pavilions, cultural pavilions, and interactive experiences, we create a bridge between different cultures.",
       "description2": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula.",
       "features": {
         "globalDiversity": {
@@ -301,7 +301,7 @@
       "welcome": {
         "title": "Welcome to Global Carnival Jeddah",
         "description1": "Global Carnival Jeddah is a groundbreaking cultural extravaganza that brings the world's most vibrant traditions, flavors, and experiences to the heart of Saudi Arabia. This extraordinary event represents a fusion of global cultures, creating an immersive environment where visitors can explore, taste, and experience the richness of our diverse world.",
-        "description2": "Our carnival is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic souks, cultural pavilions, and interactive experiences, we create a bridge between different cultures, fostering understanding and appreciation for the world's diversity.",
+        "description2": "Our carnival is more than just an event—it's a celebration of human creativity, cultural heritage, and global unity. Through meticulously crafted facades, authentic pavilions, cultural pavilions, and interactive experiences, we create a bridge between different cultures, fostering understanding and appreciation for the world's diversity.",
         "description3": "From the bustling markets of Marrakech to the serene gardens of Kyoto, from the vibrant streets of Mumbai to the elegant boulevards of Paris, Global Carnival Jeddah offers an unparalleled journey around the world without leaving the Arabian Peninsula."
       },
       "features": {
@@ -356,7 +356,7 @@
       "title": "Global Carnival Jeddah: A World of Possibilities",
       "content": {
         "paragraph1": "Global Carnival Jeddah represents a revolutionary approach to cultural tourism and entertainment, creating an immersive environment where visitors can experience the world's most vibrant cultures, traditions, and flavors in one extraordinary destination. This ambitious project goes beyond traditional theme parks or cultural centers—it's a living, breathing celebration of global diversity.",
-        "paragraph2": "Our carnival concept is built around the principle of authentic cultural representation. Each region, country, and culture featured in our carnival is represented through carefully crafted facades that replicate iconic architectural styles, authentic souks that showcase traditional crafts and products, cultural pavilions that tell the stories of different societies, and interactive kiosks that offer hands-on experiences.",
+        "paragraph2": "Our carnival concept is built around the principle of authentic cultural representation. Each region, country, and culture featured in our carnival is represented through carefully crafted facades that replicate iconic architectural styles, authentic pavilions that showcase traditional crafts and products, cultural pavilions that tell the stories of different societies, and interactive kiosks that offer hands-on experiences.",
         "paragraph3": "The project encompasses six distinct cultural regions: India & Pakistan, Turkey & Morocco, East Asia (China, Japan, Korea), GCC countries, Egypt, and Africa. Each region is designed to provide visitors with an authentic experience that goes beyond surface-level representation, offering deep cultural immersion through food, music, art, crafts, and interactive experiences.",
         "paragraph4": "What sets Global Carnival Jeddah apart is our commitment to cultural authenticity. We work directly with cultural ambassadors, artisans, and experts from each region to ensure that every aspect of our carnival—from the architecture and decor to the food and entertainment—accurately represents the rich heritage and traditions of these diverse cultures.",
         "paragraph5": "The carnival is designed to be accessible to visitors of all ages and backgrounds, offering educational experiences for students, entertainment for families, cultural enrichment for adults, and exciting adventures for thrill-seekers. Our facilities include adventure parks, balloon displays, sports courts, diverse dining options, and ample parking to accommodate visitors from around the world.",
@@ -655,7 +655,7 @@
         "culture": "Cultural Experiences",
         "food": "Food & Dining",
         "entertainment": "Entertainment & Shows",
-        "shopping": "Shopping & Souks",
+        "shopping": "Shopping & Pavilions",
         "activities": "Activities & Workshops"
       }
     }
@@ -758,7 +758,7 @@
     "business": "Business",
     "contactInformation": "Contact Information",
     "footerLinks": {
-      "souks": "Souks",
+      "pavilion": "Pavilion",
       "highlights": "Highlights",
       "products": "Products",
       "foodBeverages": "Food & Beverages",
@@ -789,7 +789,7 @@
       "title": "Discover Global Carnival Jeddah",
       "subtitle": "Experience the world's cultures, flavors, and traditions in one extraordinary destination"
     },
-    "souksPreview": {
+    "pavilionPreview": {
       "tags": {
         "popular": "Popular",
         "new": "New",
@@ -797,7 +797,7 @@
       },
       "duration": "Open Daily",
       "exploreNow": "Explore Now",
-      "exploreAllSouks": "Explore All Souks"
+      "exploreAllPavilions": "Explore All Pavilions"
     },
     "highlightsPreview": {
       "descriptions": {

@@ -23,7 +23,7 @@ export function Header() {
     // { name: t('home'), href: `/${locale}` },
     { name: t('about'), href: `/${locale}/about` },
     { name: t('overview'), href: `/${locale}/overview` },
-    { name: t('souks'), href: `/${locale}/souks` },
+    { name: t('pavilion'), href: `/${locale}/pavilion` },
     // { name: t('highlights'), href: `/${locale}/highlights` },
     // { name: t('products'), href: `/${locale}/products` },
     // { name: t('food'), href: `/${locale}/food` },

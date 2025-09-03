@@ -7,13 +7,13 @@ import { X, ChevronLeft, ChevronRight, MapPin, Star } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 
-export default function SouksPage() {
-  const t = useTranslations('souks');
+export default function PavilionPage() {
+  const t = useTranslations('pavilion');
   const locale = useLocale();
   const [selectedSouk, setSelectedSouk] = useState(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
-  const souks = [
+  const pavilions = [
     {
       id: 'indiaPakistan',
       name: t('regions.indiaPakistan.name'),
@@ -99,8 +99,8 @@ export default function SouksPage() {
     }
   ];
 
-  const openGallery = (souk) => {
-    setSelectedSouk(souk);
+  const openGallery = (pavilion) => {
+    setSelectedSouk(pavilion);
     setGalleryIndex(0);
   };
 
@@ -152,37 +152,37 @@ export default function SouksPage() {
         </div>
       </section>
 
-      {/* Souks Grid */}
+      {/* Pavilions Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {souks.map((souk, index) => (
+            {pavilions.map((pavilion, index) => (
               <motion.div
-                key={souk.id}
+                key={pavilion.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
                 <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
-                      onClick={() => openGallery(souk)}>
+                      onClick={() => openGallery(pavilion)}>
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src={souk.image}
-                      alt={`${souk.name} souk`}
+                      src={pavilion.image}
+                      alt={`${pavilion.name} pavilion`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-lg font-bold text-white mb-2">
-                        {souk.name}
+                        {pavilion.name}
                       </h3>
                     </div>
                   </div>
                   
                   <div className="p-4">
                     <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                      {souk.description}
+                      {pavilion.description}
                     </p>
                     
                     <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
