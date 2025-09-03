@@ -83,12 +83,17 @@ export function Footer() {
               <p className="text-gray-700 text-sm mb-2">
                 23rd October 2025 → 9th April 2026
               </p>
-              <div className="flex items-center space-x-2">
+              <a
+                href="https://maps.app.goo.gl/yiNCMrCrTbgJ3fxd8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:underline"
+              >
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-gray-700 text-sm">
                   Carnival Jeddah, Next to Aziz Mall, Jeddah
                 </span>
-              </div>
+              </a>
             </div>
             
             {/* Newsletter Signup */}
