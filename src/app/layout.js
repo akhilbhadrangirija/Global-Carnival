@@ -1,4 +1,6 @@
 import "./globals.css";
+import Script from 'next/script';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 
 export const metadata = {
   title: {
@@ -179,6 +181,26 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="antialiased" style={{ fontFamily: 'Oswald, system-ui, sans-serif' }}>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PK8QE4THP2"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PK8QE4THP2', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
