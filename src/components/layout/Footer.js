@@ -208,7 +208,7 @@ export function Footer() {
                     >
                       <Phone className="w-4 h-4 text-primary" />
                       <span className="text-gray-700 text-sm">
-                        Rinu: +971 50 275 5860
+                        Srinu: +971 50 275 5860
                       </span>
                     </a>
                     <a
