@@ -125,11 +125,13 @@ export default function PavilionPage() {
     <div className="min-h-screen">
       {/* Hero Banner */}
       <section className="relative py-32 text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/souks/AllSoucks.jpg)'
-          }}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/allpavillion.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container mx-auto px-4 text-center">
