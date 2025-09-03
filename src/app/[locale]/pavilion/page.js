@@ -7,33 +7,7 @@ import { X, ChevronLeft, ChevronRight, MapPin, Star } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 
-export const metadata = {
-  title: 'Experience Pavilions from Around the World',
-  description: 'Explore authentic cultural pavilions representing different regions of the world. Each pavilion showcases unique traditions, crafts, and cultural experiences.',
-  keywords: 'cultural pavilions, world cultures, regional pavilions, cultural experiences, traditional crafts, authentic representations, cultural diversity, international pavilions',
-  openGraph: {
-    title: 'Experience Pavilions from Around the World | Global Carnival Jeddah',
-    description: 'Explore authentic cultural pavilions representing different regions of the world. Each pavilion showcases unique traditions, crafts, and cultural experiences.',
-    type: 'website',
-    images: [
-      {
-        url: '/souks/AllSoucks.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Cultural Pavilions at Global Carnival Jeddah',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Experience Pavilions from Around the World | Global Carnival Jeddah',
-    description: 'Explore authentic cultural pavilions representing different regions of the world. Each pavilion showcases unique traditions, crafts, and cultural experiences.',
-    images: ['/souks/AllSoucks.jpg'],
-  },
-  alternates: {
-    canonical: '/pavilion',
-  },
-};
+
 
 export default function PavilionPage() {
   const t = useTranslations('pavilion');

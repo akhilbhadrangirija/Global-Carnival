@@ -4,33 +4,6 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Globe, Users } from 'lucide-react';
 import Image from 'next/image';
 
-export const metadata = {
-  title: 'About Global Carnival Jeddah',
-  description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
-  keywords: 'about Global Carnival Jeddah, cultural extravaganza, world traditions, cultural diversity, interactive experiences, strategic location Jeddah, Saudi Arabia cultural events',
-  openGraph: {
-    title: 'About Global Carnival Jeddah | Cultural Extravaganza',
-    description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
-    type: 'website',
-    images: [
-      {
-        url: '/about-jeddah.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'About Global Carnival Jeddah - Cultural Extravaganza',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Global Carnival Jeddah | Cultural Extravaganza',
-    description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
-    images: ['/about-jeddah.jpg'],
-  },
-  alternates: {
-    canonical: '/about',
-  },
-};
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
