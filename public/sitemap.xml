@@ -1,240 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Homepage -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en"/>
   </url>
 
   <!-- About Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/about</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/about"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/about</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/about"/>
   </url>
 
   <!-- Activities Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/activities</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/activities"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/activities"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/activities</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/activities"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/activities"/>
   </url>
 
   <!-- Attractions Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/attractions</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/attractions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/attractions"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/attractions</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/attractions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/attractions"/>
   </url>
 
   <!-- Contact Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/contact</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/contact"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/contact</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/contact"/>
   </url>
 
   <!-- Dining Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/dining</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/dining"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/dining"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/dining</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/dining"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/dining"/>
   </url>
 
   <!-- Directory Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/directory</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/directory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/directory"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/directory</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/directory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/directory"/>
   </url>
 
   <!-- Events Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/events</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/events"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/events"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/events</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/events"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/events"/>
   </url>
 
   <!-- Food Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/food</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/food"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/food"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/food</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/food"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/food"/>
   </url>
 
   <!-- Gallery Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/gallery</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/gallery"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/gallery"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/gallery</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/gallery"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/gallery"/>
   </url>
 
   <!-- Highlights Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/highlights</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/highlights"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/highlights"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/highlights</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/highlights"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/highlights"/>
   </url>
 
   <!-- Overview Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/overview</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/overview"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/overview</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/overview"/>
   </url>
 
   <!-- Partner Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/partner</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/partner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/partner"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/partner</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/partner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/partner"/>
   </url>
 
   <!-- Privacy Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/privacy</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/privacy"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/privacy</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/privacy"/>
   </url>
 
   <!-- Products Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/products</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/products"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/products</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/products"/>
   </url>
 
   <!-- Pavilion Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/pavilion</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/pavilion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/pavilion"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/pavilion</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/pavilion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/pavilion"/>
   </url>
 
   <!-- Terms Page -->
   <url>
     <loc>https://globalcarnivaljeddah.com/en/terms</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/terms"/>
   </url>
   <url>
     <loc>https://globalcarnivaljeddah.com/ar/terms</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://globalcarnivaljeddah.com/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalcarnivaljeddah.com/en/terms"/>
   </url>
 </urlset>

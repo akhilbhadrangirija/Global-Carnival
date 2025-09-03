@@ -9,6 +9,34 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Chip } from '@/components/ui/Chip';
 
+export const metadata = {
+  title: 'Explore Attractions',
+  description: 'Discover amazing attractions across six unique categories at Global Carnival Jeddah. Adventure parks, cultural experiences, family fun, and entertainment for all ages.',
+  keywords: 'attractions Jeddah, adventure park, cultural experiences, family attractions, entertainment venues, tourist attractions Saudi Arabia, carnival attractions, family fun',
+  openGraph: {
+    title: 'Explore Attractions | Global Carnival Jeddah',
+    description: 'Discover amazing attractions across six unique categories at Global Carnival Jeddah. Adventure parks, cultural experiences, family fun, and entertainment for all ages.',
+    type: 'website',
+    images: [
+      {
+        url: '/attractions/adventurePark.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Attractions at Global Carnival Jeddah',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Explore Attractions | Global Carnival Jeddah',
+    description: 'Discover amazing attractions across six unique categories at Global Carnival Jeddah. Adventure parks, cultural experiences, family fun, and entertainment for all ages.',
+    images: ['/attractions/adventurePark.jpg'],
+  },
+  alternates: {
+    canonical: '/attractions',
+  },
+};
+
 // Mock attractions data
 const attractions = [
   {

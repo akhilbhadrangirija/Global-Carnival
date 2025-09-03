@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import CTAButton from '@/components/ui/CTAButton';
 import { Card } from '@/components/ui/Card';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export function HighlightsPreview() {
   const t = useTranslations('highlights');
@@ -92,10 +93,13 @@ export function HighlightsPreview() {
                 className={`absolute inset-0 ${index === currentIndex ? 'z-10' : 'z-0'}`}
               >
                 <div className="relative w-full h-full">
-                  <img
+                  <Image
                     src={highlight.image}
-                    alt={highlight.title}
-                    className="w-full h-full object-cover"
+                    alt={`${highlight.title} at Global Carnival Jeddah`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                    priority={index === currentIndex}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

@@ -4,6 +4,34 @@ import { Star, Palette, Users, Music, Calendar, Globe, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useState } from 'react';
 
+export const metadata = {
+  title: 'Interactive Activities & Entertainment',
+  description: 'Discover hands-on fun for all ages at Global Carnival Jeddah. Creative workshops, cultural activities, stage entertainment, and interactive experiences.',
+  keywords: 'interactive activities, creative workshops, cultural activities, stage entertainment, family fun, hands-on experiences, entertainment Jeddah, cultural workshops, family activities',
+  openGraph: {
+    title: 'Interactive Activities & Entertainment | Global Carnival Jeddah',
+    description: 'Discover hands-on fun for all ages at Global Carnival Jeddah. Creative workshops, cultural activities, stage entertainment, and interactive experiences.',
+    type: 'website',
+    images: [
+      {
+        url: '/hero/activities.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Interactive Activities at Global Carnival Jeddah',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Interactive Activities & Entertainment | Global Carnival Jeddah',
+    description: 'Discover hands-on fun for all ages at Global Carnival Jeddah. Creative workshops, cultural activities, stage entertainment, and interactive experiences.',
+    images: ['/hero/activities.jpg'],
+  },
+  alternates: {
+    canonical: '/activities',
+  },
+};
+
 export default function ActivitiesPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 

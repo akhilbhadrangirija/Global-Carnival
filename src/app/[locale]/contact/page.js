@@ -9,6 +9,34 @@ import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Select } from '@/components/ui/Select';
 
+export const metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Global Carnival Jeddah. Contact information, inquiries, and support for visitors and partners.',
+  keywords: 'contact information, customer support, inquiries, visitor support, partner contact, carnival contact, Global Carnival Jeddah contact',
+  openGraph: {
+    title: 'Contact Us | Global Carnival Jeddah',
+    description: 'Get in touch with Global Carnival Jeddah. Contact information, inquiries, and support for visitors and partners.',
+    type: 'website',
+    images: [
+      {
+        url: '/hero/hero_image1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Global Carnival Jeddah',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Global Carnival Jeddah',
+    description: 'Get in touch with Global Carnival Jeddah. Contact information, inquiries, and support for visitors and partners.',
+    images: ['/hero/hero_image1.jpg'],
+  },
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
 export default function ContactPage() {
   const t = useTranslations();
   const [formData, setFormData] = useState({

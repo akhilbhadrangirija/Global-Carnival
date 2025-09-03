@@ -5,6 +5,34 @@ import { Button } from '@/components/ui/Button';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+export const metadata = {
+  title: 'Global Cuisine & Food',
+  description: 'A passport-free feast of world flavors at Global Carnival Jeddah. Experience authentic dishes, traditional recipes, and international street food.',
+  keywords: 'global cuisine, international food, traditional recipes, street food, authentic dishes, food festival, culinary experiences, world flavors, Jeddah food',
+  openGraph: {
+    title: 'Global Cuisine & Food | Global Carnival Jeddah',
+    description: 'A passport-free feast of world flavors at Global Carnival Jeddah. Experience authentic dishes, traditional recipes, and international street food.',
+    type: 'website',
+    images: [
+      {
+        url: '/foodcollage.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Global Cuisine at Global Carnival Jeddah',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Global Cuisine & Food | Global Carnival Jeddah',
+    description: 'A passport-free feast of world flavors at Global Carnival Jeddah. Experience authentic dishes, traditional recipes, and international street food.',
+    images: ['/foodcollage.jpg'],
+  },
+  alternates: {
+    canonical: '/food',
+  },
+};
+
 export default function FoodPage() {
   const t = useTranslations('food');
   const commonT = useTranslations('common');

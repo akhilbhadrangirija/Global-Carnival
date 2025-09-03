@@ -2,6 +2,35 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Globe, Users } from 'lucide-react';
+import Image from 'next/image';
+
+export const metadata = {
+  title: 'About Global Carnival Jeddah',
+  description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
+  keywords: 'about Global Carnival Jeddah, cultural extravaganza, world traditions, cultural diversity, interactive experiences, strategic location Jeddah, Saudi Arabia cultural events',
+  openGraph: {
+    title: 'About Global Carnival Jeddah | Cultural Extravaganza',
+    description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
+    type: 'website',
+    images: [
+      {
+        url: '/about-jeddah.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Global Carnival Jeddah - Cultural Extravaganza',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Global Carnival Jeddah | Cultural Extravaganza',
+    description: 'Learn about Global Carnival Jeddah - a groundbreaking cultural extravaganza bringing the world\'s most vibrant traditions, flavors, and experiences to Saudi Arabia.',
+    images: ['/about-jeddah.jpg'],
+  },
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
@@ -79,10 +108,12 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/about-jeddah.jpg"
-                  alt="Global Carnival Jeddah cultural celebration"
-                  className="w-full h-full object-cover"
+                  alt="Global Carnival Jeddah cultural celebration and cultural diversity"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
@@ -140,10 +171,12 @@ export default function AboutPage() {
               >
                 {/* Image Section */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover"
+                    alt={`${feature.title} at Global Carnival Jeddah`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-black/20" />
                   <div className="absolute top-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
