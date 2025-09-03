@@ -47,14 +47,17 @@ export function Carousel({
 
   return (
     <div className={cn('relative w-full overflow-hidden', className)} {...props}>
-      <div className="relative md:aspect-[16/9] aspect-[9/16] w-full">
+      <div className="relative md:aspect-[16/9] aspect-[9/16] h-screen w-full bg-black">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ x: '100%', opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '-100%', opacity: 1 }}
+            transition={{ 
+              duration: 0.3,
+              // ease: [0.4, 0.0, 0.2, 1]
+            }}
             className="absolute inset-0"
           >
             {items[currentIndex]}
