@@ -212,7 +212,7 @@ export default function ContactPage() {
                   >
                     <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
                     <p className="text-sm text-green-600">
-                      Message sent successfully! Thank you for reaching out. We'll get back to you soon.
+                      {`Message sent successfully! Thank you for reaching out. We'll get back to you soon.`}
                     </p>
                   </motion.div>
                 )}
