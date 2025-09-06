@@ -196,6 +196,51 @@ export function ContactWidget() {
                         )}
                       </div>
 
+                      {/* Shop Name Field */}
+                      <div>
+                        <label
+                          htmlFor="shopName"
+                          className="block text-sm font-medium text-gray-700 mb-2"
+                        >
+                          Shop Name
+                        </label>
+                        <input
+                          {...register('shopName')}
+                          type="text"
+                          id="shopName"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                          placeholder="Your shop or business name (optional)"
+                        />
+                        {errors.shopName && (
+                          <p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>
+                        )}
+                      </div>
+
+                      {/* Phone Number Field */}
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-medium text-gray-700 mb-2"
+                        >
+                          Phone Number
+                        </label>
+                        <input
+                          {...register('phone', {
+                            pattern: {
+                              value: /^[\+]?[1-9][\d]{0,15}$/,
+                              message: 'Please enter a valid phone number',
+                            },
+                          })}
+                          type="tel"
+                          id="phone"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                          placeholder="+966 XX XXX XXXX (optional)"
+                        />
+                        {errors.phone && (
+                          <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+                        )}
+                      </div>
+
                       {/* Email Field */}
                       <div>
                         <label

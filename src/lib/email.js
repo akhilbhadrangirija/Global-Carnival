@@ -112,6 +112,13 @@ export const emailTemplates = {
                 <div class="field-value">${data.name}</div>
               </div>
               
+              ${data.shopName ? `
+              <div class="field">
+                <div class="field-label">Shop Name</div>
+                <div class="field-value">${data.shopName}</div>
+              </div>
+              ` : ''}
+              
               <div class="field">
                 <div class="field-label">Email</div>
                 <div class="field-value">
@@ -120,6 +127,17 @@ export const emailTemplates = {
                   </a>
                 </div>
               </div>
+              
+              ${data.phone ? `
+              <div class="field">
+                <div class="field-label">Phone Number</div>
+                <div class="field-value">
+                  <a href="tel:${data.phone}" style="color: #3b82f6; text-decoration: none;">
+                    ${data.phone}
+                  </a>
+                </div>
+              </div>
+              ` : ''}
               
               <div class="field">
                 <div class="field-label">Message</div>
@@ -149,7 +167,9 @@ export const emailTemplates = {
 New Contact Form Submission - Global Carnival Jeddah
 
 Name: ${data.name}
+${data.shopName ? `Shop Name: ${data.shopName}` : ''}
 Email: ${data.email}
+${data.phone ? `Phone: ${data.phone}` : ''}
 Message: ${data.message}
 
 Received on: ${new Date().toLocaleString('en-US', {

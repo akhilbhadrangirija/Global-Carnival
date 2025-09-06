@@ -4,7 +4,7 @@ import { sendEmail } from '@/lib/email';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, email, message, shopName, phone } = body;
 
     // Basic validation
     if (!name || !email || !message) {
@@ -28,6 +28,8 @@ export async function POST(request) {
       name,
       email,
       message,
+      shopName: shopName || 'Not provided',
+      phone: phone || 'Not provided',
       timestamp: new Date().toISOString(),
     });
 
@@ -35,7 +37,7 @@ export async function POST(request) {
     const adminEmailResult = await sendEmail(
       process.env.ADMIN_EMAIL || 'contact@globalcarnivaljeddah.com',
       'contactForm',
-      { name, email, message }
+      { name, email, message, shopName, phone }
     );
 
     if (!adminEmailResult.success) {
@@ -47,7 +49,7 @@ export async function POST(request) {
     const userEmailResult = await sendEmail(
       email,
       'confirmation',
-      { name, email, message }
+      { name, email, message, shopName, phone }
     );
 
     if (!userEmailResult.success) {
