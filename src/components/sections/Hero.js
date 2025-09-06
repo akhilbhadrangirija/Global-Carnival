@@ -28,10 +28,10 @@ export function Hero() {
       src: "/hero/hero_image3.jpg",
       alt: "Global Carnival Jeddah - A world of wonder and culture"
     },
-    {
-      src: "/hero/hero_image4.jpg",
-      alt: "Global Carnival Jeddah - A world of wonder and culture"
-    }
+    // {
+    //   src: "/hero/hero_image4.jpg",
+    //   alt: "Global Carnival Jeddah - A world of wonder and culture"
+    // }
   ];
 
   return (
