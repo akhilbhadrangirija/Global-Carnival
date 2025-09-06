@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
@@ -13,40 +14,45 @@ import { Select } from '@/components/ui/Select';
 
 export default function ContactPage() {
   const t = useTranslations();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    topic: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        topic: '',
-        message: ''
+  const onSubmit = async (data) => {
+    setSubmitStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
-    }, 2000);
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        reset();
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        const errorData = await response.json();
+        setErrorMessage(errorData.message || 'Something went wrong. Please try again.');
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setErrorMessage('Network error. Please check your connection and try again.');
+      setSubmitStatus('error');
+    }
   };
 
   const openWhatsApp = () => {
@@ -91,115 +97,144 @@ export default function ContactPage() {
                 Send us a Message
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.form.name')}
+                      {t('contact.form.name')} *
                     </label>
                     <Input
+                      {...register('name', { required: 'Name is required' })}
                       id="name"
-                      name="name"
                       type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
                       className="w-full"
+                      placeholder="Your full name"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.form.email')}
+                      {t('contact.form.email')} *
                     </label>
                     <Input
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: 'Invalid email address',
+                        },
+                      })}
                       id="email"
-                      name="email"
                       type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
                       className="w-full"
+                      placeholder="your.email@example.com"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                    )}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="shopName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Shop Name
+                    </label>
+                    <Input
+                      {...register('shopName')}
+                      id="shopName"
+                      type="text"
+                      className="w-full"
+                      placeholder="Your shop or business name (optional)"
+                    />
+                    {errors.shopName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>
+                    )}
+                  </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('contact.form.phone')}
                     </label>
                     <Input
+                      {...register('phone', {
+                        pattern: {
+                          value: /^[\+]?[1-9][\d]{0,15}$/,
+                          message: 'Please enter a valid phone number',
+                        },
+                      })}
                       id="phone"
-                      name="phone"
                       type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
                       className="w-full"
+                      placeholder="+966 XX XXX XXXX (optional)"
                     />
-                  </div>
-                  <div>
-                    <label htmlFor="topic" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.form.topic')}
-                    </label>
-                    <Select
-                      id="topic"
-                      name="topic"
-                      value={formData.topic}
-                      onChange={handleInputChange}
-                      className="w-full"
-                    >
-                      <option value="">Select a topic</option>
-                      <option value="general">{t('contact.topics.general')}</option>
-                      <option value="events">{t('contact.topics.events')}</option>
-                      <option value="business">{t('contact.topics.business')}</option>
-                      <option value="support">{t('contact.topics.support')}</option>
-                    </Select>
+                    {errors.phone && (
+                      <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+                    )}
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.message')}
+                    {t('contact.form.message')} *
                   </label>
                   <Textarea
+                    {...register('message', { required: 'Message is required' })}
                     id="message"
-                    name="message"
                     rows={6}
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
                     className="w-full"
+                    placeholder="Tell us how we can help you..."
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                  )}
                 </div>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full group"
-                  size="lg"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                      {t('contact.form.sending')}
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      {t('contact.form.send')}
-                    </>
-                  )}
-                </Button>
+                {/* Error Message */}
+                {submitStatus === 'error' && errorMessage && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg"
+                  >
+                    <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
+                    <p className="text-sm text-red-600">{errorMessage}</p>
+                  </motion.div>
+                )}
 
+                {/* Success Message */}
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg"
+                    className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg"
                   >
-                    {t('contact.form.success')}
+                    <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
+                    <p className="text-sm text-green-600">
+                      Message sent successfully! Thank you for reaching out. We'll get back to you soon.
+                    </p>
                   </motion.div>
                 )}
+
+                <Button
+                  type="submit"
+                  disabled={submitStatus === 'loading'}
+                  className="w-full group"
+                  size="lg"
+                >
+                  {submitStatus === 'loading' ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin mr-2" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
               </form>
 
               {/* WhatsApp Quick Contact */}
