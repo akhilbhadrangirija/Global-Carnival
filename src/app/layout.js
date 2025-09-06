@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from 'next/script';
 import { Suspense } from 'react';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { ContactWidget } from '@/components/ContactWidget';
 
 export const metadata = {
   title: {
@@ -205,6 +206,7 @@ export default function RootLayout({ children }) {
           <GoogleAnalytics />
         </Suspense>
         {children}
+        <ContactWidget />
       </body>
     </html>
   );
