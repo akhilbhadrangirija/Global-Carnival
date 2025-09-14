@@ -5,13 +5,14 @@ import { PavilionPreview } from '@/components/sections/PavilionPreview';
 import { HighlightsPreview } from '@/components/sections/HighlightsPreview';
 import { PartnerCTA } from '@/components/sections/PartnerCTA';
 import { AboutPreview } from '@/components/sections/AboutPreview';
+import { ContactSection } from '@/components/sections/ContactSection';
 
 export const metadata = {
-  title: 'Discover the World in One Place',
+  title: 'Global Carnival Jeddah - Discover the World in One Place',
   description: 'Step into a world of wonder, color, and culture at Global Carnival Jeddah. Experience authentic pavilions, global cuisine, interactive activities, and cultural celebrations from around the world.',
   keywords: 'Global Carnival Jeddah, cultural festival, world cultures, pavilions, global cuisine, interactive activities, Jeddah attractions, family entertainment, cultural extravaganza, Saudi Arabia tourism',
   openGraph: {
-    title: 'Discover the World in One Place | Global Carnival Jeddah',
+    title: 'Global Carnival Jeddah - Discover the World in One Place',
     description: 'Step into a world of wonder, color, and culture at Global Carnival Jeddah. Experience authentic pavilions, global cuisine, interactive activities, and cultural celebrations from around the world.',
     type: 'website',
     images: [
@@ -25,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Discover the World in One Place | Global Carnival Jeddah',
+    title: 'Global Carnival Jeddah - Discover the World in One Place',
     description: 'Step into a world of wonder, color, and culture at Global Carnival Jeddah. Experience authentic pavilions, global cuisine, interactive activities, and cultural celebrations from around the world.',
     images: ['/og-image.jpg'],
   },
@@ -43,6 +44,7 @@ export default function HomePage() {
       <HomepageTeasers />
       <PavilionPreview />
       <PartnerCTA />
+      <ContactSection />
     </>
   );
 }
