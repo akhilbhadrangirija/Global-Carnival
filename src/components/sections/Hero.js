@@ -77,10 +77,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-oswald"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight font-oswald"
+          >
+            {t('brandName')}
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xl md:text-2xl lg:text-3xl font-medium mb-6 text-gray-200"
           >
             {t('title')}
-          </motion.h1>
+          </motion.h2>
 
           {/* Sub-text */}
           {/* <motion.p
