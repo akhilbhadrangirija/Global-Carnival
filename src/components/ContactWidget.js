@@ -106,10 +106,10 @@ export function ContactWidget() {
 
   return (
     <>
-      {/* Floating Contact Icon */}
+      {/* Floating Contact Button */}
       <motion.button
         onClick={handleToggle}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50"
+        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 flex items-center gap-2"
         variants={iconVariants}
         whileHover="hover"
         whileTap="tap"
@@ -119,8 +119,11 @@ export function ContactWidget() {
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+          {isOpen ? <X size={20} /> : <MessageCircle size={20} />}
         </motion.div>
+        <span className="font-medium text-sm hidden sm:inline">
+          {isOpen ? 'Close' : 'Contact Us'}
+        </span>
       </motion.button>
 
       {/* Overlay and Form */}
@@ -148,7 +151,10 @@ export function ContactWidget() {
               <div className="p-6 pb-8 max-w-2xl mx-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">Get in Touch</h2>
+                  <div className="flex items-center gap-3">
+                    <MessageCircle size={24} className="text-blue-600" />
+                    <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
+                  </div>
                   <button
                     onClick={handleToggle}
                     className="p-2 hover:bg-gray-100 rounded-full transition-colors"
