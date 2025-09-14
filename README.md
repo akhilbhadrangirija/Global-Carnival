@@ -22,6 +22,51 @@ A modern, responsive city-destination website built with Next.js 14, featuring i
 - **Images**: Next.js Image optimization
 - **Forms**: React Hook Form with validation
 
+## 🧭 Functional Overview
+
+- **Routing & Layout**
+  - App Router with locale-prefixed routes: `/:locale` where `locale ∈ {en, ar}`
+  - Root layout (`src/app/layout.js`) injects global SEO, JSON-LD (Organization, Event, WebSite), GA scripts, and `ContactWidget`
+  - Locale layout (`src/app/[locale]/layout.js`) wraps pages with `NextIntlClientProvider`, and renders shared `Header` and `Footer`
+
+- **Key Pages** (`src/app/[locale]/...`)
+  - `page.js` (Home): hero, previews (about, highlights, pavilions), partner CTA
+  - `about/`: brand story and features
+  - `pavilion/`: regional pavilions with modal image galleries
+  - `attractions/`: client-side filters (category/age/price/search) over sample data
+  - `food/` and `products/`: gallery-style showcases with lightbox modal
+  - `contact/`: contact form (submits to API)
+
+- **Internationalization (i18n)**
+  - Powered by `next-intl`; messages in `src/messages/en.json` and `src/messages/ar.json`
+  - RTL/LTR handled via helpers in `utils` and `dir` attributes on layout/components
+  - Language switcher in `Header` swaps `/:locale` in the current path
+
+- **Content & Data**
+  - Structured JSON content in `src/content/attractions.json` and `src/content/events.json`
+  - Media assets in `public/` (hero images, pavilion galleries, product/food photos)
+
+- **Interactivity & UI**
+  - Animations with Framer Motion (section reveals, modals, hover effects)
+  - Reusable UI in `src/components/ui/` (Button, Card, Chip, Input, etc.)
+  - Sections for homepage in `src/components/sections/` (Hero, Stats, Previews)
+
+- **SEO & Analytics**
+  - Centralized SEO config/utilities in `src/lib/seo.js`
+  - Open Graph/Twitter metadata defined at root and page level
+  - JSON-LD for Organization/Event/WebSite in root layout
+  - Google Analytics v4 via `next/script` and `src/components/analytics/GoogleAnalytics.js`
+
+- **Contact Form**
+  - Endpoint: `src/app/api/contact/route.js` (POST JSON: name, email, message, optional shopName, phone)
+  - Validates payload, logs submission, sends admin notification and user confirmation via `src/lib/email.js`
+
+- **Accessibility & Responsiveness**
+  - Tailwind-driven responsive layouts; keyboard-focusable controls; alt text; color contrast
+
+- **Deployment**
+  - Production-ready on Vercel; locale-aware middleware; image optimization enabled
+
 ## 📁 Project Structure
 
 ```
