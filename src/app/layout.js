@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from 'next/script';
 import { Suspense } from 'react';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { MetaPixel } from '@/components/analytics/MetaPixel';
 import { ContactWidget } from '@/components/ContactWidget';
 
 export const metadata = {
@@ -202,8 +203,32 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        {/* Meta Pixel Base Code */}
+        <Script
+          id="facebook-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s){
+            if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1126959302219911');
+            fbq('track', 'PageView');`
+          }}
+        />
+        {/* Meta Pixel noscript image for users without JS */}
+        <noscript>
+          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1126959302219911&ev=PageView&noscript=1" alt="" />
+        </noscript>
         <Suspense fallback={null}>
           <GoogleAnalytics />
+        </Suspense>
+        <Suspense fallback={null}>
+          <MetaPixel />
         </Suspense>
         {children}
         <ContactWidget />
