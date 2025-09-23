@@ -8,6 +8,7 @@ import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle, AlertCirc
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
+import { ContactSuccess } from '@/components/ui/ContactSuccess';
 
 export function ContactSection() {
   const t = useTranslations();
@@ -37,10 +38,6 @@ export function ContactSection() {
       if (response.ok) {
         setSubmitStatus('success');
         reset();
-        // Auto-hide success message after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus('idle');
-        }, 5000);
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Something went wrong. Please try again.');
@@ -80,18 +77,21 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-xl p-8"
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Send us a Message
-            </h3>
-            
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          {submitStatus === 'success' ? (
+            <ContactSuccess onReset={() => setSubmitStatus('idle')} />
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-xl p-8"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Send us a Message
+              </h3>
+              
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -197,19 +197,7 @@ export function ContactSection() {
                 </motion.div>
               )}
 
-              {/* Success Message */}
-              {submitStatus === 'success' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg"
-                >
-                  <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                  <p className="text-sm text-green-600">
-                    Message sent successfully! Thank you for reaching out. We&apos;ll get back to you soon.
-                  </p>
-                </motion.div>
-              )}
+              {/* Success handled by ContactSuccess above */}
 
               <Button
                 type="submit"
@@ -229,10 +217,10 @@ export function ContactSection() {
                   </>
                 )}
               </Button>
-            </form>
+              </form>
 
-            {/* WhatsApp Quick Contact */}
-            <div className="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
+              {/* WhatsApp Quick Contact */}
+              <div className="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
               <div className="flex items-center space-x-3 mb-3">
                 <MessageCircle className="w-6 h-6 text-green-600" />
                 <h4 className="text-lg font-semibold text-green-800">
@@ -248,8 +236,9 @@ export function ContactSection() {
               >
                 Chat on WhatsApp
               </Button>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          )}
 
           {/* Contact Information */}
           <motion.div

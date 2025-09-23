@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Select } from '@/components/ui/Select';
+import { ContactSuccess } from '@/components/ui/ContactSuccess';
 
 
 
@@ -40,10 +41,6 @@ export default function ContactPage() {
       if (response.ok) {
         setSubmitStatus('success');
         reset();
-        // Auto-hide success message after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus('idle');
-        }, 5000);
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Something went wrong. Please try again.');
@@ -87,7 +84,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <motion.div
+            {submitStatus === 'success' ? (
+              <ContactSuccess onReset={() => setSubmitStatus('idle')} />
+            ) : (
+              <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -203,19 +203,7 @@ export default function ContactPage() {
                   </motion.div>
                 )}
 
-                {/* Success Message */}
-                {submitStatus === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg"
-                  >
-                    <CheckCircle size={20} className="text-green-500 flex-shrink-0" />
-                    <p className="text-sm text-green-600">
-                      {`Message sent successfully! Thank you for reaching out. We'll get back to you soon.`}
-                    </p>
-                  </motion.div>
-                )}
+              {/* Success handled by ContactSuccess above */}
 
                 <Button
                   type="submit"
@@ -256,6 +244,7 @@ export default function ContactPage() {
                 </Button>
               </div>
             </motion.div>
+            )}
 
             {/* Contact Information */}
             <motion.div

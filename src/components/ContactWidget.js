@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { MessageCircle, X, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { ContactSuccess } from '@/components/ui/ContactSuccess';
 
 export function ContactWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +34,6 @@ export function ContactWidget() {
       if (response.ok) {
         setSubmitStatus('success');
         reset();
-        // Auto-close after 3 seconds
-        setTimeout(() => {
-          setIsOpen(false);
-          setSubmitStatus('idle');
-        }, 3000);
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Something went wrong. Please try again.');
@@ -167,19 +163,7 @@ export function ContactWidget() {
                 {/* Form Content */}
                 <div className="space-y-6">
                   {submitStatus === 'success' ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-center py-8"
-                    >
-                      <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Message Sent Successfully!
-                      </h3>
-                      <p className="text-gray-600">
-                        Thank you for reaching out. We&apos;ll get back to you soon.
-                      </p>
-                    </motion.div>
+                    <ContactSuccess onReset={() => setSubmitStatus('idle')} />
                   ) : (
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                       {/* Name Field */}
