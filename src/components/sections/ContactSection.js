@@ -149,10 +149,11 @@ export function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.phone')}
+                    {t('contact.form.phone')} *
                   </label>
                   <Input
                     {...register('phone', {
+                      required: 'Phone is required',
                       pattern: {
                         value: /^[\+]?[1-9][\d]{0,15}$/,
                         message: 'Please enter a valid phone number',
