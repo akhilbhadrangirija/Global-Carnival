@@ -64,6 +64,44 @@ const visitorInfo = [
 export function PlanYourVisit() {
   const t = useTranslations();
 
+  const readCookie = (name) => {
+    if (typeof document === 'undefined') return undefined;
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : undefined;
+  };
+
+  const handleContactClick = () => {
+    try {
+      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact', { content_name: 'PlanYourVisit Contact' });
+      }
+    } catch (_) {}
+
+    try {
+      const eventId = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+      const payload = {
+        event_name: 'Contact',
+        event_time: Math.floor(Date.now() / 1000),
+        event_source_url: typeof window !== 'undefined' ? window.location.href : undefined,
+        event_id: eventId,
+        user_data: {
+          fbp: readCookie('_fbp'),
+          fbc: readCookie('_fbc'),
+        },
+        custom_data: {
+          content_name: 'PlanYourVisit Contact',
+        },
+      };
+
+      fetch('/api/meta/capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {});
+    } catch (_) {}
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
       <div className="container mx-auto px-4">
@@ -197,7 +235,7 @@ export function PlanYourVisit() {
             </CTAButton>
             
             <Link href="/contact">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={handleContactClick}>
                 <Phone className="mr-2 w-5 h-5" />
                 Contact Us
               </Button>
