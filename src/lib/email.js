@@ -300,6 +300,41 @@ The Global Carnival Jeddah Team
 This is an automated response. Please do not reply to this email.
     `,
   }),
+
+  emailOtp: (data) => ({
+    subject: `Your verification code: ${data.code}`,
+    html: `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Your Verification Code</title>
+          <style>
+            body { font-family: 'Oswald', Arial, sans-serif; color:#111827; background:#f9fafb; padding:24px; }
+            .card { max-width:600px; margin:0 auto; background:#fff; border-radius:12px; box-shadow:0 10px 20px rgba(0,0,0,0.06); overflow:hidden; }
+            .header { background: linear-gradient(135deg, #3b82f6, #10b981); color:#fff; padding:24px; text-align:center; }
+            .code { font-size:32px; letter-spacing:6px; font-weight:800; color:#111827; background:#f3f4f6; border-radius:8px; padding:16px 24px; display:inline-block; }
+            .content { padding:28px; text-align:center; }
+            .muted { color:#6b7280; font-size:14px; margin-top:12px; }
+          </style>
+        </head>
+        <body>
+          <div class="card">
+            <div class="header">
+              <h1>Verify your email</h1>
+            </div>
+            <div class="content">
+              <p>Use the following code to verify your email for Global Carnival Jeddah:</p>
+              <div class="code">${data.code}</div>
+              <p class="muted">This code expires in 5 minutes. If you didn't request this, you can ignore this email.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Your verification code is ${data.code}. It expires in 5 minutes.`,
+  }),
 };
 
 // Send email function

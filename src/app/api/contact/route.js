@@ -1,9 +1,18 @@
 import { NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
+import { verifyVerifiedToken } from '@/lib/otp';
 
 export async function POST(request) {
   try {
     const body = await request.json();
+    const verifiedHeader = request.headers.get('x-verified-token') || '';
+    const verified = verifyVerifiedToken(verifiedHeader);
+    if (!verified || verified.email !== body.email) {
+      return NextResponse.json(
+        { message: 'Email verification required' },
+        { status: 403 }
+      );
+    }
     const { name, email, message, shopName, phone } = body;
 
     // Basic validation

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { MessageCircle, X, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
@@ -15,18 +15,33 @@ export function ContactWidget() {
     register,
     handleSubmit,
     reset,
+    getValues,
     formState: { errors },
   } = useForm();
+  const [otpStatus, setOtpStatus] = useState('idle');
+  const [otpError, setOtpError] = useState('');
+  const [otpCode, setOtpCode] = useState('');
+  const [otpStateToken, setOtpStateToken] = useState('');
+  const [verifiedToken, setVerifiedToken] = useState('');
+  const [step, setStep] = useState(1);
+  const [otpCooldown, setOtpCooldown] = useState(0);
+  const otpTimerRef = useRef(null);
 
   const onSubmit = async (data) => {
     setSubmitStatus('loading');
     setErrorMessage('');
 
     try {
+      if (!verifiedToken) {
+        setErrorMessage('Please verify your email via OTP before submitting.');
+        setSubmitStatus('error');
+        return;
+      }
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-verified-token': verifiedToken,
         },
         body: JSON.stringify(data),
       });
@@ -52,6 +67,68 @@ export function ContactWidget() {
       setErrorMessage('');
     } else {
       setIsOpen(true);
+    }
+  };
+
+  const handleSendOtp = async () => {
+    setOtpError('');
+    const email = getValues('email');
+    if (!email) {
+      setOtpError('Enter your email first');
+      return;
+    }
+    if (otpCooldown > 0) return;
+    setOtpStatus('sending');
+    try {
+      const res = await fetch('/api/contact/otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Failed to send OTP');
+      setOtpStateToken(data.stateToken);
+      setOtpStatus('sent');
+      setOtpCooldown(40);
+      if (otpTimerRef.current) clearInterval(otpTimerRef.current);
+      otpTimerRef.current = setInterval(() => {
+        setOtpCooldown((s) => {
+          if (s <= 1) {
+            clearInterval(otpTimerRef.current);
+            otpTimerRef.current = null;
+            return 0;
+          }
+          return s - 1;
+        });
+      }, 1000);
+    } catch (e) {
+      setOtpError(e.message);
+      setOtpStatus('error');
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    setOtpError('');
+    const email = getValues('email');
+    if (!email || !otpCode || !otpStateToken) {
+      setOtpError('Enter the code sent to your email');
+      return;
+    }
+    setOtpStatus('verifying');
+    try {
+      const res = await fetch('/api/contact/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, code: otpCode, stateToken: otpStateToken }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Invalid code');
+      setVerifiedToken(data.verifiedToken);
+      setOtpStatus('verified');
+      setStep(2);
+    } catch (e) {
+      setOtpError(e.message);
+      setOtpStatus('error');
     }
   };
 
@@ -166,150 +243,142 @@ export function ContactWidget() {
                     <ContactSuccess onReset={() => setSubmitStatus('idle')} />
                   ) : (
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                      {/* Name Field */}
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Name *
-                        </label>
-                        <input
-                          {...register('name', { required: 'Name is required' })}
-                          type="text"
-                          id="name"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="Your full name"
-                        />
-                        {errors.name && (
-                          <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                        )}
-                      </div>
-
-                      {/* Shop Name Field */}
-                      <div>
-                        <label
-                          htmlFor="shopName"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Shop Name
-                        </label>
-                        <input
-                          {...register('shopName')}
-                          type="text"
-                          id="shopName"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="Your shop or business name (optional)"
-                        />
-                        {errors.shopName && (
-                          <p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>
-                        )}
-                      </div>
-
-                      {/* Phone Number Field */}
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Phone Number *
-                        </label>
-                        <input
-                          {...register('phone', {
-                            required: 'Phone is required',
-                            pattern: {
-                              value: /^[\+]?[1-9][\d]{0,15}$/,
-                              message: 'Please enter a valid phone number',
-                            },
-                          })}
-                          type="tel"
-                          id="phone"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="+966 XX XXX XXXX (optional)"
-                        />
-                        {errors.phone && (
-                          <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
-                        )}
-                      </div>
-
-                      {/* Email Field */}
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Email *
-                        </label>
-                        <input
-                          {...register('email', {
-                            required: 'Email is required',
-                            pattern: {
-                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: 'Invalid email address',
-                            },
-                          })}
-                          type="email"
-                          id="email"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="your.email@example.com"
-                        />
-                        {errors.email && (
-                          <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-                        )}
-                      </div>
-
-                      {/* Message Field */}
-                      <div>
-                        <label
-                          htmlFor="message"
-                          className="block text-sm font-medium text-gray-700 mb-2"
-                        >
-                          Message *
-                        </label>
-                        <textarea
-                          {...register('message', { required: 'Message is required' })}
-                          id="message"
-                          rows={4}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
-                          placeholder="Tell us how we can help you..."
-                        />
-                        {errors.message && (
-                          <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-                        )}
-                      </div>
-
-                      {/* Error Message */}
-                      {submitStatus === 'error' && errorMessage && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg"
-                        >
-                          <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
-                          <p className="text-sm text-red-600">{errorMessage}</p>
-                        </motion.div>
+                      {step === 1 ? (
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                          <input
+                            {...register('email', {
+                              required: 'Email is required',
+                              pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: 'Invalid email address',
+                              },
+                            })}
+                            type="email"
+                            id="email"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                            placeholder="your.email@example.com"
+                          />
+                          {errors.email && (<p className="mt-1 text-sm text-red-600">{errors.email.message}</p>)}
+                          <div className="mt-3 flex items-center gap-2">
+                            <motion.button
+                              type="button"
+                              onClick={handleSendOtp}
+                              disabled={otpStatus === 'sending' || otpStatus === 'verified' || otpCooldown > 0}
+                              className="px-3 py-2 bg-blue-600 text-white rounded-md disabled:opacity-60"
+                              whileHover={{ scale: otpStatus === 'sending' || otpStatus === 'verified' ? 1 : 1.02 }}
+                              whileTap={{ scale: otpStatus === 'sending' || otpStatus === 'verified' ? 1 : 0.98 }}
+                            >
+                              {otpStatus === 'verified' ? 'Verified' : otpStatus === 'sending' ? 'Sending...' : otpCooldown > 0 ? `Resend in ${otpCooldown}s` : 'Send OTP'}
+                            </motion.button>
+                            {(otpStatus === 'sent' || otpStatus === 'verifying' || otpStatus === 'error') && (
+                              <>
+                                <input
+                                  value={otpCode}
+                                  onChange={(e) => setOtpCode(e.target.value)}
+                                  placeholder="Enter code"
+                                  className="w-32 px-3 py-2 border border-gray-300 rounded-md"
+                                />
+                                <motion.button
+                                  type="button"
+                                  onClick={handleVerifyOtp}
+                                  disabled={otpStatus === 'verifying'}
+                                  className="px-3 py-2 bg-green-600 text-white rounded-md disabled:opacity-60"
+                                  whileHover={{ scale: otpStatus === 'verifying' ? 1 : 1.02 }}
+                                  whileTap={{ scale: otpStatus === 'verifying' ? 1 : 0.98 }}
+                                >
+                                  {otpStatus === 'verifying' ? 'Verifying...' : 'Verify'}
+                                </motion.button>
+                              </>
+                            )}
+                          </div>
+                          {otpError && <p className="mt-1 text-sm text-red-600">{otpError}</p>}
+                          <div className="mt-6">
+                            <motion.button
+                              type="button"
+                              onClick={() => setStep(2)}
+                              disabled={otpStatus !== 'verified'}
+                              className="w-full bg-gray-900 text-white rounded-lg py-3 disabled:opacity-60"
+                              whileHover={{ scale: otpStatus !== 'verified' ? 1 : 1.02 }}
+                              whileTap={{ scale: otpStatus !== 'verified' ? 1 : 0.98 }}
+                            >
+                              Continue
+                            </motion.button>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                            <input
+                              {...register('name', { required: 'Name is required' })}
+                              type="text"
+                              id="name"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                              placeholder="Your full name"
+                            />
+                            {errors.name && (<p className="mt-1 text-sm text-red-600">{errors.name.message}</p>)}
+                          </div>
+                          <div>
+                            <label htmlFor="shopName" className="block text-sm font-medium text-gray-700 mb-2">Shop Name</label>
+                            <input
+                              {...register('shopName')}
+                              type="text"
+                              id="shopName"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                              placeholder="Your shop or business name (optional)"
+                            />
+                            {errors.shopName && (<p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>)}
+                          </div>
+                          <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input
+                              {...register('phone', {
+                                required: 'Phone is required',
+                                pattern: { value: /^[\+]?[1-9][\d]{0,15}$/, message: 'Please enter a valid phone number' },
+                              })}
+                              type="tel"
+                              id="phone"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                              placeholder="+966 XX XXX XXXX (optional)"
+                            />
+                            {errors.phone && (<p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>)}
+                          </div>
+                          <div>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea
+                              {...register('message', { required: 'Message is required' })}
+                              id="message"
+                              rows={4}
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                              placeholder="Tell us how we can help you..."
+                            />
+                            {errors.message && (<p className="mt-1 text-sm text-red-600">{errors.message.message}</p>)}
+                          </div>
+                          {submitStatus === 'error' && errorMessage && (
+                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg">
+                              <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
+                              <p className="text-sm text-red-600">{errorMessage}</p>
+                            </motion.div>
+                          )}
+                          <div className="flex gap-3">
+                            <motion.button type="button" onClick={() => setStep(1)} className="flex-1 bg-gray-200 text-gray-900 rounded-lg py-3">Back</motion.button>
+                            <motion.button
+                              type="submit"
+                              disabled={submitStatus === 'loading'}
+                              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed"
+                              whileHover={{ scale: submitStatus === 'loading' ? 1 : 1.02 }}
+                              whileTap={{ scale: submitStatus === 'loading' ? 1 : 0.98 }}
+                            >
+                              {submitStatus === 'loading' ? (
+                                <div className="flex items-center justify-center gap-2"><Loader2 size={20} className="animate-spin" /><span>Sending...</span></div>
+                              ) : (
+                                <div className="flex items-center justify-center gap-2"><Send size={20} /><span>Send Message</span></div>
+                              )}
+                            </motion.button>
+                          </div>
+                        </>
                       )}
-
-                      {/* Submit Button */}
-                      <motion.button
-                        type="submit"
-                        disabled={submitStatus === 'loading'}
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed"
-                        whileHover={{ scale: submitStatus === 'loading' ? 1 : 1.02 }}
-                        whileTap={{ scale: submitStatus === 'loading' ? 1 : 0.98 }}
-                      >
-                        {submitStatus === 'loading' ? (
-                          <div className="flex items-center justify-center gap-2">
-                            <Loader2 size={20} className="animate-spin" />
-                            <span>Sending...</span>
-                          </div>
-                        ) : (
-                          <div className="flex items-center justify-center gap-2">
-                            <Send size={20} />
-                            <span>Send Message</span>
-                          </div>
-                        )}
-                      </motion.button>
                     </form>
                   )}
                 </div>

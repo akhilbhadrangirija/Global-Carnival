@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
@@ -19,18 +19,33 @@ export function ContactSection() {
     register,
     handleSubmit,
     reset,
+    getValues,
     formState: { errors },
   } = useForm();
+  const [otpStatus, setOtpStatus] = useState('idle');
+  const [otpError, setOtpError] = useState('');
+  const [otpCode, setOtpCode] = useState('');
+  const [otpStateToken, setOtpStateToken] = useState('');
+  const [verifiedToken, setVerifiedToken] = useState('');
+  const [step, setStep] = useState(1);
+  const [otpCooldown, setOtpCooldown] = useState(0);
+  const otpTimerRef = useRef(null);
 
   const onSubmit = async (data) => {
     setSubmitStatus('loading');
     setErrorMessage('');
 
     try {
+      if (!verifiedToken) {
+        setErrorMessage('Please verify your email via OTP before submitting.');
+        setSubmitStatus('error');
+        return;
+      }
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-verified-token': verifiedToken,
         },
         body: JSON.stringify(data),
       });
@@ -55,6 +70,74 @@ export function ContactSection() {
     );
     window.open(`https://wa.me/+971502755860?text=${message}`, '_blank');
   };
+
+  const handleSendOtp = async () => {
+    setOtpError('');
+    const email = getValues('email');
+    if (!email) {
+      setOtpError('Enter your email first');
+      return;
+    }
+    if (otpCooldown > 0) return;
+    setOtpStatus('sending');
+    try {
+      const res = await fetch('/api/contact/otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Failed to send OTP');
+      setOtpStateToken(data.stateToken);
+      setOtpStatus('sent');
+      setOtpCooldown(40);
+      if (otpTimerRef.current) clearInterval(otpTimerRef.current);
+      otpTimerRef.current = setInterval(() => {
+        setOtpCooldown((s) => {
+          if (s <= 1) {
+            clearInterval(otpTimerRef.current);
+            otpTimerRef.current = null;
+            return 0;
+          }
+          return s - 1;
+        });
+      }, 1000);
+    } catch (e) {
+      setOtpError(e.message);
+      setOtpStatus('error');
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    setOtpError('');
+    const email = getValues('email');
+    if (!email || !otpCode || !otpStateToken) {
+      setOtpError('Enter the code sent to your email');
+      return;
+    }
+    setOtpStatus('verifying');
+    try {
+      const res = await fetch('/api/contact/verify-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, code: otpCode, stateToken: otpStateToken }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Invalid code');
+      setVerifiedToken(data.verifiedToken);
+      setOtpStatus('verified');
+      setStep(2);
+    } catch (e) {
+      setOtpError(e.message);
+      setOtpStatus('error');
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (otpTimerRef.current) clearInterval(otpTimerRef.current);
+    };
+  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -92,132 +175,163 @@ export function ContactSection() {
               </h3>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.name')} *
-                  </label>
-                  <Input
-                    {...register('name', { required: 'Name is required' })}
-                    id="name"
-                    type="text"
-                    className="w-full"
-                    placeholder="Your full name"
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.email')} *
-                  </label>
-                  <Input
-                    {...register('email', {
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'Invalid email address',
-                      },
-                    })}
-                    id="email"
-                    type="email"
-                    className="w-full"
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && (
-                    <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-                  )}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="shopName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Shop Name
-                  </label>
-                  <Input
-                    {...register('shopName')}
-                    id="shopName"
-                    type="text"
-                    className="w-full"
-                    placeholder="Your shop or business name (optional)"
-                  />
-                  {errors.shopName && (
-                    <p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.phone')} *
-                  </label>
-                  <Input
-                    {...register('phone', {
-                      required: 'Phone is required',
-                      pattern: {
-                        value: /^[\+]?[1-9][\d]{0,15}$/,
-                        message: 'Please enter a valid phone number',
-                      },
-                    })}
-                    id="phone"
-                    type="tel"
-                    className="w-full"
-                    placeholder="+966 XX XXX XXXX (optional)"
-                  />
-                  {errors.phone && (
-                    <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
-                  )}
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  {t('contact.form.message')} *
-                </label>
-                <Textarea
-                  {...register('message', { required: 'Message is required' })}
-                  id="message"
-                  rows={6}
-                  className="w-full"
-                  placeholder="Tell us how we can help you..."
-                />
-                {errors.message && (
-                  <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-                )}
-              </div>
-
-              {/* Error Message */}
-              {submitStatus === 'error' && errorMessage && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg"
-                >
-                  <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
-                  <p className="text-sm text-red-600">{errorMessage}</p>
-                </motion.div>
-              )}
-
-              {/* Success handled by ContactSuccess above */}
-
-              <Button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                className="w-full group"
-                size="lg"
-              >
-                {submitStatus === 'loading' ? (
-                  <>
-                    <Loader2 size={20} className="animate-spin mr-2" />
-                    Sending...
-                  </>
+                {step === 1 ? (
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('contact.form.email')} *
+                    </label>
+                    <Input
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: 'Invalid email address',
+                        },
+                      })}
+                      id="email"
+                      type="email"
+                      className="w-full"
+                      placeholder="your.email@example.com"
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                    )}
+                    <div className="mt-3 flex items-center gap-2">
+                      <Button type="button" onClick={handleSendOtp} disabled={otpStatus === 'sending' || otpStatus === 'verified' || otpCooldown > 0}>
+                        {otpStatus === 'verified' ? 'Verified' : otpStatus === 'sending' ? 'Sending...' : otpCooldown > 0 ? `Resend in ${otpCooldown}s` : 'Send OTP'}
+                      </Button>
+                      {(otpStatus === 'sent' || otpStatus === 'verifying' || otpStatus === 'error') && (
+                        <>
+                          <Input
+                            value={otpCode}
+                            onChange={(e) => setOtpCode(e.target.value)}
+                            placeholder="Enter code"
+                            className="w-32"
+                          />
+                          <Button type="button" onClick={handleVerifyOtp} disabled={otpStatus === 'verifying'}>
+                            {otpStatus === 'verifying' ? 'Verifying...' : 'Verify'}
+                          </Button>
+                        </>
+                      )}
+                    </div>
+                    {otpError && <p className="mt-1 text-sm text-red-600">{otpError}</p>}
+                    <div className="mt-6">
+                      <Button type="button" onClick={() => setStep(2)} disabled={otpStatus !== 'verified'} className="w-full">
+                        Continue
+                      </Button>
+                    </div>
+                  </div>
                 ) : (
                   <>
-                    <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    Send Message
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                          {t('contact.form.name')} *
+                        </label>
+                        <Input
+                          {...register('name', { required: 'Name is required' })}
+                          id="name"
+                          type="text"
+                          className="w-full"
+                          placeholder="Your full name"
+                        />
+                        {errors.name && (
+                          <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                          {t('contact.form.phone')} *
+                        </label>
+                        <Input
+                          {...register('phone', {
+                            required: 'Phone is required',
+                            pattern: {
+                              value: /^[\+]?[1-9][\d]{0,15}$/,
+                              message: 'Please enter a valid phone number',
+                            },
+                          })}
+                          id="phone"
+                          type="tel"
+                          className="w-full"
+                          placeholder="+966 XX XXX XXXX (optional)"
+                        />
+                        {errors.phone && (
+                          <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="shopName" className="block text-sm font-medium text-gray-700 mb-2">
+                          Shop Name
+                        </label>
+                        <Input
+                          {...register('shopName')}
+                          id="shopName"
+                          type="text"
+                          className="w-full"
+                          placeholder="Your shop or business name (optional)"
+                        />
+                        {errors.shopName && (
+                          <p className="mt-1 text-sm text-red-600">{errors.shopName.message}</p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                        {t('contact.form.message')} *
+                      </label>
+                      <Textarea
+                        {...register('message', { required: 'Message is required' })}
+                        id="message"
+                        rows={6}
+                        className="w-full"
+                        placeholder="Tell us how we can help you..."
+                      />
+                      {errors.message && (
+                        <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                      )}
+                    </div>
+
+                    {submitStatus === 'error' && errorMessage && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg"
+                      >
+                        <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
+                        <p className="text-sm text-red-600">{errorMessage}</p>
+                      </motion.div>
+                    )}
+
+                    <div className="flex gap-3">
+                      <Button type="button" onClick={() => setStep(1)} variant="secondary" className="flex-1">
+                        Back
+                      </Button>
+                      <Button
+                        type="submit"
+                        disabled={submitStatus === 'loading'}
+                        className="flex-1 group"
+                        size="lg"
+                      >
+                        {submitStatus === 'loading' ? (
+                          <>
+                            <Loader2 size={20} className="animate-spin mr-2" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            Send Message
+                          </>
+                        )}
+                      </Button>
+                    </div>
                   </>
                 )}
-              </Button>
               </form>
 
               {/* WhatsApp Quick Contact */}
