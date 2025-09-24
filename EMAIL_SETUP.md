@@ -17,6 +17,9 @@ SMTP_FROM=your-email@gmail.com
 
 # Admin Email (where contact form submissions will be sent)
 ADMIN_EMAIL=contact@globalcarnivaljeddah.com
+
+# Second Admin Email (optional - for additional notifications)
+SECOND_ADMIN_EMAIL=admin2@globalcarnivaljeddah.com
 ```
 
 ## Email Provider Setup
@@ -63,8 +66,10 @@ SMTP_FROM=your-verified-email@yourdomain.com
 
 ### Admin Notification Email
 - Sent to `ADMIN_EMAIL` when someone submits the contact form
+- Optionally sent to `SECOND_ADMIN_EMAIL` if configured
 - Includes all form data in a beautifully formatted HTML email
 - Timestamp in Saudi Arabia timezone
+- Both admins receive identical notification emails
 
 ### User Confirmation Email
 - Sent to the user who submitted the form
@@ -93,6 +98,11 @@ SMTP_FROM=your-verified-email@yourdomain.com
 3. **"Authentication failed" error**:
    - Verify your credentials
    - Check if 2FA is enabled and you're using an App Password
+
+4. **Second admin not receiving emails**:
+   - Ensure `SECOND_ADMIN_EMAIL` is set in your environment variables
+   - Check that the email address is valid and accessible
+   - Verify the email is not being sent to spam folder
 
 ### Debug Mode
 

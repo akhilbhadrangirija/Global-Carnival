@@ -42,7 +42,7 @@ export async function POST(request) {
       timestamp: new Date().toISOString(),
     });
 
-    // Send email notification to admin
+    // Send email notification to primary admin
     const adminEmailResult = await sendEmail(
       process.env.ADMIN_EMAIL || 'contact@globalcarnivaljeddah.com',
       'contactForm',
@@ -52,6 +52,22 @@ export async function POST(request) {
     if (!adminEmailResult.success) {
       console.error('Failed to send admin notification:', adminEmailResult.error);
       // Continue processing even if admin email fails
+    }
+
+    // Send email notification to second admin (if configured)
+    if (process.env.SECOND_ADMIN_EMAIL) {
+      const secondAdminEmailResult = await sendEmail(
+        process.env.SECOND_ADMIN_EMAIL,
+        'contactForm',
+        { name, email, message, shopName, phone }
+      );
+
+      if (!secondAdminEmailResult.success) {
+        console.error('Failed to send second admin notification:', secondAdminEmailResult.error);
+        // Continue processing even if second admin email fails
+      } else {
+        console.log('Second admin notification sent successfully');
+      }
     }
 
     // Send confirmation email to user
