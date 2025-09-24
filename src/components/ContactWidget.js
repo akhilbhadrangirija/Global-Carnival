@@ -16,6 +16,7 @@ export function ContactWidget() {
     handleSubmit,
     reset,
     getValues,
+    setValue,
     formState: { errors },
   } = useForm();
   const [otpStatus, setOtpStatus] = useState('idle');
@@ -131,6 +132,19 @@ export function ContactWidget() {
       setOtpStatus('error');
     }
   };
+
+  useEffect(() => {
+    return () => {
+      if (otpTimerRef.current) clearInterval(otpTimerRef.current);
+    };
+  }, []);
+
+  // Clear name field when transitioning to step 2 to prevent autofill issues
+  useEffect(() => {
+    if (step === 2) {
+      setValue('name', '');
+    }
+  }, [step, setValue]);
 
   const formVariants = {
     hidden: {
@@ -316,6 +330,7 @@ export function ContactWidget() {
                               id="name"
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                               placeholder="Your full name"
+                              autoComplete="off"
                             />
                             {errors.name && (<p className="mt-1 text-sm text-red-600">{errors.name.message}</p>)}
                           </div>

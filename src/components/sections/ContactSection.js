@@ -20,6 +20,7 @@ export function ContactSection() {
     handleSubmit,
     reset,
     getValues,
+    setValue,
     formState: { errors },
   } = useForm();
   const [otpStatus, setOtpStatus] = useState('idle');
@@ -139,6 +140,13 @@ export function ContactSection() {
     };
   }, []);
 
+  // Clear name field when transitioning to step 2 to prevent autofill issues
+  useEffect(() => {
+    if (step === 2) {
+      setValue('name', '');
+    }
+  }, [step, setValue]);
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
@@ -234,6 +242,7 @@ export function ContactSection() {
                           type="text"
                           className="w-full"
                           placeholder="Your full name"
+                          autoComplete="off"
                         />
                         {errors.name && (
                           <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>

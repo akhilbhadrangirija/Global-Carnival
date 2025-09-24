@@ -23,6 +23,7 @@ export default function ContactPage() {
     handleSubmit,
     reset,
     getValues,
+    setValue,
     formState: { errors },
   } = useForm();
 
@@ -145,6 +146,13 @@ export default function ContactPage() {
     };
   }, []);
 
+  // Clear name field when transitioning to step 2 to prevent autofill issues
+  useEffect(() => {
+    if (step === 2) {
+      setValue('name', '');
+    }
+  }, [step, setValue]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -243,6 +251,7 @@ export default function ContactPage() {
                           type="text"
                           className="w-full"
                           placeholder="Your full name"
+                          autoComplete="off"
                         />
                         {errors.name && (
                           <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
