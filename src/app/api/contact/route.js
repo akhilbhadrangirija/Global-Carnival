@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
 import { verifyVerifiedToken } from '@/lib/otp';
+import { appendContactRow } from '@/lib/sheets';
 
 export async function POST(request) {
   try {
@@ -80,6 +81,15 @@ export async function POST(request) {
     if (!userEmailResult.success) {
       console.error('Failed to send user confirmation:', userEmailResult.error);
       // Continue processing even if user email fails
+    }
+
+    // Append to Google Sheets (non-blocking failure)
+    try {
+      await appendContactRow({ name, email, phone, shopName, message });
+      console.log('Appended contact submission to Google Sheets');
+    } catch (sheetsError) {
+      console.error('Failed to append to Google Sheets:', sheetsError);
+      // Do not fail the request if Sheets append fails
     }
 
     return NextResponse.json(

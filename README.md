@@ -276,9 +276,29 @@ SMTP_PORT=587
 SMTP_USER=your-email@example.com
 SMTP_PASS=your-password
 
+# Google Sheets (Service Account)
+GOOGLE_SERVICE_ACCOUNT_EMAIL=service-account@project.iam.gserviceaccount.com
+# Paste the full JSON private_key with escaped newlines (Vercel: add as-is; locally: wrap in quotes)
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nABC...\n-----END PRIVATE KEY-----\n"
+GOOGLE_SHEETS_SPREADSHEET_ID=your-spreadsheet-id
+# Optional: sheet tab name (defaults to Sheet1)
+GOOGLE_SHEETS_SHEET_NAME=ContactSubmissions
+
 # WhatsApp Integration
 WHATSAPP_NUMBER=971503545972
 ```
+
+### Google Sheets Setup
+
+1. Create a Google Cloud project and enable the "Google Sheets API".
+2. Create a Service Account and generate a JSON key. Copy:
+   - `client_email` → `GOOGLE_SERVICE_ACCOUNT_EMAIL`
+   - `private_key` → `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` (escape newlines as `\n`).
+3. Share your target Google Sheet with the service account email (Editor).
+4. In the sheet, keep columns like: `Timestamp, Name, Email, Phone, Shop Name, Message`.
+5. Set `GOOGLE_SHEETS_SPREADSHEET_ID` from the sheet URL.
+
+Successful contact form submissions will append rows to the configured sheet.
 
 ### Next.js Configuration
 
