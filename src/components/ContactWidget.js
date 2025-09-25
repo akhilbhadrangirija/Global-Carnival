@@ -27,6 +27,8 @@ export function ContactWidget() {
   const [step, setStep] = useState(1);
   const [otpCooldown, setOtpCooldown] = useState(0);
   const otpTimerRef = useRef(null);
+  const autoOpenTimerRef = useRef(null);
+  const AUTO_OPEN_SESSION_KEY = 'contactWidgetAutoOpened';
 
   const onSubmit = async (data) => {
     setSubmitStatus('loading');
@@ -62,12 +64,18 @@ export function ContactWidget() {
   };
 
   const handleToggle = () => {
+    if (autoOpenTimerRef.current) {
+      clearTimeout(autoOpenTimerRef.current);
+      autoOpenTimerRef.current = null;
+      try { sessionStorage.setItem(AUTO_OPEN_SESSION_KEY, 'true'); } catch {}
+    }
     if (isOpen) {
       setIsOpen(false);
       setSubmitStatus('idle');
       setErrorMessage('');
     } else {
       setIsOpen(true);
+      try { sessionStorage.setItem(AUTO_OPEN_SESSION_KEY, 'true'); } catch {}
     }
   };
 
@@ -136,6 +144,25 @@ export function ContactWidget() {
   useEffect(() => {
     return () => {
       if (otpTimerRef.current) clearInterval(otpTimerRef.current);
+    };
+  }, []);
+
+  // Auto-open the widget once per session, 5 seconds after first visit
+  useEffect(() => {
+    try {
+      const alreadyOpened = sessionStorage.getItem(AUTO_OPEN_SESSION_KEY);
+      if (!alreadyOpened) {
+        autoOpenTimerRef.current = setTimeout(() => {
+          setIsOpen(true);
+          try { sessionStorage.setItem(AUTO_OPEN_SESSION_KEY, 'true'); } catch {}
+        }, 5000);
+      }
+    } catch {}
+    return () => {
+      if (autoOpenTimerRef.current) {
+        clearTimeout(autoOpenTimerRef.current);
+        autoOpenTimerRef.current = null;
+      }
     };
   }, []);
 
@@ -240,7 +267,7 @@ export function ContactWidget() {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <MessageCircle size={24} className="text-blue-600" />
-                    <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>
+                    <h2 className="text-2xl font-bold text-gray-900">Get in touch</h2>
                   </div>
                   <button
                     onClick={handleToggle}
